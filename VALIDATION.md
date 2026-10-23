@@ -2,6 +2,8 @@
 
 Local workstation: Windows, Unreal Engine 5.8.3, MSVC 14.44, RTX 4050 Laptop GPU.
 
+This page records the V1 baseline. See the [V2 pilot checks](Docs/V2/README.md) and [V2 acceptance register](Docs/V2_ACCEPTANCE.txt) for the separate upgraded street.
+
 | Check | Result |
 | --- | --- |
 | C++ editor build | Passed after final controller and camera changes |

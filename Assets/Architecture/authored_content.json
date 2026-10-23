@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "namespace": "/Game/VillageMeshAuthored",
+  "approved_packages": [],
+  "distribution": "No hand-authored binary assets are required by this pilot. All current components are original procedural recipes or pinned CC0 inputs.",
+  "rules": "Generation never writes this namespace. Before introducing an asset, record its license, versioned bundle or LFS source, checksum and exact package allowlist, then test recovery on a clean clone."
+}

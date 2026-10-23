@@ -1,0 +1,103 @@
+VILLAGE MESH V2 IMPLEMENTATION / ACCEPTANCE REGISTER
+Date: 2026-10-23 (Asia/Kolkata)
+Plan: Village_Mesh_V2_Hyperrealism_Plan_20261023.txt
+This register separates implemented code, engine evidence, and missing observations.
+
+SCOPE DECISION
+User selected the mapped street near the original start. Pilot follows OSM
+1114810501 and part of 1114810502, approximately 240.04 m. Sixteen mapped
+frontages and eight fixed comparison cameras are stored in Assets/Routes.
+Three spaces are representative interiors; none claims to reproduce a home.
+
+M0 - REPRODUCIBLE BASELINE
+V1 commit and input hashes frozen in Docs/V2/baseline_inputs.json.
+Host, driver, RAM, available memory and power scheme recorded separately.
+Windows Development package built, staged and launched its V2 default map.
+Authoring descriptor and DefaultEngine.ini restored byte-for-byte afterward.
+Three rendered routes passed in both editor game and standalone package.
+Final source/package fingerprints: Docs/V2/build_manifest.json.
+
+M1 - REFERENCE PACKAGE
+Existing source attribute audit completed: 824 features, zero populated height
+or floor attributes, zero true has_parts flags. 821 selected source footprints.
+Stable source IDs, deterministic fallback attributes and explicit override
+precedence implemented. Unknown/orphaned overrides fail instead of disappearing.
+Reference/confidence register covers all 16 frontages.
+Missing: local facade photographs, dimensions, elevation control and local review.
+Status: data foundation implemented; reference-based fidelity is not accepted.
+
+M2 - GEOMETRY PILOT
+Separate /Game/VillageMeshV2 generator; original V1 maps are preserved.
+Procedural kit: thick walls, separate floor/ceiling/roof geometry, recessed
+windows, frames/grills, coping, porches, roof tanks, pipes, benches and furniture.
+Continuous inferred road cross-sections have a 6 cm crown and 2.5 cm edges.
+Doors use stable IDs and session state kept outside streamed actor instances.
+Generated 932 detail boxes across 25 kit component types; 128 small CC0 verge
+plants replace the earlier oversized grass triangles in V2.
+HLOD commandlet built all 119 actors: zero errors, two warnings.
+All three editor and all three standalone collision-aware walks passed.
+Fixed camera views were visually reviewed; overview retains distant buildings.
+No claim of measured street levels or an inspected Lumen diagnostic view.
+
+M3 - APPEARANCE / INTERIORS / WEATHER
+Geographic sun uses installed Epic SunPosition library with the existing sun,
+origin latitude/longitude, 2026-10-23 and UTC+05:30. No duplicate SunSky rig.
+Shared wind m/s and artistic wetness/cloudiness state; wetting/drying response.
+Rain suppression uses overhead visibility traces at the player. This is a
+local shelter approximation, not spatial roof runoff, puddles or a Niagara
+collision/splash implementation. Interior materials do not use global wetness.
+Four repeatable conditions: daylight, evening, overcast and rain.
+Three entrance, door-state-store and roof-shelter checks passed both in NullRHI
+and in the rendered standalone package. State restoration after an actual
+unload/reload cycle has not been separately exercised by this check.
+Daylight was verified at physical sun elevation 43.08 degrees at 13:30 local.
+The API's +180-degree light-rotation offset is removed exactly once.
+All 32 final camera captures exist and are SHA256-indexed in evidence.json.
+The fallback rain shell has faded edges and no visible cap band; it remains
+an approximation and is not accepted as volumetric, collision-aware rain.
+
+M4 - LIVING STREET
+Pending: licensed human/animal animation, navigation and routines, vehicle
+route, and appropriate audio. No primitive stand-ins presented as realistic
+villagers; enabled authoring plugins do not satisfy this milestone.
+
+M5 - STREAMING / PERFORMANCE
+Playable render scale 67%, capture scale 100%, output 1440x900, uncapped FPS.
+Route diagnostics record frame wall-time median/p95/p99/max after warmup and
+peak process resident memory. CPU/GPU timing split and VRAM peaks are not
+implemented in that summary; use engine profiling tools for those measures.
+Target p95 <=33.3 ms is a proposed target, never a guaranteed result.
+Three editor route trials: p95 10.94-12.40 ms; largest frame 93.72 ms.
+Three final standalone trials: p95 10.98-13.13 ms; largest frame 31.43 ms.
+These are offscreen D3D12/Epic local measurements on the recorded workstation.
+119 HLOD actors built; overview inspected. Physics smoke: 13 finite simulating
+bodies and grounded player at 96.06 cm. Its 1,880 instance count includes HLOD
+instances and is not a vegetation count (base vegetation 146 + verge plants 128).
+Continuous standalone soak passed: 1,800.026 wall-clock seconds after warmup,
+31 route legs, 182,221 measured frames, no blocked/fall-through/crash failure.
+Mixed-weather frame p95 12.71 ms, largest frame 62.10 ms, peak process resident
+memory 1,546.1 MiB. This mixed-condition run is not another daylight trial.
+Whole-adapter peak memory 4,297 MiB and GPU temperature 89 C include other
+workloads. Interactive launchers now cap at 60 FPS; diagnostics remain uncapped.
+The process-memory samples do not establish absence of all memory leaks.
+
+M6 - RELEASE EVIDENCE
+Pending independent fresh-machine test, local fidelity review, complete release
+acceptance and final shipping distribution. A local Development package is
+not evidence of these gates.
+
+REGENERATION AND DISTRIBUTION
+Tracked JSON/GeoJSON recipes and pinned CC0 downloads recover the current kit.
+No new authored binary bundle is required. /Game/VillageMeshAuthored is reserved
+and never written by generation. Its dependency allowlist starts empty.
+Any later authored asset needs provenance plus a versioned bundle/checksum or
+LFS distribution path before its package can enter the dependency allowlist.
+Source manifests are not overwritten by generator runs.
+
+RECORDED EVIDENCE
+Docs/V2/RESULTS.md and evidence.json: per-run results and camera hashes.
+Docs/V2/engine_checks.json: engine stages, corrections and HLOD warnings.
+Docs/V2/portability.json: 2,230 dependency packages, no legacy-art references.
+Packaged UFS manifest: no Content/Village or Content/VillageMesh entries.
+Docs/V2/build_manifest.json: source, runtime-manifest and package fingerprints.
+The open acceptance gates above remain visible and are not waived by these checks.

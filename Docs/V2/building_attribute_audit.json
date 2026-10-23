@@ -1,0 +1,13 @@
+{
+  "source_features": 824,
+  "populated_attributes": {
+    "sources": 824,
+    "is_underground": 824,
+    "has_parts": 824,
+    "version": 824
+  },
+  "height_present": 0,
+  "floors_present": 0,
+  "has_parts_true": 0,
+  "statement": "No measured height, floor or facade attributes are inferred from absent data."
+}

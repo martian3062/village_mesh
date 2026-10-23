@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scalability": "Epic (3), verified in the local development run logs",
+  "output_resolution": [1440, 900],
+  "playable_screen_percentage": 67,
+  "capture_screen_percentage": 100,
+  "interactive_max_fps": 60,
+  "cvars": [
+    "sg.ViewDistanceQuality 3", "sg.AntiAliasingQuality 3", "sg.ShadowQuality 3",
+    "sg.GlobalIlluminationQuality 3", "sg.ReflectionQuality 3", "sg.PostProcessQuality 3",
+    "sg.TextureQuality 3", "sg.EffectsQuality 3", "sg.FoliageQuality 3",
+    "sg.ShadingQuality 3", "sg.LandscapeQuality 3", "r.VSync 0",
+    "r.DynamicRes.OperationMode 0", "t.MaxFPS 0"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "engine": "5.8.3",
+  "accepted": false,
+  "scope": "Offscreen editor game; five exterior and three interior cameras",
+  "attempts": [
+    "Legacy r.Lumen.Visualize.Mode 5 and 3",
+    "r.Lumen.Visualize.ViewMode SurfaceCache/LumenScene with ShowFlag.VisualizeLumen 1",
+    "viewmode visualizelumen with SurfaceCache and VisualizeLumen show flag"
+  ],
+  "observation": "Console accepted the named modes; inspected output remained lit. No surface-cache coverage or Lumen-scene acceptance is claimed.",
+  "next_check": "Use the interactive editor Lumen Scene and Surface Cache viewport modes; inspect each room and pilot facade.",
+  "images": {
+    "Lumen_SurfaceCache": [
+      {
+        "file": "view_01.png",
+        "sha256": "a129bcd073a4a2752b96b88b04533aa0d05730bf35d6262f9ec3e5104655f473"
+      },
+      {
+        "file": "view_02.png",
+        "sha256": "b6ce429f442ca8bddfc5058c29d33682e0255db0cca5b14a1d9036cc568f63c1"
+      },
+      {
+        "file": "view_03.png",
+        "sha256": "dcd35639b6af49262ec2d472ba545f180ea21f1e0a6c9b776f43811dc5622508"
+      },
+      {
+        "file": "view_04.png",
+        "sha256": "5791f6de235b708cc437982560c995f984ec30d3ddb3428b918239ff4a9b7b6e"
+      },
+      {
+        "file": "view_05.png",
+        "sha256": "49bd4affd01c2b1a7b80ee53b27d92de81368daa01a116788db508a3d441c43e"
+      },
+      {
+        "file": "view_06.png",
+        "sha256": "259b89f0f356bfe0d799e83b008551be112f448becf7d73b3292450281bf82ca"
+      },
+      {
+        "file": "view_07.png",
+        "sha256": "bce621060f69f68c33c4d5349f16848542a3899af7e960b1f59e7befc83cb077"
+      },
+      {
+        "file": "view_08.png",
+        "sha256": "7ca99fe35f58a2875368a290f1993aa7d5ee5274a24199391e1a8d2dd25cd413"
+      }
+    ],
+    "Lumen_Scene": [
+      {
+        "file": "view_01.png",
+        "sha256": "8db10dd95bfaf2ab60fa121a452f83ed7f89a60c06f4d1599d8ddfcaf154be52"
+      },
+      {
+        "file": "view_02.png",
+        "sha256": "86be25da77ba80a5d6ca5b9fd28f9f007810f56c286659a2899b5c456c1c1d01"
+      },
+      {
+        "file": "view_03.png",
+        "sha256": "d7c2b3db98d6b540089e8379e67bcfcf7f029fc4dc48d66dbf4987a1243f818b"
+      },
+      {
+        "file": "view_04.png",
+        "sha256": "0fcc81289aebd3da298b17d2a11ecfa42e7235085acc109a9ca9b2d54f601841"
+      },
+      {
+        "file": "view_05.png",
+        "sha256": "acb50924737cfce3b2620f41820f4902de0fd8fceb6294e1ec4e77403e677758"
+      },
+      {
+        "file": "view_06.png",
+        "sha256": "8a60208a249ed2bdb4b75f2fb8b2c195b6e591a557b12027c6a7d6a2fcbda824"
+      },
+      {
+        "file": "view_07.png",
+        "sha256": "9354c0ad282541bd152809a3d6f5edf829b4193dae6e8adf62eddf0872fd841d"
+      },
+      {
+        "file": "view_08.png",
+        "sha256": "5ac15a051513a68e4638e9207de9ca16b0f8952e397af0174945eb6c9fe3560a"
+      }
+    ]
+  }
+}

@@ -15,6 +15,7 @@ class RURAL_PARDEEP_API AVillageExplorer : public ACharacter
     GENERATED_BODY()
 public:
     AVillageExplorer();
+    virtual void BeginPlay() override;
     virtual void Tick(float DeltaSeconds) override;
     virtual void SetupPlayerInputComponent(UInputComponent* Input) override;
 protected:
@@ -31,6 +32,10 @@ protected:
     void AdvanceTime();
     void VisitPhysicsYard();
     void ToggleOverview();
+    void VisitPilotRoom();
+    TArray<FVector> PilotRoomStops;
+    TArray<FVector> PilotRoomTargets;
+    int32 PilotRoomIndex = 0;
     bool bAtPhysicsYard = false;
     bool bOverview = false;
     FVector OverviewReturnPosition;

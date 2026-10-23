@@ -1,0 +1,73 @@
+{
+  "pilot_length_m": 240.04351027369535,
+  "frontages": 16,
+  "enterable_spaces": [
+    {
+      "building_id": "21ca042c-29c1-4dce-9190-fa42dbbbd6a5",
+      "door_id": "21ca042c-29c1-4dce-9190-fa42dbbbd6a5:entry",
+      "entrance_cm": [
+        2317.157558694381,
+        4193.722451010699,
+        110
+      ],
+      "inside_cm": [
+        2308.1435197488295,
+        4333.431960715257,
+        110
+      ],
+      "outside_cm": [
+        2332.6101968867542,
+        3954.2204343743133,
+        110
+      ],
+      "confidence": "procedural inference"
+    },
+    {
+      "building_id": "8f18b220-1b98-4de7-b4af-654520c75570",
+      "door_id": "8f18b220-1b98-4de7-b4af-654520c75570:entry",
+      "entrance_cm": [
+        6968.0712259561105,
+        -7046.988209804958,
+        110
+      ],
+      "inside_cm": [
+        7011.211766057741,
+        -7180.175648400869,
+        110
+      ],
+      "outside_cm": [
+        6894.116014353314,
+        -6818.666886497683,
+        110
+      ],
+      "confidence": "procedural inference"
+    },
+    {
+      "building_id": "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7",
+      "door_id": "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7:entry",
+      "entrance_cm": [
+        958.4476926010562,
+        -8537.002284925296,
+        110
+      ],
+      "inside_cm": [
+        996.3280527249359,
+        -8671.780170043312,
+        110
+      ],
+      "outside_cm": [
+        893.5099323886911,
+        -8305.95448186584,
+        110
+      ],
+      "confidence": "procedural inference"
+    }
+  ],
+  "component_kinds": 25,
+  "detail_box_actors": 932,
+  "local_review": "pending",
+  "semantic_verge_instances": 128,
+  "namespace": "/Game/VillageMeshV2",
+  "authored_namespace_touched": false,
+  "confidence": "procedural inference"
+}

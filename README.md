@@ -1,14 +1,16 @@
 # village_mesh
 
+**V2 pilot work:** see the [V2 implementation guide](Docs/V2/README.md) for the separate 240 m street pilot, build/run commands, and milestone status. The V1 overview and recorded validation below remain available for comparison.
+
 An explorable Unreal Engine village based on **Pandori Nijjaran, Adampur, Punjab, India, PIN 144102**. OpenStreetMap road centerlines and Overture building footprints provide the geographic layout. Procedural architecture, CC0 materials and vegetation, dynamic weather, and interactive Chaos physics turn that layout into a playable environment.
 
 **Current status:** a working, map-based environment foundation. Building heights, facades, road widths, vegetation placement, and terrain elevation are approximations. This is not yet a surveyed digital twin or a finished photorealistic game.
 
 The repository publishes project source, generation scripts, small geographic extracts, asset manifests, and validation evidence. Unreal maps and imported binary assets are generated locally. The C++ module and project file retain the original name, `rural_pardeep`.
 
-![Pandori Nijjaran in Unreal Engine](Docs/overview.png)
+![V2 mapped street pilot in Unreal Engine](Docs/V2/daylight.png)
 
-*Actual engine capture of the generated village. [Street-level capture](Docs/street.png) and [source map](Docs/pandori_map.png) are also available.*
+*Actual V2 engine capture. See the [V2 guide, weather comparisons and results](Docs/V2/README.md). The [original village overview](Docs/overview.png), [V1 street capture](Docs/street.png), and [source map](Docs/pandori_map.png) remain available for comparison.*
 
 ## Contents
 

@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "selection": "User-approved mapped street near V1 start",
+  "road_ids": [
+    1114810501,
+    1114810502
+  ],
+  "length_m": 240.04351027369535,
+  "units": "centimeters",
+  "centerline_cm": [
+    [
+      -1191.301634806227,
+      3897.387562181974
+    ],
+    [
+      -1107.8346412555818,
+      2339.5444881166127
+    ],
+    [
+      -1065.1526559064616,
+      2140.505294503359
+    ],
+    [
+      -942.7976313018858,
+      2018.1907062392515
+    ],
+    [
+      -709.4694449783018,
+      1944.8019532965893
+    ],
+    [
+      -432.5107846644065,
+      1969.2648709178072
+    ],
+    [
+      1655.1125419341854,
+      2204.998441041897
+    ],
+    [
+      2009.8472643559426,
+      2190.543080600629
+    ],
+    [
+      2335.1788413269537,
+      2058.2209351170677
+    ],
+    [
+      2535.3099281741793,
+      1870.3012495385974
+    ],
+    [
+      3084.484806000377,
+      1089.7117863026747
+    ],
+    [
+      3526.48047613318,
+      452.56397654559225
+    ],
+    [
+      3969.4246349071745,
+      -552.6395487401319
+    ],
+    [
+      4207.49526416714,
+      -1464.4392066837904
+    ],
+    [
+      4408.574839520768,
+      -2180.5355233811747
+    ],
+    [
+      4613.448369034798,
+      -2908.863298889168
+    ],
+    [
+      5689.982887692039,
+      -6703.951387285447
+    ],
+    [
+      -730.336193332266,
+      -8051.635759702769
+    ],
+    [
+      -863.1245920464298,
+      -8181.734003595176
+    ],
+    [
+      -983.5826395034113,
+      -8365.205885951833
+    ],
+    [
+      -984.5311281446028,
+      -8530.88655550024
+    ],
+    [
+      -247.55551486314954,
+      -10514.606786898818
+    ]
+  ],
+  "frontages": [
+    {
+      "building_id": "4dcb8e14-a7b3-4128-ad72-c0c1c0848967",
+      "edge_index": 3,
+      "chainage_cm": 0.0,
+      "setback_from_centerline_cm": 1053.803108991609,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "a13839c5-d48e-4f9c-a41f-188f8f22d536",
+      "edge_index": 8,
+      "chainage_cm": 948.0608783310873,
+      "setback_from_centerline_cm": 428.3607101244513,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "063ea54f-2f17-44d8-bb88-e5469007e1d8",
+      "edge_index": 1,
+      "chainage_cm": 2540.8584424538617,
+      "setback_from_centerline_cm": 304.6320147389264,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "21ca042c-29c1-4dce-9190-fa42dbbbd6a5",
+      "edge_index": 7,
+      "chainage_cm": 4915.203383597949,
+      "setback_from_centerline_cm": 2026.6147159839884,
+      "confidence": "procedural inference",
+      "interior": true
+    },
+    {
+      "building_id": "d6e9dd09-e4b7-48d1-a9e7-f25ad11b8360",
+      "edge_index": 0,
+      "chainage_cm": 5453.624150843894,
+      "setback_from_centerline_cm": 459.49452324646705,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "e08ba05c-0e73-438e-b79a-e36dbf42d80d",
+      "edge_index": 2,
+      "chainage_cm": 9277.073794151964,
+      "setback_from_centerline_cm": 516.8147573785982,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "43762046-2369-4709-b252-6aa5e534b848",
+      "edge_index": 2,
+      "chainage_cm": 11556.219780749445,
+      "setback_from_centerline_cm": 335.58711079217625,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "8f18b220-1b98-4de7-b4af-654520c75570",
+      "edge_index": 2,
+      "chainage_cm": 14756.853038236988,
+      "setback_from_centerline_cm": 1323.3231132308156,
+      "confidence": "procedural inference",
+      "interior": true
+    },
+    {
+      "building_id": "3dc00634-ee68-4288-a48e-22a9a871e4ef",
+      "edge_index": 2,
+      "chainage_cm": 15615.3229176827,
+      "setback_from_centerline_cm": 1178.6753755048542,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "8465beaa-ec99-4f32-98ca-a200f052cd3f",
+      "edge_index": 1,
+      "chainage_cm": 16360.009558345864,
+      "setback_from_centerline_cm": 734.9041909852942,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "bff91b04-f82c-4ed7-8afa-79ac72214859",
+      "edge_index": 3,
+      "chainage_cm": 17312.104815918392,
+      "setback_from_centerline_cm": 1643.9662385003003,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "63460e46-f3ed-4046-a0da-a8b78bf3618f",
+      "edge_index": 2,
+      "chainage_cm": 18467.569752471354,
+      "setback_from_centerline_cm": 1324.1629419656842,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "eda24ace-de4a-4e47-bee4-3a5dd5e8b944",
+      "edge_index": 3,
+      "chainage_cm": 19291.626659302237,
+      "setback_from_centerline_cm": 789.8792398730816,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7",
+      "edge_index": 2,
+      "chainage_cm": 19764.038629804847,
+      "setback_from_centerline_cm": 821.9448566163998,
+      "confidence": "procedural inference",
+      "interior": true
+    },
+    {
+      "building_id": "bc44919d-24a3-4b98-bd52-d3b5111600ed",
+      "edge_index": 3,
+      "chainage_cm": 23391.993853493193,
+      "setback_from_centerline_cm": 1036.961396084638,
+      "confidence": "procedural inference",
+      "interior": false
+    },
+    {
+      "building_id": "768f9ae6-bf1d-4eb2-9b34-1281e34c185e",
+      "edge_index": 4,
+      "chainage_cm": 24004.35102736954,
+      "setback_from_centerline_cm": 982.051942036896,
+      "confidence": "procedural inference",
+      "interior": false
+    }
+  ],
+  "cameras": [
+    {
+      "id": "camera_01",
+      "position_cm": [
+        -1152.7733369089478,
+        3178.288437108248,
+        170
+      ],
+      "yaw_degrees": -148.91570423960184,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "a13839c5-d48e-4f9c-a41f-188f8f22d536"
+    },
+    {
+      "id": "camera_02",
+      "position_cm": [
+        1042.4041376592959,
+        2135.811659238646,
+        170
+      ],
+      "yaw_degrees": 4.238458763684386,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "d6e9dd09-e4b7-48d1-a9e7-f25ad11b8360"
+    },
+    {
+      "id": "camera_03",
+      "position_cm": [
+        3467.3183514438274,
+        537.8476585216408,
+        170
+      ],
+      "yaw_degrees": -56.18113462771037,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "e08ba05c-0e73-438e-b79a-e36dbf42d80d"
+    },
+    {
+      "id": "camera_04",
+      "position_cm": [
+        4499.292268551262,
+        -2503.037036594277,
+        170
+      ],
+      "yaw_degrees": -58.14578892252819,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "43762046-2369-4709-b252-6aa5e534b848"
+    },
+    {
+      "id": "camera_05",
+      "position_cm": [
+        5378.072114597409,
+        -5604.377858430686,
+        170
+      ],
+      "yaw_degrees": 96.57395944307372,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "43762046-2369-4709-b252-6aa5e534b848"
+    },
+    {
+      "id": "camera_06",
+      "position_cm": [
+        3653.8721925997506,
+        -7131.349859177261,
+        170
+      ],
+      "yaw_degrees": -45.141048302074495,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "8465beaa-ec99-4f32-98ca-a200f052cd3f"
+    },
+    {
+      "id": "camera_07",
+      "position_cm": [
+        499.1824038981267,
+        -7793.548431304831,
+        170
+      ],
+      "yaw_degrees": -58.294486862295,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7"
+    },
+    {
+      "id": "camera_08",
+      "position_cm": [
+        -498.34467839707986,
+        -9839.556583673451,
+        170
+      ],
+      "yaw_degrees": 14.447073793321726,
+      "pitch_degrees": -2,
+      "fov_degrees": 85,
+      "reference_path": null,
+      "confidence": "procedural inference",
+      "target_building_id": "bc44919d-24a3-4b98-bd52-d3b5111600ed"
+    }
+  ],
+  "notes": "Road alignment sourced from OSM; architecture/widths/ground levels inferred. No surveyed landmark selected."
+}

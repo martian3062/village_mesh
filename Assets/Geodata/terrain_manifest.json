@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "horizontal_crs": "EPSG:4326 input; local east/north tangent approximation",
+  "origin_lat_lon": [31.4610594, 75.7240654],
+  "units": "meters in source attributes; centimeters at Unreal import",
+  "vertical_datum": "arbitrary local zero, NOT an orthometric or ellipsoidal elevation",
+  "elevation_source": null,
+  "survey_control": [],
+  "confidence": "procedural inference",
+  "base_elevation_m": 0,
+  "pilot_road_crown_m": 0.06,
+  "pilot_road_edge_m": 0.025,
+  "pilot_plinth_m": 0.12,
+  "notes": "No DEM acquired. Road cross-sections and threshold levels are designed approximations; no interpolation presented as survey detail."
+}

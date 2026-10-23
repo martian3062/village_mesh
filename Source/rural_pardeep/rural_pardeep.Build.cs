@@ -14,6 +14,8 @@ public class rural_pardeep : ModuleRules
 		{
 			"Core",
 			"CoreUObject",
+			"Json",
+			"SunPosition",
 			"Engine",
 			"InputCore",
 			"EnhancedInput",   // IA_/IMC_ input assets, UEnhancedInputComponent

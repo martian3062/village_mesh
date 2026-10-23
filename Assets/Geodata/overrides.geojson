@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": 1,
+  "description": "Explicit building corrections keyed by building_id. Current design overrides are labelled procedural inference, not measurements. Generation never rewrites this file.",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "building_id": "8f18b220-1b98-4de7-b4af-654520c75570",
+        "height_m": 3.3,
+        "confidence": "procedural inference",
+        "reason": "Representative single-storey pilot room; design override, not a surveyed height",
+        "reviewer": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "building_id": "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7",
+        "height_m": 3.3,
+        "confidence": "procedural inference",
+        "reason": "Representative single-storey pilot room; design override, not a surveyed height",
+        "reviewer": null
+      }
+    }
+  ]
+}

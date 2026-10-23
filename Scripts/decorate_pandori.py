@@ -10,6 +10,8 @@ def build(api, site):
     tank = api.solid("M_PandoriTank", (0.03,0.055,0.075), 0.45)
     count = 0
     for i,b in enumerate(site.BUILDINGS):
+        if b['id'] in getattr(site, 'DETAIL_EXCLUSIONS', set()):
+            continue
         x,y=b["center"];z=b["height"]
         if i%11==0:
             api.mesh_actor(cube,trim,"VM_ApproxTankBase_"+str(i),(x,y,z+8),(1.3,1.3,0.16))

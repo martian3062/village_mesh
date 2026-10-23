@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "required": ["PCG", "SunPosition"],
+  "disabled_for_package": ["ModelContextProtocol", "EditorToolset", "MCPClientToolset", "PCGToolset", "ProceduralVegetationEditor", "MeshTerrainMode", "USDImporter", "Water", "Landmass", "NiagaraFluids", "NNERuntimeORT", "LearningAgents", "MassAI", "StateTree", "SmartObjects", "PoseSearch", "PythonScriptPlugin", "ModelingToolsEditorMode"],
+  "notes": "Scoped to the current procedural explorer. Niagara core and native AI modules remain module dependencies. No trained agents, Water bodies or editor Python are needed by this map. Packaging restores the authoring descriptor byte-for-byte."
+}

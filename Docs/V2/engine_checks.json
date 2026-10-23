@@ -1,0 +1,41 @@
+{
+  "engine": "5.8.3",
+  "map": "/Game/VillageMeshV2/Lvl_PandoriV2_WP",
+  "python_tests_passed": 15,
+  "editor_build": "passed",
+  "generation": "passed",
+  "world_partition_conversion": "passed",
+  "hlod_actors_built": 119,
+  "hlod_errors": 0,
+  "hlod_warnings": [
+    "TSR 16-bit VALU disabled for installed NVIDIA driver",
+    "One generated HLOD emissive texture reported no mip levels during build"
+  ],
+  "package_build_success": true,
+  "package_type": "Windows Development",
+  "legacy_content_in_ufs_manifest": [],
+  "native_well_samples": 49,
+  "corrections": [
+    "Rejected an entrance obstructed by a neighboring footprint",
+    "Converted SunPosition elevation from engine light-rotation convention",
+    "Replaced oversized grass with small CC0 verge plants",
+    "Re-aimed obstructed comparison cameras",
+    "Removed visible rain-shell caps and edge bands",
+    "Enabled instanced-mesh usage for the HLOD lamp material"
+  ],
+  "remaining": [
+    "No dedicated Lumen scene/surface-cache diagnostic views",
+    "No local architectural review or surveyed street levels",
+    "Separate CPU/GPU timing and process VRAM not measured",
+    "Independent fresh-machine test and shipping release remain pending"
+  ],
+  "baseline_input_hashes_unchanged": {
+    "Assets/Geodata/pandori_nijjaran.buildings.geojson": true,
+    "Assets/Geodata/pandori_nijjaran.osm.json": true,
+    "Assets/textures.lock.json": true,
+    "Assets/models.lock.json": true,
+    "Content/Well/wind.csv": true,
+    "Content/Well/wind.source.json": true
+  },
+  "v1_asset_files_written_after_2026_10_23_1320_utc": 0
+}

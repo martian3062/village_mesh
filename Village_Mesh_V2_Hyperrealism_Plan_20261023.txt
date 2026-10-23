@@ -1,0 +1,739 @@
+VILLAGE_MESH — VERSION 2 HYPERREALISM PLAN
+Pandori Nijjaran, Punjab
+Prepared: 23 October 2026 (IST)
+Basis: README(20261023-131009).md and VALIDATION.md
+
+This is a proposed implementation plan. It does not report new engine tests,
+measured FPS, inspected screenshots, or completed changes. The two supplied
+documents were reviewed; repository code and generated Unreal assets were
+not available for a line-by-line or visual audit.
+
+1. RECOMMENDATION
+
+Keep the existing geographic foundation and Unreal pipeline. Make V2 a
+reference-built, living village with convincing street-level detail.
+
+The largest gains should come from:
+- correct proportions and ground levels;
+- recognizable local architecture and materials;
+- coherent lighting, surface response and weather;
+- believable people, sound and interactions;
+- stable rendering and streaming during movement.
+
+The project already has Lumen, Substrate, Nanite foliage, weather and physics.
+More enabled plugins alone will not supply the missing observations.
+
+Build one excellent 150–250 m street first, then extend its reusable
+architecture and placement rules. Aim for realism at walking distance before
+increasing the map area. A visually convincing reconstruction and a surveyed
+digital twin are different deliverables; label measured and inferred details.
+
+2. WHAT V1 ACTUALLY ESTABLISHES
+
+The supplied documents record:
+- A finite 1.28 km × 1.28 km world, approximately 1.6384 square kilometres.
+- 821 mapped building shells, grouped into 265 spatial/material mesh chunks.
+- 306 base actors, plus 399 procedural roof-tank/shade detail actors.
+- 146 vegetation instances and 13 physics props in the recorded run.
+- Windows editor build on Unreal Engine 5.8.3 with MSVC 14.44.
+- An RTX 4050 Laptop GPU runtime smoke check.
+- Seven Python unit tests and a dependency audit of 1,026 packages.
+- World Partition conversion, with HLOD baking still unfinished.
+- A pinned 49-sample, normalized and retimed Well wind playback signal.
+
+These results establish a functioning foundation. They do not establish:
+- surveyed terrain, building heights or facade accuracy;
+- realistic interiors or integrated villagers in the portable explorer;
+- long-duration frame rate, memory stability or complete traversal;
+- an independently tested packaged game;
+- scientifically validated local atmosphere or water simulation.
+
+The 821 shells are not 821 detailed houses or necessarily 821 separate actors.
+The reported player Z position is a runtime grounding observation, not a terrain
+survey result. Preserve these distinctions in the V2 documentation.
+
+3. PROPOSED V2 RELEASE SCOPE
+
+These counts are planning choices, not engine requirements or achieved results.
+
+Detailed pilot:
+- One reference-backed street, approximately 150–250 m long.
+- Twelve to twenty reviewed frontages.
+- Two or three enterable spaces: for example, a courtyard, a shop and a room.
+- One locally verified distinctive site or building, selected after reference
+  collection rather than invented from a map label.
+- A small kit of roughly 20–30 useful props and architectural components.
+- A first runtime population test of 6–10 nearby villagers, 2–4 animals and
+  one vehicle route. Reduce or expand after profiling.
+- Four presentation conditions: clear daylight, evening, overcast and rain.
+- A tested packaged explorer and a separate capture-quality preset.
+
+Rest of the village:
+- Preserve the mapped layout.
+- Improve silhouette, road edges, field boundaries and facade variation.
+- Use cheaper background buildings and distant proxies.
+- Upgrade additional streets only after the pilot meets fidelity and
+  performance gates.
+
+If local reference collection is unavailable, V2 can still become a plausible
+Punjab-inspired environment. Exact Pandori fidelity remains unverified until
+the relevant local observations are obtained.
+
+4. DATA AND REFERENCE ACQUISITION
+
+4.1 Local reference pack — highest priority
+
+For the pilot street, collect:
+- Front-facing and oblique facade images at known viewpoints.
+- Roofline, parapet, gate, window, balcony, stair and plinth dimensions.
+- Street widths at intersections and regular cross-sections.
+- Relative ground levels at drains, road crown, door thresholds and courtyards.
+- Surface close-ups with a scale reference: brick, plaster, metal, paving, soil.
+- Tree placement, canopy size, field boundaries and the season represented.
+- Short ambient recordings where appropriate.
+- Date, approximate time, camera orientation and exposure information.
+
+Use images and recordings you are entitled to use. For private interiors,
+obtain permission or make a clearly labelled representative interior.
+Do not reproduce identifiable people or private-house details without the
+appropriate permission.
+
+A phone GPS position alone does not establish centimetre survey accuracy.
+For precise geometry, use suitable measured control, survey equipment or
+photogrammetry with scale and independent check dimensions.
+
+Proposed reference manifest fields:
+feature_id, provider_id, capture_date, source, permission_or_license,
+capture_position, orientation, measured_dimensions, units, uncertainty,
+reference_paths, confidence, reviewer, notes.
+
+Use explicit confidence categories:
+- measured;
+- photo-estimated;
+- sourced map attribute;
+- procedural inference.
+
+4.2 Audit the existing geodata before downloading another release
+
+Overture supports optional height, floor-count, building-part and facade/roof
+attributes. Inspect whether those fields are actually populated for these
+821 buildings. Preserve useful values and their provenance; missing values
+must remain distinguishable from measurements. Footprints may be roofprints,
+so compare them with ground-level walls and setbacks. [S1]
+
+Keep a stable internal building identifier and an explicit mapping to source
+IDs/releases. A source refresh must not silently delete authored corrections.
+
+4.3 Terrain: broad relief plus measured street detail
+
+Copernicus GLO-30 is a global 30 m digital surface model that includes buildings
+and vegetation; its principal acquisition dates are 2011–2015. It can help
+establish broad context after inspection, but it is not a current bare-earth
+survey or a source of street-level drains. Interpolation cannot create missing
+measured detail. [S2]
+
+Use a suitable local terrain survey or scaled photogrammetry for the pilot.
+Where this is unavailable, author plausible microterrain and mark it inferred.
+
+Record horizontal CRS, vertical datum, origin and unit conversions. Retain the
+existing east/north/up convention unless a deliberate migration is tested.
+Convert metres to Unreal centimetres once, at a defined import boundary.
+Do not combine unrelated elevation datums without accounting for the offset.
+
+4.4 Selective photogrammetry
+
+Use RealityScan on surfaces or objects that benefit from unique geometry:
+textured wall sections, steps, gate surrounds, roadside stones and props.
+Capture overlapping views at several heights; missing views leave missing
+information. Establish scale, clean the mesh, remove unwanted background,
+inspect lighting baked into textures and build appropriate collision. [S3]
+
+RealityScan 2.2, released 24 June 2026, adds AMD/mixed-GPU support and describes
+an experimental 360-camera workflow. It is an option for capture work, not
+evidence of a speedup on this project's RTX 4050. [S4]
+
+For repeated house components, a measured modular kit will usually be easier
+to maintain than an enormous raw scan. Test one scan and one modular facade
+in-engine before expanding capture.
+
+4.5 Land cover
+
+ESA WorldCover provides 10 m products for 2020 and 2021. Use them only for broad
+land-cover context. They do not establish present-day individual tree positions,
+crop species, narrow paths or current field boundaries. [S5]
+
+5. BUILDINGS, ROADS AND THE GROUND
+
+5.1 Replace generic facade generation with a reviewed local kit
+
+Proposed kit:
+- Exposed brick and plaster wall sections with appropriate thickness.
+- Parapets, coping, roof edges and believable roof access.
+- Gate leaves, frames, hinges and recessed entrances.
+- Windows with reveals, grills, glass and interior depth.
+- Stairs, plinths, thresholds, balconies and shaded porch components.
+- Water tanks, pipes, outlets and mounting supports.
+- Shop shutters and locally appropriate signage.
+- Boundary walls and courtyard connections.
+
+Derive dimensions and combinations from references. Review Gurmukhi signage
+with a fluent reader. Avoid placing the same roof tank, window spacing and
+decorative clutter on every house.
+
+Hero facades need depth and silhouette: normal maps alone cannot replace a
+window recess or a projecting parapet. Keep background detail cheaper.
+
+5.2 Audit the current 265 mesh chunks
+
+The README describes material/spatial grouping; actual chunk bounds and
+lighting behaviour have not been inspected here.
+
+Check whether any chunk joins complex or widely separated buildings. For
+detailed buildings, separate walls, floors, ceilings and interaction parts
+enough to support lighting, collision and streaming. Inspect Lumen Surface
+Cache and distance-field views. Epic documents limitations for complex merged
+interiors and thin surfaces. [S6]
+
+Use instancing for repeated modules where it profiles well. Distant HLOD
+merging is a separate decision from the structure used for nearby interiors.
+
+5.3 Make entrances and interiors believable
+
+For each enterable pilot space:
+- Match the exterior opening to the interior floor plan and floor level.
+- Include wall thickness, ceiling, functional threshold and collision.
+- Add a modest, coherent set of furnishings.
+- Implement door state and an intentional interaction.
+- Test daylight entering the opening and exposure when crossing it.
+- Preserve persistent door/prop state through streaming.
+
+Use representative layouts when actual interiors have not been observed.
+Do not imply that an invented room is the interior of a real resident's home.
+
+5.4 Rebuild roads as surfaces with cross-sections
+
+OSM centre lines do not describe the full visible road surface. Add measured
+or explicitly inferred width, camber, shoulder, drainage, junction shapes and
+material transitions.
+
+Priorities:
+1. Roads meet doors, lanes and courtyards at believable heights.
+2. Intersections do not contain cracks, overlapping strips or abrupt steps.
+3. Drains have plausible continuity and outfalls.
+4. Potholes and repairs appear in context, rather than as uniform random noise.
+5. Footpaths and narrow passages remain navigable.
+
+Landscape splines, authored meshes and local height patches can be combined.
+Choose the method according to the required geometry and observed performance.
+
+6. MATERIALS AND SMALL-SCALE DETAIL
+
+Build a small family of reusable materials rather than a unique expensive
+shader for every object.
+
+Add:
+- Correct real-world texture scale.
+- Consistent PBR import settings and channel interpretation.
+- Roughness variation, chipped paint, repaired plaster and brick variation.
+- Ground contact dirt, runoff below outlets and sheltered dry areas.
+- A controlled decal set for cracks, stains, signs and repairs.
+- Material blends between road, soil, paving and vegetation.
+
+Use wear with a cause: moisture near drains, rust around exposed fixings,
+dust where it collects, paint differences where surfaces were repaired.
+Random grunge across every surface is visually repetitive.
+
+Start with modest texture sizes for repeated pieces. Give higher resolution
+to assets that occupy substantial screen space close to the camera. Review
+texture streaming and memory before broadly increasing resolution.
+
+Keep the existing Substrate setup initially. Add material complexity only
+when a reference comparison shows a useful improvement. Test dry and wet
+surfaces under neutral daylight before grading the final look.
+
+7. LIGHTING, CAMERA AND ATMOSPHERE
+
+Connect geographic sun positioning to the existing weather/light rig.
+SunSky supports latitude, longitude, date, time zone and north alignment. [S7]
+
+For this project's reference origin:
+- Latitude: 31.4610594 N.
+- Longitude: 75.7240654 E.
+- Local civil time: Asia/Kolkata / UTC+05:30.
+- Verify north against the project's X-east/Y-north convention.
+
+Avoid introducing a second active sun or sky system when integrating SunSky.
+
+Create repeatable lighting presets and fixed camera viewpoints. Compare
+references at similar sun angle, view, exposure and season. Begin with neutral
+colour and believable brightness; add artistic grading after the match works.
+
+Review:
+- Light leaks and excessively black interiors.
+- Exposure adaptation when moving between sun and shade.
+- Glass, water and rough-surface reflections.
+- Contact shadows under props, walls and foliage.
+- Volumetric haze and fog density.
+- Temporal stability while walking and turning.
+
+Use software Lumen as the initial playable baseline already established by
+the project. Evaluate hardware ray tracing only as a separate measured profile.
+Epic's published console frame budgets are not RTX 4050 laptop benchmarks. [S8]
+
+Use a separate capture preset for expensive screenshots or offline sequences.
+Capture quality must not be presented as the playable frame rate.
+
+8. WEATHER, WATER AND PHYSICAL INTERACTION
+
+8.1 One shared environment state
+
+Extend WeatherManager around an explicit state:
+time/date, sun state, wind vector in m/s, gust strength, rainfall rate,
+cloudiness, wetness and drying parameters.
+
+Document which values are physical quantities and which are artistic controls.
+Drive foliage, rain direction, hanging cloth, dust, prop drag and audio from
+the same state so they do not contradict one another.
+
+8.2 Rain that interacts with the scene
+
+Replace the camera streak shell as the sole rain representation with a
+layered effect:
+- Nearby rain, distant rain and splash effects.
+- Shelter detection or authored shelter masks.
+- Roof-edge runoff and downpipe outlets.
+- Context-sensitive wetness and gradual drying.
+- Limited puddles in appropriate depressions.
+- Rain sound that changes when entering a building.
+
+A Niagara system still needs authored collision, shelter and material logic.
+Validate it in a covered porch, an indoor room and an exposed street.
+
+8.3 Pond and drainage
+
+For the pilot, use a coherent visual water system with shore interaction,
+ripples and selected buoyant objects. Improve the existing plane approximation
+only when an interaction exposes its limitation.
+
+Do not put a full fluid solver across the entire map by default. Treat flood
+modelling or hydrological prediction as a separate research task requiring
+measured terrain, boundary conditions and validation.
+
+8.4 Props and contact
+
+Set mass, friction, restitution and collision according to the object's role.
+Use sensible constraints for gates and hanging objects. Keep most scenery
+static; activate simulation only for useful nearby interactions.
+
+Test grabbing, throwing, resting, sleep/wake and streaming persistence.
+Substepping and CCD help specific cases but do not guarantee realistic results
+under long frame stalls.
+
+8.5 Keep The Well contribution accurately described
+
+The existing 49-sample trace is artistic wind modulation from 2D periodic
+incompressible shear flow. It does not supply local wind shelter, vertical
+structure or Punjab meteorology.
+
+The official shear_flow page now documents an October 2026 v2 split correction
+and warns that older benchmark scores used overlapping training/test data.
+That does not invalidate a pinned visual playback. Keep the playback provenance;
+if later training a model, use verified disjoint splits and independent
+validation. Do not silently relabel the existing trace as the new dataset. [S9]
+
+A sensible V2 wind upgrade is a coherent base wind plus locally authored
+shelter/variation, explicitly described as an approximation.
+
+9. LANDSCAPE, FIELDS AND VEGETATION
+
+Replace uniform random placement with semantic areas:
+road verges, courtyards, field edges, drainage edges and background vegetation.
+
+Use native PCG with authored masks and rules for:
+- Building/road exclusion and access clearance.
+- Density by land use.
+- Tree age, height and canopy variation.
+- Crop rows, boundaries and seasonal state where supported by reference.
+- Sparse weeds near appropriate edges.
+- Fallen leaves and small ground detail close to the player.
+
+Use local references to choose species and agricultural appearance. Two generic
+vegetation assets cannot represent all local plant variation convincingly.
+
+Place important trees manually from reference. Keep dense distant fields
+cheap. Reduce foliage deformation, animation and shadow cost with distance
+using supported settings, then verify the result in motion.
+
+10. PEOPLE, ANIMALS, TRAFFIC AND SOUND
+
+10.1 Believable routines first
+
+Connect a small set of villagers to visible activities:
+walking between places, sitting, talking, opening a shop, carrying an object,
+or taking shelter when rain starts.
+
+Use a schedule and StateTree/behaviour logic, navigation, and Smart Object
+interaction slots. Smart Objects provide reservation and interaction data;
+they do not implement the agent's actions automatically. [S10, S11]
+
+Handle failed navigation, interrupted actions and released reservations.
+Persist a lightweight identity/schedule while a person is far away; run
+full animation and interaction only nearby.
+
+A coherent routine with good animation will contribute more visible realism
+than an unrestricted chatbot attached to an idle character.
+
+10.2 Animation and animals
+
+Start with clean locomotion, turns, stops, foot placement and hand-object
+alignment. Add more elaborate motion systems only after the basic movement
+works and licensed animation assets are available.
+
+Animals need scale, movement, rest/feeding behaviour and appropriate sound.
+Avoid identical timing and continuous random wandering.
+
+10.3 Vehicles
+
+Start with one low-density route and a measured interaction with pedestrians:
+speed, turning, stopping, avoidance, parking and engine sound.
+Choose a kinematic or physics-based vehicle according to whether the player
+will drive or collide with it. Do not simulate every distant vehicle fully.
+
+10.4 Audio
+
+Add layered spatial sound:
+- Distant ambience and nearby emitters.
+- Footsteps by physical surface.
+- Door, gate, prop and vehicle sounds.
+- Birds, animals and foliage sound appropriate to the time and season.
+- Indoor/outdoor attenuation and reverberation.
+- Rain on different surfaces and muffling under shelter.
+
+Use licensed recordings or your own. Audio should respond to the same weather
+and activity state as the visible scene.
+
+11. PERFORMANCE AND DELIVERY
+
+11.1 Establish a baseline before adding density
+
+Record the actual CPU, RAM, VRAM, driver, laptop power mode, storage and thermal
+conditions. GPU model alone is insufficient to predict performance.
+
+Use a cooked Development build for profiling, followed by a release-package
+check. Keep editor-only Python/MCP authoring dependencies out of runtime paths.
+
+Measure:
+- Output resolution and internal render scale.
+- CPU/game/render/GPU frame time.
+- Median, p95 and p99 frame time; largest stalls.
+- GPU and host memory peaks.
+- Streaming, shader/PSO and asset-loading events.
+- Cold launch and warm traversal separately.
+
+11.2 Proposed targets, not promises
+
+Initial playable target:
+- Use the existing 1440 × 900 output as one reproducible baseline.
+- Aim for p95 frame time at or below 33.3 ms after warmup on the tested laptop.
+- Report p99 and maximum stalls, including any failures of this target.
+- Treat a 16.7 ms / 60 fps profile as a later stretch goal.
+
+These are proposed acceptance targets. No new FPS was measured for this plan.
+
+Run at least three comparable traversal trials and one 30-minute session.
+Do not hide a failing profile behind an average FPS number.
+
+11.3 Finish HLODs and streaming
+
+World Partition conversion does not generate finished HLOD proxies. Create
+appropriate layers and build them. Epic documents instancing, merged and
+simplified proxy options for representing unloaded cells. [S12]
+
+Separate:
+- Near-player detailed geometry and interactions.
+- Mid-distance buildings and vegetation.
+- Distant HLOD representation.
+
+Test F9 overview without relying on loading the entire detailed village.
+Confirm the loading range returns to its walking value afterward.
+
+Avoid merging away interactive doors or hero interiors. Keep distant
+simulation inexpensive. Use simple collision for assets that do not need
+detailed contact.
+
+11.4 Release discipline
+
+Prove a clean packaged launch before expanding optional plugins. Test a fresh
+machine or clean environment. Keep input manifests, seeds, generator version,
+asset provenance and graphics settings with every published result.
+
+12. PROPOSED PROJECT CHANGES
+
+The existing paths below come from the supplied README. The exact code changes
+must be designed after inspecting their implementation.
+
+Existing path:
+Scripts/pandori_layout.py
+Change:
+Add reviewed attribute precedence, facade parameters, road cross-sections and
+stable IDs. Keep measured values separate from inferred defaults.
+
+Existing path:
+Scripts/build_pandori_world.py
+Change:
+Import terrain and assemble the pilot zone, background world and overrides.
+
+Existing path:
+Scripts/build_open_world.py
+Change:
+Refine reusable material/light/assembly helpers where shared with the real map.
+Avoid letting changes to the fictional alternative silently redefine Pandori.
+
+Existing path:
+Scripts/decorate_pandori.py
+Change:
+Use semantic placement rules and reviewed exceptions for tanks, pipes,
+boundary details and facade props.
+
+Existing paths:
+Scripts/build_pcg_biome.py and Scripts/build_cc0_vegetation.py
+Change:
+Add land-use masks, regional variation and measured distance/quality profiles.
+
+Existing component:
+WeatherManager
+Change:
+Shared environment state, sun integration, wetting/drying and shelter-aware
+effect control.
+
+Existing components:
+VillageExplorer and VillagePhysicsProp
+Change:
+Reviewed movement/interactions, surfaces, persistent prop/door state, and
+repeatable traversal/interaction diagnostics.
+
+Existing configuration:
+Config/DefaultEngine.ini and toolkit configuration
+Change:
+Explicit playable/capture presets and a packaged-runtime plugin set.
+
+Existing path:
+Scripts/validate_open_world.py
+Change:
+Extend the dependency audit with an explicit reviewed authored-content
+namespace. Continue rejecting excluded legacy art and unapproved dependencies.
+
+Proposed NEW data/content areas:
+Assets/Reference/manifest.json
+Assets/Geodata/overrides.geojson
+Assets/Geodata/terrain_manifest.json
+Assets/Architecture/archetypes.json
+Assets/Routes/validation_route.json
+Content/VillageMeshAuthored/
+Docs/V2_ACCEPTANCE.txt
+
+These names are suggestions, not files already implemented.
+
+Recommended generation precedence:
+pinned geodata -> normalized attributes -> reviewed overrides -> modular
+generation -> authored content composition -> HLOD/cook -> validation.
+
+Keep authored hero content and override data separate from regenerated assets.
+The current generator can overwrite named content, so this separation must be
+implemented before substantial manual dressing. Maintain a regeneration test
+that proves reviewed corrections survive.
+
+The current repository excludes most generated Content. Hand-authored Unreal
+assets therefore need an explicit distribution path: either version selected
+authored assets with Git LFS, or publish a versioned asset bundle with checksums
+and a bootstrap retrieval step. Confirm redistribution rights for each asset.
+Update ignore rules, the dependency allowlist and packaging configuration
+together. A clean clone must recover the authored pilot without relying on
+files that exist only on the original workstation.
+
+13. MILESTONES AND EXIT CRITERIA
+
+M0 — Reproducible baseline
+Deliver:
+Cooked pilot build, hardware/settings record, route and initial traces.
+Exit:
+Launch succeeds without editor authoring scripts; baseline measurements saved.
+
+M1 — Grounded reference package
+Deliver:
+Pilot selection, photo viewpoints, dimensions, ground profiles and confidence
+manifest; audit of available building attributes.
+Exit:
+Each hero feature has a traceable reference or a clearly labelled inference.
+
+M2 — Geometry and architecture pilot
+Deliver:
+Corrected terrain/road interface, 12–20 frontages and reusable local kit.
+Exit:
+Reference comparisons show believable proportions; intended routes are
+walkable; lighting representations are checked. Build initial HLOD proxies
+and run the pilot traversal before expanding detail or adding population.
+
+M3 — Finished street appearance
+Deliver:
+Materials, small props, fields/vegetation, calibrated sun and 2–3 interiors.
+Exit:
+Matched camera captures pass review in daylight, evening, overcast and wet
+conditions; major light leaks and geometry intersections are resolved.
+Repeat the initial streaming/performance gate before starting M4.
+
+M4 — Living street
+Deliver:
+Small NPC/animal population, one vehicle route, spatial audio and useful
+interactions.
+Exit:
+Routines, navigation, interaction reservations and rain responses work across
+a complete demonstration cycle.
+
+M5 — Streaming and optimization
+Deliver:
+Final HLOD rebuild and tuning, detail-distance rules, playable/capture presets
+and runtime package. This extends the initial M2/M3 performance gates.
+Exit:
+The full route and overview work; performance is measured against the declared
+target; memory stabilizes across repeated traversals.
+
+M6 — V2 release evidence
+Deliver:
+Fresh-environment run, packaged explorer, reference comparisons, logs and
+remaining-limitations document.
+Exit:
+No unresolved release-blocking crash, missing content or broken intended route;
+claims match the recorded evidence.
+
+Planning allowance:
+A solo developer could reserve roughly 8–12 focused weeks for this bounded
+pilot, depending heavily on reference access, art skills and reusable licensed
+assets. This is an estimate, not a delivery commitment. Full-village close-up
+fidelity is a later expansion and may take substantially longer.
+
+14. V2 ACCEPTANCE MATRIX
+
+Geography:
+Compare independent check dimensions and control points, not only data used
+to fit the model. Publish errors and uncertainty in metres. Set tolerances
+according to the quality of the measurements before evaluation.
+
+Visual fidelity:
+Use approximately eight fixed cameras and four conditions. Record matching
+reference/render pairs, field of view, time, exposure and quality preset.
+Ask a local reviewer to identify incorrect architecture, signage and placement.
+
+Geometry:
+Test every intended entrance, stair, threshold and junction in the pilot.
+Resolve visible floating meshes, gaps, blocking collision and fall-throughs.
+
+Lighting:
+Inspect interior/exterior transitions, window openings, thin surfaces,
+reflections and moving-camera stability. Save diagnostic views where needed.
+
+Weather:
+Test exposed street, covered porch and indoor room. Rain/wetness should respect
+the declared shelter behaviour. Wind direction should be coherent.
+
+People:
+Test task interruption, blocked navigation, reservation release, streaming
+away/back and time-of-day changes.
+
+Physics:
+Repeat grab/drop/throw and resting-contact cases; inspect finite states,
+penetration, tunnelling and persistence.
+
+Streaming:
+Walk/sprint the route, cross streaming boundaries, rotate rapidly, use the yard
+teleport and enter/exit overview. Distant proxies must remain meaningful.
+
+Performance:
+Three repeatable runs plus a 30-minute session; save frame-time distributions,
+memory peaks, largest stalls and settings. Report all target misses.
+
+Delivery:
+Launch the packaged build in a clean environment; verify dependencies,
+attribution, generation inputs and regeneration behaviour.
+
+The existing short smoke test remains useful for fast regression checks.
+It should sit alongside these tests, not substitute for them.
+
+15. FIRST TEN IMPLEMENTATION TASKS
+
+1. Freeze the current input/build versions and capture a reproducible baseline.
+2. Select the pilot street and define eight comparison viewpoints.
+3. Audit actual height/floor/part attributes in the existing building extract.
+4. Create the reference/confidence manifest and separate authored overrides.
+5. Measure or obtain pilot ground profiles and road cross-sections.
+6. Build one fully reviewed facade with correct depth, materials and collision.
+7. Inspect that building's Lumen representations and interior daylight.
+8. Expand it into a small regional kit and 12–20 distinct frontages.
+9. Build HLODs and profile before adding a larger live population.
+10. Add interiors, weather response, audio and routines, then package and
+    validate the complete pilot.
+
+16. FEATURES TO DEFER UNTIL THE PILOT WORKS
+
+- Detailed interiors for all 821 shells.
+- An always-active simulation for the entire population.
+- Full-map real-time CFD or a claim of local weather prediction.
+- Multiplayer, economies and large agent-training pipelines.
+- Widespread 8K textures and maximum-quality rendering without measurement.
+- An engine migration solely for novelty; stay with the documented 5.8.3
+  baseline unless a specific verified capability or fix justifies a change.
+- A full reconstruction based only on a single tour video.
+- Neural captures or generated 3D assets as replacements for measured scale,
+  editable geometry and verified collision.
+
+Optional later research:
+Compare a small measured street reconstruction against a procedural baseline
+using reference fidelity, reconstruction effort, runtime cost and resident
+recognition. A reproducible uncertainty-aware reconstruction workflow could
+be a stronger project contribution than the number of plugins installed.
+
+17. VERIFIED PRIMARY SOURCES
+
+The sources support tool capabilities and data limitations. The proposed
+scope, priorities, budgets and acceptance criteria are engineering judgments.
+
+[S1] Overture Maps — building schema and optional attributes
+https://docs.overturemaps.org/schema/reference/buildings/building/
+
+[S2] Copernicus DEM — surface-model definition, resolution and acquisition
+https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM
+
+[S3] Epic — RealityScan Mobile capture guide
+https://dev.epicgames.com/documentation/realityscan-mobile/realityscan-step-by-step-guide
+
+[S4] RealityScan 2.2 release — 24 June 2026
+https://www.realityscan.com/news/realityscan-2-2-is-here-with-full-amd-gpu-support-download-today
+
+[S5] ESA WorldCover — data access, dates and resolution
+https://esa-worldcover.org/en/data-access
+
+[S6] Epic — Lumen technical details
+https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-technical-details-in-unreal-engine
+
+[S7] Epic — Sun and Sky Actor
+https://dev.epicgames.com/documentation/unreal-engine/sun-and-sky-actor-in-unreal-engine?application_version=5.8
+
+[S8] Epic — Lumen performance guide
+https://dev.epicgames.com/documentation/unreal-engine/lumen-performance-guide-for-unreal-engine?application_version=5.8
+
+[S9] The Well — periodic shear flow and October 2026 split correction
+https://polymathic-ai.org/the_well/datasets/shear_flow/
+
+[S10] Epic — StateTree overview
+https://dev.epicgames.com/documentation/unreal-engine/overview-of-state-tree-in-unreal-engine?lang=en-US
+
+[S11] Epic — Smart Objects overview
+https://dev.epicgames.com/documentation/unreal-engine/smart-objects-in-unreal-engine---overview?application_version=5.8
+
+[S12] Epic — World Partition HLOD
+https://dev.epicgames.com/documentation/unreal-engine/world-partition---hierarchical-level-of-detail-in-unreal-engine?application_version=5.8
+
+Project evidence:
+README(20261023-131009).md and VALIDATION.md, supplied by the user,
+recorded 23 October 2026. Source-code behaviour beyond those documents
+must be confirmed during implementation.

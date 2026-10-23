@@ -6,6 +6,13 @@
 #include "Engine/Canvas.h"
 #include "EngineUtils.h"
 #include "Environment/WeatherManager.h"
+#include "Environment/VillageDoor.h"
+#include "Environment/VillageDiagnostics.h"
+#include "TimerManager.h"
+#include "Dom/JsonObject.h"
+#include "Serialization/JsonSerializer.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
@@ -14,8 +21,6 @@
 #include "Components/StaticMeshComponent.h"
 #include "Misc/CommandLine.h"
 #include "Misc/Parse.h"
-#include "Misc/FileHelper.h"
-#include "Misc/Paths.h"
 #include "HighResScreenshot.h"
 #include "UnrealClient.h"
 #endif
@@ -53,6 +58,32 @@ void AVillageExplorer::SetupPlayerInputComponent(UInputComponent* Input)
     Input->BindKey(EKeys::F7, IE_Pressed, this, &AVillageExplorer::AdvanceTime);
     Input->BindKey(EKeys::F8, IE_Pressed, this, &AVillageExplorer::VisitPhysicsYard);
     Input->BindKey(EKeys::F9, IE_Pressed, this, &AVillageExplorer::ToggleOverview);
+    Input->BindKey(EKeys::F10, IE_Pressed, this, &AVillageExplorer::VisitPilotRoom);
+}
+
+void AVillageExplorer::BeginPlay()
+{
+    Super::BeginPlay();
+    if (GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))
+    {
+        FString Text;TSharedPtr<FJsonObject> Manifest;
+        if (FFileHelper::LoadFileToString(Text,*(FPaths::ProjectContentDir()/TEXT("Validation/pilot.json"))) &&
+            FJsonSerializer::Deserialize(TJsonReaderFactory<>::Create(Text),Manifest))
+        {
+            for (const auto& Value : Manifest->GetArrayField(TEXT("interiors")))
+            {
+                const auto Space=Value->AsObject();
+                const auto& Outside=Space->GetArrayField(TEXT("outside_cm"));
+                const auto& Inside=Space->GetArrayField(TEXT("inside_cm"));
+                PilotRoomStops.Add(FVector(Outside[0]->AsNumber(),Outside[1]->AsNumber(),Outside[2]->AsNumber()));
+                PilotRoomTargets.Add(FVector(Inside[0]->AsNumber(),Inside[1]->AsNumber(),Inside[2]->AsNumber()));
+            }
+        }
+    }
+#if !UE_BUILD_SHIPPING
+    if (FString(FCommandLine::Get()).Contains(TEXT("-VillageV2")))
+        GetWorldTimerManager().SetTimerForNextTick([this]() { GetWorld()->SpawnActor<AVillageDiagnostics>(); });
+#endif
 }
 void AVillageExplorer::Forward(float V) { AddMovementInput(GetActorForwardVector(), V); }
 void AVillageExplorer::Right(float V) { AddMovementInput(GetActorRightVector(), V); }
@@ -70,6 +101,11 @@ void AVillageExplorer::GrabOrRelease()
     if (GetWorld()->LineTraceSingleByChannel(Hit, Start,
         Start + Camera->GetForwardVector() * 400.f, ECC_Visibility, Query))
     {
+        if (AVillageDoor* Door = Cast<AVillageDoor>(Hit.GetActor()))
+        {
+            Door->Toggle();
+            return;
+        }
         UPrimitiveComponent* Component = Hit.GetComponent();
         if (Component && Component->IsSimulatingPhysics() && Component->GetMass() <= 40.f)
             GrabHandle->GrabComponentAtLocationWithRotation(Component, NAME_None,
@@ -177,7 +213,10 @@ void AVillageExplorer::ToggleOverview()
         SetActorLocation(FVector(0,-45000,42000));
         if (Controller)
         {
-            if (APlayerController* Player = Cast<APlayerController>(Controller)) Player->ConsoleCommand(TEXT("wp.Runtime.OverrideRuntimeSpatialHashLoadingRange -grid=0 -range=180000"), true);
+            if (APlayerController* Player = Cast<APlayerController>(Controller))
+                Player->ConsoleCommand(GetWorld()->GetMapName().Contains(TEXT("PandoriV2"))
+                    ? TEXT("wp.Runtime.OverrideRuntimeSpatialHashLoadingRange -grid=0 -range=30000")
+                    : TEXT("wp.Runtime.OverrideRuntimeSpatialHashLoadingRange -grid=0 -range=180000"), true);
             Controller->SetControlRotation(FRotator(-50,90,0));
         }
     }
@@ -193,15 +232,27 @@ void AVillageExplorer::ToggleOverview()
     }
     GetCharacterMovement()->StopMovementImmediately();
 }
+
+void AVillageExplorer::VisitPilotRoom()
+{
+    if (PilotRoomStops.IsEmpty()) return;
+    if (bOverview) ToggleOverview();
+    GrabHandle->ReleaseComponent();
+    const int32 Index=PilotRoomIndex++ % PilotRoomStops.Num();
+    SetActorLocation(PilotRoomStops[Index],false,nullptr,ETeleportType::TeleportPhysics);
+    GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+    GetCharacterMovement()->StopMovementImmediately();
+    if (Controller) Controller->SetControlRotation((PilotRoomTargets[Index]-PilotRoomStops[Index]).Rotation());
+}
 void AVillageExplorerHUD::DrawHUD()
 {
     Super::DrawHUD();
     if (!Canvas) return;
     DrawRect(FLinearColor(0.02f, 0.03f, 0.025f, 0.65f), 24, 24, 480, 66);
     const bool bPandori = GetWorld()->GetMapName().Contains(TEXT("Pandori"));
-    DrawText(bPandori ? TEXT("PANDORI NIJJARAN  /  144102") : TEXT("VILLAGE MESH  /  OPEN WORLD"), FLinearColor(0.93f, 0.85f, 0.62f), 40, 34, nullptr, 1.2f);
+    DrawText(GetWorld()->GetMapName().Contains(TEXT("PandoriV2")) ? TEXT("PANDORI NIJJARAN  /  V2 PILOT") : bPandori ? TEXT("PANDORI NIJJARAN  /  144102") : TEXT("VILLAGE MESH  /  OPEN WORLD"), FLinearColor(0.93f, 0.85f, 0.62f), 40, 34, nullptr, 1.2f);
     DrawText(TEXT("WASD walk  |  Shift run  |  Space jump"), FLinearColor::White, 40, 60);
-    DrawText(TEXT("E grab/drop | RMB throw | F6 weather | F7 time | F8 physics yard | F9 overview"),
+    DrawText(TEXT("E door/grab/drop | RMB throw | F6 weather | F7 time | F8 yard | F9 overview | F10 rooms"),
         FLinearColor::White, 30, Canvas->ClipY - 50);
     if (bPandori) DrawText(TEXT("Map: (c) OpenStreetMap contributors, Overture Maps | Building sources: Microsoft / Google | ODbL / CC BY 4.0"),
         FLinearColor(0.8f,0.8f,0.8f), 30, Canvas->ClipY - 26, nullptr, 0.8f);

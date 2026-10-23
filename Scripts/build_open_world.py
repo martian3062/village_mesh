@@ -29,7 +29,8 @@ TMP = ROOT / "Saved/VillageMeshGenerated"
 WEATHER_MPC = None
 
 
-def create(name, cls, factory, folder=MAT):
+def create(name, cls, factory, folder=None):
+    folder = folder or MAT
     return EAL.load_asset(folder + "/" + name) if EAL.does_asset_exist(folder + "/" + name) else TOOLS.create_asset(name, folder, cls, factory)
 
 
@@ -163,7 +164,7 @@ def mesh_actor(mesh, mat, label, xyz, scale=(1, 1, 1), yaw=0, collide=True):
     return actor
 
 
-def main(site=None):
+def main(site=None, post_build=None, map_name=None):
     global WEATHER_MPC
     if not (ROOT / "Assets/textures.lock.json").exists():
         raise RuntimeError("Run python Scripts/fetch_open_assets.py before building")
@@ -386,7 +387,9 @@ def main(site=None):
         if (label.startswith(("VM_Terrain", "VM_Groundcover", "VM_PCG", "VM_Physics", "VM_Buoyant", "VM_Weather", "VM_Sun", "VM_Player"))
                 or isinstance(actor, (unreal.SkyAtmosphere, unreal.SkyLight, unreal.ExponentialHeightFog, unreal.PostProcessVolume))):
             actor.set_editor_property("is_spatially_loaded", False)
-    map_path = DEST + ("/Lvl_PandoriNijjaran" if site else "/Lvl_OpenVillage")
+    if post_build:
+        post_build(api, site, world)
+    map_path = DEST + (map_name or ("/Lvl_PandoriNijjaran" if site else "/Lvl_OpenVillage"))
     if not unreal.EditorLoadingAndSavingUtils.save_map(world, map_path):
         raise RuntimeError("Map save failed")
     unreal.EditorLoadingAndSavingUtils.save_dirty_packages(True, True)

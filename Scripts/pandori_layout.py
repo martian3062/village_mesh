@@ -114,14 +114,14 @@ class Obj:
             for a,b,c in self.faces: f.write(f"f {a}/{a} {c}/{c} {b}/{b}\n")
 
 
-def generate(directory):
+def generate(directory, buildings=None, segments=None):
     """Write spatially chunked shells and sourced road strips, never guessed house positions."""
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     groups={}
     def group(x,y,mat):
         key=(int(x//16000),int(y//16000),mat)
         return groups.setdefault(key,Obj())
-    for building in BUILDINGS:
+    for building in (BUILDINGS if buildings is None else buildings):
         pts=building["points"];cx,cy=building["center"];h=building["height"]
         wall=group(cx,cy,building["material"]);roof=group(cx,cy,"roof")
         roof.polygon(pts,h)
@@ -135,7 +135,7 @@ def generate(directory):
             midpoint=((a[0]+b[0])/2,(a[1]+b[1])/2)
             # Details are invented, not extracted from aerial imagery.
             glass=group(cx,cy,"glass")
-            for z in range(160,h,330):
+            for z in range(160,math.ceil(h),330):
                 for j in range(max(1,int(length/300))):
                     t=(j+0.5)/max(1,int(length/300));px=a[0]+t*(b[0]-a[0])+nx*3;py=a[1]+t*(b[1]-a[1])+ny*3
                     glass.quad([(px-dx*45,py-dy*45,z-50),(px+dx*45,py+dy*45,z-50),
@@ -144,7 +144,7 @@ def generate(directory):
                 px,py=midpoint[0]+nx*5,midpoint[1]+ny*5
                 group(cx,cy,"door").quad([(px-dx*55,py-dy*55,0),(px+dx*55,py+dy*55,0),
                     (px+dx*55,py+dy*55,215),(px-dx*55,py-dy*55,215)])
-    for a,b,width in SEGMENTS:
+    for a,b,width in (SEGMENTS if segments is None else segments):
         cx,cy=(a[0]+b[0])/2,(a[1]+b[1])/2
         if abs(cx)>63500 or abs(cy)>63500:continue
         length=math.dist(a,b)

@@ -2,8 +2,8 @@
 import unreal
 
 
-def build(api, layers):
-    graph = api.create("PCG_VillageBiome", unreal.PCGGraph, unreal.PCGGraphFactory(), api.DEST + "/PCG")
+def build(api, layers, name='PCG_VillageBiome', label='VM_PCG_Biome'):
+    graph = api.create(name, unreal.PCGGraph, unreal.PCGGraphFactory(), api.DEST + "/PCG")
     for node in list(graph.get_editor_property("nodes")):
         graph.remove_node(node)
     total = 0
@@ -32,7 +32,7 @@ def build(api, layers):
         total += len(points)
     api.EAL.save_loaded_asset(graph)
     actor = api.EAS.spawn_actor_from_class(unreal.PCGVolume, unreal.Vector())
-    actor.set_actor_label("VM_PCG_Biome")
+    actor.set_actor_label(label)
     component = actor.get_editor_property("pcg_component")
     component.set_graph(graph)
     component.set_editor_property("generation_trigger", unreal.PCGComponentGenerationTrigger.GENERATE_ON_LOAD)

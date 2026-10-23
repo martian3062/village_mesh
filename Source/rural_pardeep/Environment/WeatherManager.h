@@ -23,6 +23,19 @@ enum class EVillageWeather : uint8
 	Storm
 };
 
+/** Shared state: velocity/rainfall use physical units; cloudiness/wetness are artistic controls. */
+USTRUCT(BlueprintType)
+struct FVillageEnvironmentState
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadOnly) FVector WindMetersPerSecond = FVector::ZeroVector;
+	UPROPERTY(BlueprintReadOnly) float RainfallMmPerHour = 0.f;
+	UPROPERTY(BlueprintReadOnly) float Cloudiness = 0.f;
+	UPROPERTY(BlueprintReadOnly) float Wetness = 0.f;
+	UPROPERTY(BlueprintReadOnly) float SunElevationDegrees = 0.f;
+	UPROPERTY(BlueprintReadOnly) bool bPlayerSheltered = false;
+};
+
 /** Blend targets for one weather state. Scales apply to the level's baseline
  *  sun/fog captured at BeginPlay, so profiles survive lighting re-tunes. */
 USTRUCT(BlueprintType)
@@ -84,6 +97,20 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Weather")
 	FVector GetWindVelocityCm() const { return CurrentWindVelocity; }
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") bool bUseV2Environment = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") bool bUseGeographicSun = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") float Latitude = 31.4610594f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") float Longitude = 75.7240654f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") float UtcOffsetHours = 5.5f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") int32 CalendarYear = 2026;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") int32 CalendarMonth = 10;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") int32 CalendarDay = 23;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") float WettingSeconds = 35.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weather|V2") float DryingSeconds = 180.f;
+	UPROPERTY(BlueprintReadOnly, Category="Weather|V2") FVillageEnvironmentState EnvironmentState;
+	UFUNCTION(BlueprintCallable, Category="Weather|V2") void SetPresentationCondition(FName Condition);
+	UFUNCTION(BlueprintPure, Category="Weather|V2") bool IsShelteredAt(FVector Position) const;
 
 	/** Optional vector curve exported from The Well. Dimensionless, art-directed
 	 *  velocity samples; not a solver or a validated local weather forecast. */
@@ -206,4 +233,5 @@ protected:
 	FVector CurrentWindVelocity = FVector::ZeroVector;
 	TArray<float> WellSampleTimes;
 	TArray<FVector> WellSampleVectors;
+	float SunUpdateElapsed = 1.f;
 };

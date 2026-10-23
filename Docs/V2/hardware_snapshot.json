@@ -1,0 +1,22 @@
+﻿{
+    "recorded_at_utc":  "2026-10-23T13:34:02.9323191Z",
+    "engine":  "5.8.3",
+    "cpu":  "13th Gen Intel(R) Core(TM) i5-13450HX",
+    "physical_cores":  10,
+    "logical_processors":  16,
+    "ram_bytes":  25463480320,
+    "free_ram_bytes_at_capture":  765390848,
+    "total_commit_limit_bytes":  95146549248,
+    "free_commit_bytes_at_capture":  7645114368,
+    "gpu_csv_columns":  "name, driver_version, VRAM, temperature_C, performance_state",
+    "gpu":  "NVIDIA GeForce RTX 4050 Laptop GPU, 581.86, 6141 MiB, 51, P8",
+    "power_scheme":  "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+    "project_drive_free_bytes":  47413522432,
+    "output_resolution":  [
+                              1440,
+                              900
+                          ],
+    "playable_render_scale_percent":  67,
+    "capture_render_scale_percent":  100,
+    "notes":  "Live host snapshot with other user workloads running. Not a clean-machine or sustained thermal benchmark."
+}

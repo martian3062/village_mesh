@@ -1,0 +1,15 @@
+{
+  "baseline_commit": "3c96d4490104c036aed02c525d3dce0a0e3924f8",
+  "recorded_date": "2026-10-23",
+  "engine": "5.8.3",
+  "seed": 3062,
+  "files": {
+    "Assets/Geodata/pandori_nijjaran.buildings.geojson": "db470631597c2d6902e45160333b6c2dc1dd71ac63eaeb19a18052778a547dbe",
+    "Assets/Geodata/pandori_nijjaran.osm.json": "242483fe262d1aae31ba2a1974edc5a419f57c5c835755b7d303f27ab7ca518c",
+    "Assets/textures.lock.json": "3eb6afaec4fae55334bcfedfb2776c85d579a5cfedc3610cf999ed008e94f2dd",
+    "Assets/models.lock.json": "a3879994f4d74c3e0230f834d1dd727d4fa42eb8047348507793b71b89975c87",
+    "Content/Well/wind.csv": "250baa33f08ea28c05a85d557994dd73e8e143b220b795730ca26a70e7d2f04a",
+    "Content/Well/wind.source.json": "e818b52c10827bfddf04b94d0c9ea3f42bc09836df7397a01779557a760cf54c"
+  },
+  "notes": "V1 input freeze. Packaged launch and performance must be recorded separately; no FPS claim."
+}

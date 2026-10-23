@@ -1,0 +1,55 @@
+﻿{
+    "action":  "Route",
+    "run_id":  "packaged_trial2",
+    "exit_code":  0,
+    "wall_seconds":  90.8656292,
+    "binary_sha256":  "a2a2b6c2da2200e54788ca488c97b214f7e5cbca86f2fa384f859d4a9237f716",
+    "package_utoc_sha256":  "8e736713d7a2c22c9bedfdf8a9308aa6540113557bf81f16f7b1dc9957cdea86",
+    "resolution":  [
+                       1440,
+                       900
+                   ],
+    "render_scale_percent":  67,
+    "uncapped":  true,
+    "cvars":  "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67",
+    "gpu_columns":  "adapter_memory_MiB, temperature_C, power_W, utilization_percent",
+    "gpu_scope":  "Whole adapter including other applications; not process VRAM or separate GPU frame timing.",
+    "gpu_samples":  [
+                        {
+                            "wall_seconds":  0.05,
+                            "adapter_csv":  "833, 60, 2.58, 0"
+                        },
+                        {
+                            "wall_seconds":  10.15,
+                            "adapter_csv":  "4192, 82, 51.45, 95"
+                        },
+                        {
+                            "wall_seconds":  20.24,
+                            "adapter_csv":  "4192, 81, 53.20, 91"
+                        },
+                        {
+                            "wall_seconds":  30.31,
+                            "adapter_csv":  "4192, 84, 60.10, 92"
+                        },
+                        {
+                            "wall_seconds":  40.39,
+                            "adapter_csv":  "4239, 81, 50.89, 93"
+                        },
+                        {
+                            "wall_seconds":  50.52,
+                            "adapter_csv":  "4147, 85, 60.61, 92"
+                        },
+                        {
+                            "wall_seconds":  60.6,
+                            "adapter_csv":  "4158, 83, 57.82, 62"
+                        },
+                        {
+                            "wall_seconds":  70.69,
+                            "adapter_csv":  "4178, 87, 67.79, 95"
+                        },
+                        {
+                            "wall_seconds":  80.84,
+                            "adapter_csv":  "4123, 73, 23.78, 0"
+                        }
+                    ]
+}

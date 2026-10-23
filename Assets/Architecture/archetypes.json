@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "license": "MIT (original procedural recipes)",
+  "confidence": "procedural inference",
+  "reviewer": null,
+  "units": "centimeters",
+  "wall_thickness": 24,
+  "floor_thickness": 12,
+  "door_width": 120,
+  "door_height": 225,
+  "window_width": 105,
+  "window_sill": 105,
+  "window_height": 115,
+  "parapet_height": 65,
+  "styles": [
+    {
+      "id": "lime_courtyard",
+      "paint": [
+        0.67,
+        0.62,
+        0.49
+      ],
+      "trim": [
+        0.3,
+        0.35,
+        0.32
+      ],
+      "roof_tank": true
+    },
+    {
+      "id": "faded_sage",
+      "paint": [
+        0.38,
+        0.48,
+        0.39
+      ],
+      "trim": [
+        0.72,
+        0.7,
+        0.57
+      ],
+      "roof_tank": false
+    },
+    {
+      "id": "dust_rose",
+      "paint": [
+        0.58,
+        0.39,
+        0.31
+      ],
+      "trim": [
+        0.75,
+        0.66,
+        0.51
+      ],
+      "roof_tank": true
+    },
+    {
+      "id": "warm_white",
+      "paint": [
+        0.76,
+        0.73,
+        0.63
+      ],
+      "trim": [
+        0.18,
+        0.28,
+        0.31
+      ],
+      "roof_tank": false
+    }
+  ],
+  "components": [
+    "wall",
+    "plinth",
+    "floor",
+    "ceiling",
+    "roof",
+    "parapet",
+    "coping",
+    "door_frame",
+    "door_leaf",
+    "window_reveal",
+    "window_frame",
+    "window_glass",
+    "window_grill",
+    "window_sill",
+    "sunshade",
+    "porch_post",
+    "porch_slab",
+    "tank",
+    "tank_support",
+    "downpipe",
+    "runoff_patch",
+    "threshold",
+    "bench",
+    "table",
+    "shelf"
+  ],
+  "notes": "Representative Punjab-inspired component dimensions, not reviewed Pandori measurements. No Gurmukhi signage or claimed private-house reproduction."
+}

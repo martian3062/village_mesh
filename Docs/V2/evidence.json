@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "passed": true,
+      "reason": "Eight fixed camera captures requested",
+      "mode": "capture",
+      "condition": "daylight",
+      "run_id": "local",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 66.09540557861328,
+      "samples": 3363,
+      "wall_seconds": 66.45099740102887,
+      "median_frame_ms": 12.931600213050842,
+      "p95_frame_ms": 15.901099890470505,
+      "p99_frame_ms": 18.553901463747025,
+      "max_frame_ms": 764.9689987301826,
+      "peak_process_physical_bytes": 2518335488,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 8,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -498.34467839707986,
+        -9839.556583673451,
+        100
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "capture_daylight_local.json"
+    },
+    {
+      "passed": true,
+      "reason": "Eight fixed camera captures requested",
+      "mode": "capture",
+      "condition": "evening",
+      "run_id": "local",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 66.07820892333984,
+      "samples": 3398,
+      "wall_seconds": 66.39363969862461,
+      "median_frame_ms": 12.75719702243805,
+      "p95_frame_ms": 15.741799026727676,
+      "p99_frame_ms": 18.442001193761826,
+      "max_frame_ms": 720.5913029611111,
+      "peak_process_physical_bytes": 3415924736,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 8,
+      "sun_elevation_degrees": 2.837493896484375,
+      "local_hour_utc_plus_5_5": 17.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -498.34467839707986,
+        -9839.556583673451,
+        100
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "capture_evening_local.json"
+    },
+    {
+      "passed": true,
+      "reason": "Eight fixed camera captures requested",
+      "mode": "capture",
+      "condition": "overcast",
+      "run_id": "local",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 66.10240936279297,
+      "samples": 3375,
+      "wall_seconds": 66.5128821991384,
+      "median_frame_ms": 12.856397777795792,
+      "p95_frame_ms": 15.694499015808105,
+      "p99_frame_ms": 18.481098115444183,
+      "max_frame_ms": 814.6662004292011,
+      "peak_process_physical_bytes": 3421409280,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 8,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -498.34467839707986,
+        -9839.556583673451,
+        100
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "capture_overcast_local.json"
+    },
+    {
+      "passed": true,
+      "reason": "Eight fixed camera captures requested",
+      "mode": "capture",
+      "condition": "rain",
+      "run_id": "local",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 66.13607788085938,
+      "samples": 3009,
+      "wall_seconds": 66.52977840229869,
+      "median_frame_ms": 14.442399144172668,
+      "p95_frame_ms": 17.78789982199669,
+      "p99_frame_ms": 19.860301166772842,
+      "max_frame_ms": 809.5230013132095,
+      "peak_process_physical_bytes": 2432716800,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 8,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0.800000011920929,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -498.34467839707986,
+        -9839.556583673451,
+        100
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "capture_rain_local.json"
+    },
+    {
+      "passed": true,
+      "reason": "Three doors, entrances and shelter checks passed",
+      "mode": "interactions",
+      "condition": "rain",
+      "run_id": "local",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 40.16903305053711,
+      "samples": 23542,
+      "median_frame_ms": 0.7599964737892151,
+      "p95_frame_ms": 1.368001103401184,
+      "p99_frame_ms": 1.8380992114543915,
+      "max_frame_ms": 53.71849983930588,
+      "peak_process_physical_bytes": 2012753920,
+      "rendered": false,
+      "p95_target_met": null,
+      "point_index": 3,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0.800000011920929,
+      "player_sheltered": true,
+      "player_position_cm": [
+        985.596408882694,
+        -8633.54179153647,
+        101.93599557876587
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "interactions_rain_local.json"
+    },
+    {
+      "passed": true,
+      "reason": "Three doors, entrances and shelter checks passed",
+      "mode": "interactions",
+      "condition": "rain",
+      "run_id": "packaged_final",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 40.21855163574219,
+      "samples": 1968,
+      "wall_seconds": 40.215845599770546,
+      "median_frame_ms": 10.039698332548141,
+      "p95_frame_ms": 13.061102479696274,
+      "p99_frame_ms": 14.494102448225021,
+      "max_frame_ms": 23.61849695444107,
+      "peak_process_physical_bytes": 1572429824,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 3,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0.800000011920929,
+      "player_sheltered": true,
+      "player_position_cm": [
+        986.3922116791572,
+        -8636.395759672008,
+        102.00232934247697
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "file": "interactions_rain_packaged_final.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "packaged_trial1",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.14395904541016,
+      "samples": 6344,
+      "wall_seconds": 77.13910909742117,
+      "median_frame_ms": 8.95320251584053,
+      "p95_frame_ms": 10.975901037454605,
+      "p99_frame_ms": 12.002699077129364,
+      "max_frame_ms": 15.815302729606628,
+      "peak_process_physical_bytes": 1652396032,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.25188314797145,
+        -10474.843349726376,
+        96.11376913053269
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "file": "route_daylight_packaged_trial1.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "packaged_trial2",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.16534423828125,
+      "samples": 5682,
+      "wall_seconds": 77.16330559924245,
+      "median_frame_ms": 9.833700954914093,
+      "p95_frame_ms": 13.129401952028275,
+      "p99_frame_ms": 15.068598091602325,
+      "max_frame_ms": 31.430602073669434,
+      "peak_process_physical_bytes": 1580273664,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.81799196280105,
+        -10473.274764847383,
+        96.13248807225867
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "file": "route_daylight_packaged_trial2.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "packaged_trial3",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.14983367919922,
+      "samples": 5883,
+      "wall_seconds": 77.1484082005918,
+      "median_frame_ms": 9.556401520967484,
+      "p95_frame_ms": 12.24600151181221,
+      "p99_frame_ms": 13.672199100255966,
+      "max_frame_ms": 29.233399778604507,
+      "peak_process_physical_bytes": 1546285056,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.94397643972974,
+        -10472.95198898818,
+        96.09264320933637
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "file": "route_daylight_packaged_trial3.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "trial1",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.13426208496094,
+      "samples": 5957,
+      "median_frame_ms": 9.430702775716782,
+      "p95_frame_ms": 12.05810159444809,
+      "p99_frame_ms": 13.68660107254982,
+      "max_frame_ms": 93.72060000896454,
+      "peak_process_physical_bytes": 2341683200,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.64409878452824,
+        -10473.757730197272,
+        96.07930459375693
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "route_daylight_trial1.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "trial2",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.13282775878906,
+      "samples": 6378,
+      "wall_seconds": 77.12536329776049,
+      "median_frame_ms": 8.796099573373795,
+      "p95_frame_ms": 10.93679666519165,
+      "p99_frame_ms": 12.739498168230057,
+      "max_frame_ms": 29.773101210594177,
+      "peak_process_physical_bytes": 3396292608,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.6161281947406,
+        -10473.845692962637,
+        95.9131252598954
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "route_daylight_trial2.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "trial3",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.13926696777344,
+      "samples": 5850,
+      "wall_seconds": 77.13385060057044,
+      "median_frame_ms": 9.536698460578918,
+      "p95_frame_ms": 12.400500476360321,
+      "p99_frame_ms": 14.263398945331573,
+      "max_frame_ms": 87.0353989303112,
+      "peak_process_physical_bytes": 3394871296,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 43.08000183105469,
+      "local_hour_utc_plus_5_5": 13.5,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.60716607475734,
+        -10473.854737870382,
+        96.08355472227832
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": true,
+      "file": "route_daylight_trial3.json"
+    },
+    {
+      "passed": true,
+      "reason": "Continuous route and weather soak completed",
+      "mode": "soak",
+      "condition": "daylight",
+      "run_id": "packaged_soak",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 1820.0113525390625,
+      "samples": 182221,
+      "wall_seconds": 1820.0309015996754,
+      "requested_soak_minutes": 30,
+      "soak_wall_seconds": 1800.0262821018696,
+      "completed_route_legs": 31,
+      "memory_samples": [
+        {
+          "wall_seconds": 0.19991909712553024,
+          "process_physical_bytes": 1408503808
+        },
+        {
+          "wall_seconds": 60.20650949701667,
+          "process_physical_bytes": 1535225856
+        },
+        {
+          "wall_seconds": 120.21365009993315,
+          "process_physical_bytes": 1485357056
+        },
+        {
+          "wall_seconds": 180.22371519729495,
+          "process_physical_bytes": 407318528
+        },
+        {
+          "wall_seconds": 240.22506649792194,
+          "process_physical_bytes": 382595072
+        },
+        {
+          "wall_seconds": 300.2331055998802,
+          "process_physical_bytes": 389275648
+        },
+        {
+          "wall_seconds": 360.2396176978946,
+          "process_physical_bytes": 395018240
+        },
+        {
+          "wall_seconds": 420.24659429863095,
+          "process_physical_bytes": 367288320
+        },
+        {
+          "wall_seconds": 480.2532134987414,
+          "process_physical_bytes": 351637504
+        },
+        {
+          "wall_seconds": 540.2594137005508,
+          "process_physical_bytes": 347009024
+        },
+        {
+          "wall_seconds": 600.261706199497,
+          "process_physical_bytes": 353267712
+        },
+        {
+          "wall_seconds": 660.2693585976958,
+          "process_physical_bytes": 362131456
+        },
+        {
+          "wall_seconds": 720.2754172980785,
+          "process_physical_bytes": 362917888
+        },
+        {
+          "wall_seconds": 780.276142898947,
+          "process_physical_bytes": 372363264
+        },
+        {
+          "wall_seconds": 840.2844881005585,
+          "process_physical_bytes": 352092160
+        },
+        {
+          "wall_seconds": 900.2848843000829,
+          "process_physical_bytes": 359976960
+        },
+        {
+          "wall_seconds": 960.2872404977679,
+          "process_physical_bytes": 361410560
+        },
+        {
+          "wall_seconds": 1020.2969992980361,
+          "process_physical_bytes": 365342720
+        },
+        {
+          "wall_seconds": 1080.2975759990513,
+          "process_physical_bytes": 357031936
+        },
+        {
+          "wall_seconds": 1140.300411697477,
+          "process_physical_bytes": 347172864
+        },
+        {
+          "wall_seconds": 1200.3034680001438,
+          "process_physical_bytes": 352219136
+        },
+        {
+          "wall_seconds": 1260.31007469818,
+          "process_physical_bytes": 354603008
+        },
+        {
+          "wall_seconds": 1320.3129535987973,
+          "process_physical_bytes": 356798464
+        },
+        {
+          "wall_seconds": 1380.321797799319,
+          "process_physical_bytes": 360181760
+        },
+        {
+          "wall_seconds": 1440.3261952996254,
+          "process_physical_bytes": 355799040
+        },
+        {
+          "wall_seconds": 1500.3365061990917,
+          "process_physical_bytes": 360935424
+        },
+        {
+          "wall_seconds": 1560.3450498990715,
+          "process_physical_bytes": 364875776
+        },
+        {
+          "wall_seconds": 1620.3535932973027,
+          "process_physical_bytes": 366080000
+        },
+        {
+          "wall_seconds": 1680.354390297085,
+          "process_physical_bytes": 366706688
+        },
+        {
+          "wall_seconds": 1740.3588196001947,
+          "process_physical_bytes": 367456256
+        },
+        {
+          "wall_seconds": 1800.3616121970117,
+          "process_physical_bytes": 367013888
+        }
+      ],
+      "weather_sequence": "daylight, overcast, rain, evening; changes after each route leg",
+      "median_frame_ms": 9.599100798368454,
+      "p95_frame_ms": 12.706901878118515,
+      "p99_frame_ms": 14.551900327205658,
+      "max_frame_ms": 62.10099905729294,
+      "peak_process_physical_bytes": 1621155840,
+      "rendered": true,
+      "p95_target_met": null,
+      "point_index": 6,
+      "sun_elevation_degrees": 2.837493896484375,
+      "local_hour_utc_plus_5_5": 17.5,
+      "wetness": 0.6421713829040527,
+      "player_sheltered": false,
+      "player_position_cm": [
+        4959.757409392376,
+        -4140.5698330477235,
+        96.10859161395604
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "file": "soak_daylight_packaged_soak.json"
+    }
+  ],
+  "captures": [
+    {
+      "file": "daylight_01.png",
+      "bytes": 1941627,
+      "sha256": "1c3ae3cce9f8dc2a929ec2abfdeebb7d99af1e17badf39e2ac9847176978e291"
+    },
+    {
+      "file": "daylight_02.png",
+      "bytes": 2001766,
+      "sha256": "8409efd3059856883798d8b7aa19a46f173cd502a35dc3e265554bcacd5fd4ce"
+    },
+    {
+      "file": "daylight_03.png",
+      "bytes": 2034389,
+      "sha256": "33a2aeeeb620b709152cc6493891cdea3d6275ae30ec948b53ac144fa023afaf"
+    },
+    {
+      "file": "daylight_04.png",
+      "bytes": 2114534,
+      "sha256": "d7c4c8833eadb157dd684069ce6934a43768a1cf44516eb533e7c1117811649f"
+    },
+    {
+      "file": "daylight_05.png",
+      "bytes": 2041107,
+      "sha256": "9999adcf91d8f8da599b9f9a3cf2a4dfc08453f50a74ac3d2970fbaef8017991"
+    },
+    {
+      "file": "daylight_06.png",
+      "bytes": 2052591,
+      "sha256": "49aafb4b686cf5aaac07ea84f217da3d06c4ff1d7a0188442278dc4b9d94d4c3"
+    },
+    {
+      "file": "daylight_07.png",
+      "bytes": 2005859,
+      "sha256": "5a4e535c86266f4d46d2d0f6ea40bd8ed313439b7c951108409fddc5f6d726a4"
+    },
+    {
+      "file": "daylight_08.png",
+      "bytes": 2252891,
+      "sha256": "d266d092eac1051b26a4563b36a9f67a4c3018b658361c5499e107463b0fd269"
+    },
+    {
+      "file": "evening_01.png",
+      "bytes": 2001641,
+      "sha256": "890b6f8316218983b8dd6ec507c37cafca66b018be75e67c9dd762e90fe4ad0b"
+    },
+    {
+      "file": "evening_02.png",
+      "bytes": 1896737,
+      "sha256": "da9de828da06066cd1dc55a13a8a91a5447d60aded56296fdb5007d54eed3a9c"
+    },
+    {
+      "file": "evening_03.png",
+      "bytes": 1896387,
+      "sha256": "1ca967a0c9a8402962331a7136a841e8435013ccc9d169a424d85aa4f2a2f287"
+    },
+    {
+      "file": "evening_04.png",
+      "bytes": 1974939,
+      "sha256": "2193508a5ee7ab4996e3781fa935883692e0cacfe4fcae4f91c9ee7c9a935bd6"
+    },
+    {
+      "file": "evening_05.png",
+      "bytes": 2160928,
+      "sha256": "3a9cac72c3c1dfb5060ac621008f6a1fbed727d4e006e06026f40bc6c8564997"
+    },
+    {
+      "file": "evening_06.png",
+      "bytes": 1928702,
+      "sha256": "65f0bdb9076cc39801ef78fe121b567f2257ebc8c8bbf30253d22eda14b7e1a4"
+    },
+    {
+      "file": "evening_07.png",
+      "bytes": 1912062,
+      "sha256": "605cc70dd641b6221e90f0b8dcb2d074973c0e1ee227449b8bdeb3eb82d4c1e1"
+    },
+    {
+      "file": "evening_08.png",
+      "bytes": 1970121,
+      "sha256": "f60e79f745a2ad76bc096c9bee2f6721b82e030ea67b847507b43f2f72ffdc6e"
+    },
+    {
+      "file": "overcast_01.png",
+      "bytes": 1914751,
+      "sha256": "3b7a2d17a91eb7d7bc5cf51656f48b0b0e480ecbb985b7eb2313a292e90e22c4"
+    },
+    {
+      "file": "overcast_02.png",
+      "bytes": 1988459,
+      "sha256": "a8c06ca0b93c43f21207292555875d7614a5a1f5a9b7dfa0d63886001756400d"
+    },
+    {
+      "file": "overcast_03.png",
+      "bytes": 2020468,
+      "sha256": "38a3b06afcb64006e41a344de7718ad5e3e730c907c8c87dc7574c9f966ac292"
+    },
+    {
+      "file": "overcast_04.png",
+      "bytes": 2093971,
+      "sha256": "1ca8b89e2657ded803959c60e65ad02d22518fe24b4999854437d72a4c403138"
+    },
+    {
+      "file": "overcast_05.png",
+      "bytes": 2026448,
+      "sha256": "42cc369ca626504680cc46d0f962a7856cd86dbe84b70d3714f48fbdf22613f7"
+    },
+    {
+      "file": "overcast_06.png",
+      "bytes": 2006998,
+      "sha256": "5926ad61204cb041027e30b53c7e180a3a5b9708069cb8dfaf4ef289b02b1e8e"
+    },
+    {
+      "file": "overcast_07.png",
+      "bytes": 1989962,
+      "sha256": "7d4cbd2036e38265628c747571e5449174215c6f0368027ba6a2fad9184db1dd"
+    },
+    {
+      "file": "overcast_08.png",
+      "bytes": 2226457,
+      "sha256": "585398a3cc252bba6376749153160ae32fc3418f3990a1ec6b020bb157a9429c"
+    },
+    {
+      "file": "rain_01.png",
+      "bytes": 1892563,
+      "sha256": "2fb822712ee36a62bd1b7e65d44413996a303243714df89aed4a469e67ecdb91"
+    },
+    {
+      "file": "rain_02.png",
+      "bytes": 1985924,
+      "sha256": "aa1de854ac914ce9913ed01af6f5c16cb36a8239c0edd2d5e46057b33dcd61be"
+    },
+    {
+      "file": "rain_03.png",
+      "bytes": 2027961,
+      "sha256": "14ce510ccd57482987a5d34c7e087077939b195887cf7bc8e0a32c4c2d1d92be"
+    },
+    {
+      "file": "rain_04.png",
+      "bytes": 2091945,
+      "sha256": "5de2e37f435f1e7e350808991b098f0ef9b953253ca03d64f0ecd377a9dfe0b0"
+    },
+    {
+      "file": "rain_05.png",
+      "bytes": 2010017,
+      "sha256": "045ee85ec79379939a26e728614f2a0c422c9fabd3e1680af3b02740b5c0eab1"
+    },
+    {
+      "file": "rain_06.png",
+      "bytes": 2012504,
+      "sha256": "0185b43ecc680aebd018f78f690a8c367de3ea0366bb782f05375388406e47c1"
+    },
+    {
+      "file": "rain_07.png",
+      "bytes": 2026361,
+      "sha256": "9ee12c434e990ec007c373061a375d3f769149c721a05bedb11be743597d16d5"
+    },
+    {
+      "file": "rain_08.png",
+      "bytes": 2228650,
+      "sha256": "02334523fef2ac5573de8711544f0decee263f844941888342fb0536fe633186"
+    }
+  ],
+  "rendered_route_runs": 6,
+  "scope": "Local development evidence only. Capture and interaction timing is not a traversal benchmark. Complete logs and all views remain under Saved.",
+  "unverified": [
+    "local architectural review",
+    "independent fresh-machine setup",
+    "shipping release",
+    "separate CPU/GPU frame timing and VRAM peak"
+  ]
+}

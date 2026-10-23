@@ -16,6 +16,7 @@
 #include "Materials/MaterialParameterCollection.h"
 #include "NiagaraComponent.h"
 #include "NiagaraSystem.h"
+#include "SunPosition.h"
 
 namespace
 {
@@ -218,7 +219,21 @@ void AWeatherManager::Tick(float DeltaTime)
 	if (bDayNightCycle)
 	{
 		TimeOfDayHours = FMath::Fmod(TimeOfDayHours + DeltaTime * 24.f / (FMath::Max(1.f, DayLengthMinutes) * 60.f), 24.f);
-		if (SunLight) SunLight->SetActorRotation(FRotator((TimeOfDayHours - 6.f) * -15.f, -35.f, 0.f));
+		if (SunLight && !bUseGeographicSun) SunLight->SetActorRotation(FRotator((TimeOfDayHours - 6.f) * -15.f, -35.f, 0.f));
+	}
+	SunUpdateElapsed += DeltaTime;
+	if (bUseGeographicSun && SunLight && SunUpdateElapsed >= .25f)
+	{
+		SunUpdateElapsed = 0.f;
+		FSunPositionData Sun;
+		const int32 Seconds = FMath::FloorToInt(TimeOfDayHours * 3600.f);
+		USunPositionFunctionLibrary::GetSunPosition(Latitude,Longitude,UtcOffsetHours,false,
+			CalendarYear,CalendarMonth,CalendarDay,Seconds/3600,(Seconds/60)%60,Seconds%60,Sun);
+		// UE 5.8 SunPosition returns its light-rotation elevation with a +180 offset
+		// (223.08 at this site's 13:30 test). Convert to physical elevation once.
+		EnvironmentState.SunElevationDegrees = Sun.CorrectedElevation - 180.f;
+		// Solar azimuth is clockwise from north. X=east/Y=north; light points away from sun.
+		SunLight->SetActorRotation(FRotator(-EnvironmentState.SunElevationDegrees,270.f-Sun.Azimuth,0.f));
 	}
 
 	// ---- auto cycle ----
@@ -260,6 +275,16 @@ void AWeatherManager::Tick(float DeltaTime)
 		Gust = 1.f;
 	}
 	CurrentWindVelocity = Direction * WindSpeedCmPerSecond * Current.WindIntensity * Gust;
+	EnvironmentState.WindMetersPerSecond = CurrentWindVelocity * .01f;
+	EnvironmentState.RainfallMmPerHour = Current.RainAmount * 18.f;
+	EnvironmentState.Cloudiness = 1.f - Current.SunScale;
+	if (bUseV2Environment)
+	{
+		const float Target = Current.RainAmount > .01f ? Current.Wetness : 0.f;
+		const float Duration = Target > EnvironmentState.Wetness ? WettingSeconds : DryingSeconds;
+		EnvironmentState.Wetness = FMath::FInterpConstantTo(EnvironmentState.Wetness,Target,DeltaTime,1.f/FMath::Max(1.f,Duration));
+	}
+	else EnvironmentState.Wetness = Current.Wetness;
 	if (WeatherMPC)
 	{
 		const FVector UnitWind = CurrentWindVelocity.GetSafeNormal();
@@ -294,8 +319,9 @@ void AWeatherManager::Tick(float DeltaTime)
 	ApplyProfile(Current, LightningAlpha);
 
 	// ---- rain follows the player ----
-	const bool bRaining = Current.RainAmount > 0.01f;
 	const APawn* Pawn = UGameplayStatics::GetPlayerPawn(this, 0);
+	EnvironmentState.bPlayerSheltered = bUseV2Environment && Pawn && IsShelteredAt(Pawn->GetActorLocation());
+	const bool bRaining = Current.RainAmount > 0.01f && !EnvironmentState.bPlayerSheltered;
 
 	if (bRaining && RainComponent->GetAsset())
 	{
@@ -337,7 +363,7 @@ void AWeatherManager::ApplyProfile(const FWeatherProfile& Profile, float Lightni
 	if (SunLight && SunLight->GetLightComponent())
 	{
 		const float Boost = FMath::Lerp(1.f, LightningBoost, LightningAlpha);
-		const float Daylight = bDayNightCycle
+		const float Daylight = bUseGeographicSun ? FMath::Clamp(FMath::Sin(FMath::DegreesToRadians(EnvironmentState.SunElevationDegrees))*1.3f,0.f,1.f) : bDayNightCycle
 			? FMath::Max(0.f, FMath::Sin((TimeOfDayHours - 6.f) * PI / 12.f)) : 1.f;
 		SunLight->GetLightComponent()->SetIntensity(BaseSunIntensity * Profile.SunScale * Boost * Daylight);
 	}
@@ -348,6 +374,25 @@ void AWeatherManager::ApplyProfile(const FWeatherProfile& Profile, float Lightni
 	if (WeatherMPC)
 	{
 		UKismetMaterialLibrary::SetScalarParameterValue(this, WeatherMPC, WindIntensityParam, Profile.WindIntensity);
-		UKismetMaterialLibrary::SetScalarParameterValue(this, WeatherMPC, WetnessParam, Profile.Wetness);
+		UKismetMaterialLibrary::SetScalarParameterValue(this, WeatherMPC, WetnessParam, EnvironmentState.Wetness);
 	}
+}
+
+bool AWeatherManager::IsShelteredAt(FVector Position) const
+{
+	FHitResult Hit;
+	FCollisionQueryParams Params(SCENE_QUERY_STAT(VillageRainShelter),false,this);
+	if (const APawn* Pawn = UGameplayStatics::GetPlayerPawn(this,0)) Params.AddIgnoredActor(Pawn);
+	return GetWorld()->LineTraceSingleByChannel(Hit,Position+FVector(0,0,60),Position+FVector(0,0,3000),ECC_Visibility,Params);
+}
+
+void AWeatherManager::SetPresentationCondition(FName Condition)
+{
+	bAutoCycle = false;
+	bDayNightCycle = false;
+	TimeOfDayHours = Condition == TEXT("evening") ? 17.5f : 13.5f;
+	const EVillageWeather Preset = Condition == TEXT("rain") ? EVillageWeather::Rain
+		: Condition == TEXT("overcast") ? EVillageWeather::Overcast : EVillageWeather::Clear;
+	SetWeather(Preset,.1f);
+	SunUpdateElapsed = 1.f;
 }
