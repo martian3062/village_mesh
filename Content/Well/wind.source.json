@@ -1,0 +1,21 @@
+{
+  "source": "https://huggingface.co/datasets/polymathic-ai/shear_flow/resolve/1bca59aef4f2167f1d07d875ace6ea8c646d7cce/data/test/shear_flow_Reynolds_1e4_Schmidt_1e-1.hdf5",
+  "repository": "https://github.com/PolymathicAI/the_well",
+  "repository_commit": "aac88c0b5eb9cbe4b7b2797eaaa550a43706fb44",
+  "license": "CC-BY-4.0",
+  "attribution": "The Well / Polymathic AI; shear flow simulations by Rudy Morel, CCM, Flatiron Institute",
+  "changes": "Point trace, peak-normalized, retimed, XY mapped to horizontal wind; looping endpoint added",
+  "disclaimer": "Art-directed playback; not a validated atmospheric simulation or benchmark",
+  "trajectory": 0,
+  "point": [
+    128,
+    170
+  ],
+  "sample_count": 49,
+  "source_time_range": [
+    0.0,
+    19.9
+  ],
+  "source_velocity_peak": 0.4767257550580504,
+  "csv_sha256": "250baa33f08ea28c05a85d557994dd73e8e143b220b795730ca26a70e7d2f04a"
+}

@@ -1,0 +1,38 @@
+{
+  "place": "Pandori Nijjaran, Adampur, Punjab 144102",
+  "origin_wgs84": [
+    31.4610594,
+    75.7240654
+  ],
+  "accessed": "2026-10-23",
+  "overture_release": "2026-10-21.0",
+  "building_bbox_wsen": [
+    75.7173,
+    31.4553,
+    75.7308,
+    31.4668
+  ],
+  "license": "ODbL-1.0",
+  "buildings_source": "https://docs.overturemaps.org/attribution/#buildings",
+  "roads_source": "https://www.openstreetmap.org/copyright",
+  "place_verification": "https://jalandhar.nic.in/public-utility/pandori-nijjran-b-o/",
+  "architecture_reference": "https://www.youtube.com/watch?v=tFzYOovj_EI",
+  "assumptions": [
+    "Flat elevation datum; no DEM or surveyed heights",
+    "Building outlines from ML sources may omit, merge, or misclassify buildings",
+    "One/two-storey heights, facade colors, windows and doors are procedural",
+    "Road centerlines are sourced; widths are inferred from road class",
+    "Vegetation and physics demonstration yard are designed additions",
+    "Video title and transcript inspected; video frames were not accessible"
+  ],
+  "files": {
+    "pandori_nijjaran.buildings.geojson": "db470631597c2d6902e45160333b6c2dc1dd71ac63eaeb19a18052778a547dbe",
+    "pandori_nijjaran.osm.json": "242483fe262d1aae31ba2a1974edc5a419f57c5c835755b7d303f27ab7ca518c"
+  },
+  "osm_bbox_south_west_north_east": [
+    31.453,
+    75.714,
+    31.469,
+    75.734
+  ]
+}

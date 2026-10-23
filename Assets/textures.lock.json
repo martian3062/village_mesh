@@ -1,0 +1,140 @@
+{
+  "license_url": "https://polyhaven.com/license",
+  "textures": [
+    {
+      "asset": "brown_mud_leaves_01",
+      "channel": "color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_leaves_01/brown_mud_leaves_01_diff_2k.jpg",
+      "md5": "e8b45aee8e00a253eb3a2b08cea89776",
+      "source": "https://polyhaven.com/a/brown_mud_leaves_01",
+      "license": "CC0-1.0",
+      "sha256": "29c997d77f56e4ea16d3e998a306be0c17fddb28ab4822657c7cd8249040ffda"
+    },
+    {
+      "asset": "brown_mud_leaves_01",
+      "channel": "normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_leaves_01/brown_mud_leaves_01_nor_dx_2k.jpg",
+      "md5": "d6290b29f215091d1e0136aa59195a06",
+      "source": "https://polyhaven.com/a/brown_mud_leaves_01",
+      "license": "CC0-1.0",
+      "sha256": "0b12d1cbf3fa12cf292d77034672f91aba0366c6739dd2973e083ac6bc857e0d"
+    },
+    {
+      "asset": "brown_mud_leaves_01",
+      "channel": "roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/brown_mud_leaves_01/brown_mud_leaves_01_rough_2k.jpg",
+      "md5": "3e7209ff00204174c5bd013df3945b22",
+      "source": "https://polyhaven.com/a/brown_mud_leaves_01",
+      "license": "CC0-1.0",
+      "sha256": "9556215f5fef905c37cdf19c77aef7822f124890f8fb7dcce65d57c5eafc0ca5"
+    },
+    {
+      "asset": "red_brick_03",
+      "channel": "color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/red_brick_03/red_brick_03_diff_2k.jpg",
+      "md5": "df521ebe6c4eb72c3329832acfecd95d",
+      "source": "https://polyhaven.com/a/red_brick_03",
+      "license": "CC0-1.0",
+      "sha256": "c37ef11bb94a533d1c758c5c7d7199264e90f19b23946766c7c59aa189c11ff6"
+    },
+    {
+      "asset": "red_brick_03",
+      "channel": "normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/red_brick_03/red_brick_03_nor_dx_2k.jpg",
+      "md5": "cc25b49d3b26a7f1b9506f60250564a4",
+      "source": "https://polyhaven.com/a/red_brick_03",
+      "license": "CC0-1.0",
+      "sha256": "78d1b66e03976139f4eafc7815331e439ab670d08f90cc52e3f5eb541877c4dc"
+    },
+    {
+      "asset": "red_brick_03",
+      "channel": "roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/red_brick_03/red_brick_03_rough_2k.jpg",
+      "md5": "18815a721bf7cb485955359204484608",
+      "source": "https://polyhaven.com/a/red_brick_03",
+      "license": "CC0-1.0",
+      "sha256": "54cbcc8acdbdfbc0a38407509ef72058ef5847b5713e689fa37ce9cc504c41c1"
+    },
+    {
+      "asset": "rough_plaster_03",
+      "channel": "color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rough_plaster_03/rough_plaster_03_diff_2k.jpg",
+      "md5": "29a64deefbcee9ba90ae473f233b45df",
+      "source": "https://polyhaven.com/a/rough_plaster_03",
+      "license": "CC0-1.0",
+      "sha256": "cf41772dab54818f5f8c58b9297763a7f22480f0147bd8de0668b7732638ac71"
+    },
+    {
+      "asset": "rough_plaster_03",
+      "channel": "normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rough_plaster_03/rough_plaster_03_nor_dx_2k.jpg",
+      "md5": "8de3b8bc56d1555976659839f8a0ae10",
+      "source": "https://polyhaven.com/a/rough_plaster_03",
+      "license": "CC0-1.0",
+      "sha256": "d5a5d5d98f82b1d0b732429001ff50b141877c1750edab10c1809fc5dad3728e"
+    },
+    {
+      "asset": "rough_plaster_03",
+      "channel": "roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rough_plaster_03/rough_plaster_03_rough_2k.jpg",
+      "md5": "afee5e2e521b4438d28a09f2fc3a3bee",
+      "source": "https://polyhaven.com/a/rough_plaster_03",
+      "license": "CC0-1.0",
+      "sha256": "b55409ae7a2f18679c233aa0d2186eb203a278a16c6462a65eb542728b476052"
+    },
+    {
+      "asset": "aerial_grass_rock",
+      "channel": "color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/aerial_grass_rock/aerial_grass_rock_diff_2k.jpg",
+      "md5": "024018554c0002620127749d1f585f3d",
+      "source": "https://polyhaven.com/a/aerial_grass_rock",
+      "license": "CC0-1.0",
+      "sha256": "1a2ddfa4652adbe00447b940c40019d46f4b88245bc1b341cdf622c2110b7bc5"
+    },
+    {
+      "asset": "aerial_grass_rock",
+      "channel": "normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/aerial_grass_rock/aerial_grass_rock_nor_dx_2k.jpg",
+      "md5": "55466b239d3781482d22fc3387b76b73",
+      "source": "https://polyhaven.com/a/aerial_grass_rock",
+      "license": "CC0-1.0",
+      "sha256": "2522704b40a81e0da84b024ba170834e34d0226fc9b15c679f69a56bb91dddb9"
+    },
+    {
+      "asset": "aerial_grass_rock",
+      "channel": "roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/aerial_grass_rock/aerial_grass_rock_rough_2k.jpg",
+      "md5": "8d181000237d420a73f99dfc260dab17",
+      "source": "https://polyhaven.com/a/aerial_grass_rock",
+      "license": "CC0-1.0",
+      "sha256": "fc0fff40e3378f2f54d225db6e3e566a8563bb2c143eef0f09b543c9d4698776"
+    },
+    {
+      "asset": "asphalt_02",
+      "channel": "color",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/asphalt_02/asphalt_02_diff_2k.jpg",
+      "md5": "336af399fd98a39ab986d8b3bf73b4ff",
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "28f5ba8690553f192c0e5e1a5ff40f34765b4b93f4cc7059b1a3e9c795b6c28c"
+    },
+    {
+      "asset": "asphalt_02",
+      "channel": "normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/asphalt_02/asphalt_02_nor_dx_2k.jpg",
+      "md5": "801b454d4070a499e48c448d299fcf1f",
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "64dc04b1fc4288e1ceea00202ad581ef6e1715b12fd7a3e30c9d8b325772fa80"
+    },
+    {
+      "asset": "asphalt_02",
+      "channel": "roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/asphalt_02/asphalt_02_rough_2k.jpg",
+      "md5": "6fe669ab38640ef2009d6a28d1ad5ee9",
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "b9a516b61b7040a9245ac206642d5f767ad9589a0169c4a1668221429e8a998c"
+    }
+  ]
+}

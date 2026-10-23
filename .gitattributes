@@ -1,0 +1,12 @@
+* text=auto
+# Preserve exact bytes of inputs checked against published SHA256 hashes.
+Content/Well/wind.csv -text whitespace=cr-at-eol
+Assets/Geodata/*.osm.json -text
+Assets/Geodata/*.geojson -text whitespace=cr-at-eol
+*.py text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.jpg binary

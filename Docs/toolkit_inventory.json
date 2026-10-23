@@ -1,0 +1,115 @@
+{
+  "profile": "authoring",
+  "applied": true,
+  "plugins": [
+    {
+      "plugin": "PCG",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "ModelContextProtocol",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "EditorToolset",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "MCPClientToolset",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "PCGToolset",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "ProceduralVegetationEditor",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "MeshTerrainMode",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "USDImporter",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "Water",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "Landmass",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "NiagaraFluids",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "NNERuntimeORT",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "LearningAgents",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "MassAI",
+      "installed": true,
+      "experimental": true,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "StateTree",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "SmartObjects",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    },
+    {
+      "plugin": "PoseSearch",
+      "installed": true,
+      "experimental": false,
+      "enabled_in_project": true
+    }
+  ],
+  "external_on_path": {
+    "blender": false,
+    "gdal_translate": false,
+    "qgis": false,
+    "git-lfs": true
+  },
+  "cesium_installed": false
+}

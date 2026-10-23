@@ -1,0 +1,4 @@
+[submodule "ThirdParty/the_well"]
+	path = ThirdParty/the_well
+	url = https://github.com/PolymathicAI/the_well.git
+	shallow = true

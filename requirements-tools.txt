@@ -1,0 +1,5 @@
+# Optional: regenerate The Well trace or run the data/geometry tests.
+# Normal Unreal bootstrap uses only Python's standard library.
+numpy>=1.26,<3
+h5py>=3.10,<4
+fsspec[http]>=2024.6
