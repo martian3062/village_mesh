@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scene_date": "2026-10-23",
+  "progression": "explicit scenario change only; no real-time growth",
+  "provenance": "illustrative late-October design, not observed crop states or agronomic advice",
+  "review_status": "pending_dated_local_reference",
+  "presets": {
+    "late_october": [
+      "maturing_rice",
+      "managed_residue",
+      "prepared_soil",
+      "fodder"
+    ]
+  },
+  "references": [
+    "https://pau.edu/content/ccil/pf/pp_kharif.pdf",
+    "https://pau.edu/content/ccil/pf/pp_rabi.pdf"
+  ]
+}

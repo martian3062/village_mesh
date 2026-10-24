@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "schedules": [
+    {
+      "npc_id": "resident_00",
+      "windows": [
+        {
+          "start_hour": 8.0,
+          "end_hour": 17.0,
+          "task": "plot_inspector",
+          "destination": "plot_access"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_01",
+      "windows": [
+        {
+          "start_hour": 8.15,
+          "end_hour": 16.9,
+          "task": "shopkeeper",
+          "destination": "lane_06"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_02",
+      "windows": [
+        {
+          "start_hour": 8.3,
+          "end_hour": 16.8,
+          "task": "vehicle_operator",
+          "destination": "vehicle_stop"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_03",
+      "windows": [
+        {
+          "start_hour": 8.45,
+          "end_hour": 16.7,
+          "task": "commuter",
+          "destination": "lane_21"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_04",
+      "windows": [
+        {
+          "start_hour": 8.6,
+          "end_hour": 16.6,
+          "task": "student_adult",
+          "destination": "lane_17"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_05",
+      "windows": [
+        {
+          "start_hour": 8.75,
+          "end_hour": 16.5,
+          "task": "errands",
+          "destination": "lane_08"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_06",
+      "windows": [
+        {
+          "start_hour": 8.9,
+          "end_hour": 16.4,
+          "task": "courtyard_visitor",
+          "destination": "lane_05"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    },
+    {
+      "npc_id": "resident_07",
+      "windows": [
+        {
+          "start_hour": 9.05,
+          "end_hour": 16.3,
+          "task": "visitor",
+          "destination": "lane_12"
+        }
+      ],
+      "rainy_task": "shelter",
+      "fallback": "return_home",
+      "minimum_task_seconds": 8
+    }
+  ]
+}

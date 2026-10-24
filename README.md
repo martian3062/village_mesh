@@ -1,5 +1,7 @@
 # village_mesh
 
+**Large assets are included through Git LFS:** [clone instructions, asset manifest and licensing scope](Docs/LFS/README.md). Run `git lfs install` before cloning and `git lfs pull` before opening Unreal.
+
 **Kaggle GPU compute:** [setup and verified TinyAI run](Docs/Kaggle/README.md). A private Tesla T4 job completed three synthetic-policy training trials. The downloaded candidate passed local ONNX validation; the deployed model is unchanged.
 
 **MetaHuman pilot:** [Manpreet setup, screenshots and validation](Docs/MetaHumanPilot/README.md). The UE 5.8.4 pilot is assembled and rendered in the village, with verified idle/walk animation, ground contact and a short standalone timing comparison. He uses a temporary Epic outfit; custom Punjabi clothing and resident replacement remain future milestones.
@@ -16,7 +18,7 @@ An explorable Unreal Engine village based on **Pandori Nijjaran, Adampur, Punjab
 
 **Current status:** a working, map-based environment foundation. Building heights, facades, road widths, vegetation placement, and terrain elevation are approximations. This is not yet a surveyed digital twin or a finished photorealistic game.
 
-The repository publishes project source, generation scripts, small geographic extracts, asset manifests, and validation evidence. Unreal maps and imported binary assets are generated locally. The C++ module and project file retain the original name, `rural_pardeep`.
+The repository publishes project source, generation scripts, geographic extracts, asset manifests, validation evidence and the reviewed Unreal assets through Git LFS. The maps can also be regenerated locally. The C++ module and project file retain the original name, `rural_pardeep`.
 
 ![V3 residential lane and map HUD in Unreal Engine](Docs/V3/view_10.png)
 
@@ -67,13 +69,13 @@ Counts above describe the recorded build, not a guaranteed count after changing 
 | Dependency | Purpose and tested scope |
 | --- | --- |
 | Windows | The supplied launch/build scripts use PowerShell. Other platforms are not validated. |
-| Unreal Engine 5.8 | The project was built and checked with **5.8.3**. Engine binaries are installed separately. |
+| Unreal Engine 5.8.4 | Use **5.8.4** for the included MetaHuman pilot. Earlier village package evidence was recorded on 5.8.3. Engine binaries are installed separately. |
 | Visual Studio 2022 C++ build tools and Windows SDK | Compile the `rural_pardeepEditor` target. The recorded build used MSVC 14.44. |
-| Git | Clone the project and initialize The Well submodule. |
+| Git and Git LFS | Clone the project, download LFS assets and initialize The Well submodule. |
 | Python 3.10 or later on PATH | Download assets and run standalone geometry/data tools. Normal bootstrap uses the standard library. |
 | Packages in `requirements-tools.txt` | Optional for regenerating The Well trace and running Python tests: NumPy, h5py, and fsspec HTTP support. |
 | Internet access | Initial source/CC0 asset retrieval; supplied map extracts and the wind trace are already checked in. |
-| Storage | Approximately 200 MB of CC0 downloads, plus several GB for generated Unreal assets, build outputs, and shader caches; excludes the engine installation. |
+| Storage | About 1.25 GB of published asset files plus the local LFS object cache, several GB for build outputs/shader caches, and the separate engine/Core Data installation. |
 
 GPU smoke checks were performed on an RTX 4050 Laptop GPU. This is a tested machine, not a published minimum specification or an FPS guarantee. Hardware ray tracing and path tracing are disabled in the default configuration.
 
@@ -82,9 +84,13 @@ GPU smoke checks were performed on an RTX 4050 Laptop GPU. This is a tested mach
 Run these commands in PowerShell:
 
 ```powershell
+git lfs install
 git clone --recurse-submodules https://github.com/martian3062/village_mesh.git
 cd village_mesh
-.\Scripts\bootstrap.ps1 -EngineRoot 'E:\U.E\UE_5.8' -OpenEditor
+git lfs pull
+python Scripts/lfs_publication.py verify
+& 'E:\U.E\UE_5.8\Engine\Build\BatchFiles\Build.bat' rural_pardeepEditor Win64 Development "-Project=$PWD\rural_pardeep.uproject" -WaitMutex -NoHotReloadFromIDE
+& 'E:\U.E\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe' "$PWD\rural_pardeep.uproject" '/Game/VillageMeshV3/Lvl_PandoriV3_WP'
 ```
 
 Replace `E:\U.E\UE_5.8` with your engine installation directory: the directory containing `Engine`, not `Engine` itself. Run subsequent examples from the repository root.
@@ -95,7 +101,7 @@ For an existing clone whose submodule has not been initialized:
 git submodule update --init --recursive
 ```
 
-Bootstrap performs these steps in order:
+To regenerate the V1 world from source instead of using the published saved assets, run `.\Scripts\bootstrap.ps1 -EngineRoot 'E:\U.E\UE_5.8' -OpenEditor`. Bootstrap performs these steps in order:
 
 1. Downloads or reuses the texture/model cache and verifies source MD5 and pinned SHA256 hashes.
 2. Compiles `rural_pardeepEditor` for Win64 Development.
@@ -105,7 +111,7 @@ Bootstrap performs these steps in order:
 
 The default editor/game map is `/Game/VillageMesh/Lvl_PandoriNijjaran_WP`. Once loading finishes, press **Play** in Unreal Editor.
 
-An ordinary source clone does not contain `.umap` or `.uasset` files. Generating them is part of setup. Initial import and shader compilation can take time; scripts stop on errors and Unreal writes details under `Saved/Logs`.
+A clone with Git LFS downloaded contains the reviewed `.umap` and `.uasset` files. A clone that skipped LFS has only pointers until `git lfs pull` completes. Initial shader compilation can take time; scripts stop on errors and Unreal writes details under `Saved/Logs`.
 
 ## Open and play an existing build
 
@@ -365,7 +371,7 @@ village_mesh/
 `-- THIRD_PARTY_NOTICES.md     Source, asset, and data attribution
 ```
 
-`Binaries`, `Intermediate`, `DerivedDataCache`, `Saved`, downloaded assets, and most `Content` are excluded from Git. Original local art remains on its workstation because redistribution provenance has not been established. The portable asset dependency audit checks that the generated world does not require that art.
+`Binaries`, `Intermediate`, `DerivedDataCache` and `Saved` remain excluded. Reviewed generated village and MetaHuman assets, World Partition actors and pinned CC0 downloads are included through Git LFS; [the manifest](Docs/LFS/assets.json) records the exact files and hashes. Unverified legacy imported art remains local. The saved-asset dependency audit confirms the published maps do not require excluded project assets.
 
 ## Validation
 

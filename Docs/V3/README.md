@@ -82,7 +82,7 @@ python -m unittest discover -s Tests -v
 python Scripts/audit_v3_package.py
 ```
 
-The build creates `/Game/VillageMeshV3/Lvl_PandoriV3`, imports original meshes/materials/map artwork, then converts a separate World Partition map. V1/V2 assets are referenced but not rewritten. Public inputs live in `Assets/World`; runtime JSON is copied to `Content/V3/Data`. Generated Unreal assets, OBJ intermediates and packages remain ignored; source scripts reproduce them.
+The build creates `/Game/VillageMeshV3/Lvl_PandoriV3`, imports original meshes/materials/map artwork, then converts a separate World Partition map. V1/V2 assets are referenced but not rewritten. Public inputs live in `Assets/World`; runtime JSON is copied to `Content/V3/Data`. Reviewed generated Unreal assets are now included through [Git LFS](../LFS/README.md). OBJ intermediates and packaged builds remain ignored; source scripts still reproduce them.
 
 The V3 vegetation graphs are independent copies. Their original seeded points are filtered around new public sites and fields so trees/shrubs cannot grow through those additions. Wall UVs use their own face plane rather than a ground projection, including on vertical facades.
 
@@ -109,4 +109,4 @@ Veranda columns are omitted where they would obstruct the mapped road width; tho
 
 Raw evidence: [runtime results](runtime_packaged.json), [executable hash and render settings](runtime_build.json), and [package/input/source audit](package_audit.json). All twelve captures above were produced by that standalone run. Performance is a local workstation observation with other applications open, not a minimum hardware specification or a guarantee for a full play session. No new thirty-minute V3 soak or exhaustive navigation audit is claimed.
 
-The source/build intermediates remain in `Saved/VillageMeshV3`. The portable package is at `Saved/Packages/V3/Windows`; launch its `Play_V3.cmd`. Generated binary assets and that package are local outputs, while the repository contains the reproducible sources and reviewed evidence.
+The source/build intermediates remain in `Saved/VillageMeshV3`. The portable package is at `Saved/Packages/V3/Windows`; launch its `Play_V3.cmd`. The reviewed saved Unreal assets are now included through Git LFS. Packaged executables remain local; the repository contains the reproducible sources and reviewed evidence.

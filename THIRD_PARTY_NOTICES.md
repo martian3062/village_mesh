@@ -41,7 +41,7 @@ The downloader retrieves these [CC0 assets](https://polyhaven.com/license):
 - [Rough Plaster 03](https://polyhaven.com/a/rough_plaster_03)
 
 `Assets/textures.lock.json` records source URLs, channel, resolution URLs,
-MD5 and SHA256. Downloads are cached locally and excluded from Git.
+MD5 and SHA256. The exact pinned source downloads are now included through Git LFS; see `Docs/LFS/assets.json`.
 
 ## Existing local content
 
@@ -98,9 +98,8 @@ redistributed. All nine in-game public sites are marked representative.
 The separate Manpreet pilot uses Epic's installed MetaHuman Creator APIs. Epic
 technology and generated MetaHuman assets retain their applicable Epic terms;
 they are not relicensed under this repository's MIT source-code license. Pilot
-binary assets remain local under the ignored `Content/MetaHumanPilot` directory.
+binary assets under `Content/MetaHumanPilot` are now included through Git LFS as generated character assets under the applicable Epic terms. The user requested this publication after the initial local pilot.
 The pilot references Epic's installed MetaHuman neutral idle and forward-walk
 animation clips. These remain local and retain their applicable Epic terms.
-No Epic grooms, garments, animations, DNA, texture models or example source files are bundled
-in this repository. See `Docs/MetaHumanPilot/README.md` for the verified setup
+The generated character includes its assembled grooms, garment, rig and textures. The full Creator Core Data library, engine/plugin binaries and plugin example source files are not redistributed. See `Docs/LFS/README.md` for the publication scope and current license references, and `Docs/MetaHumanPilot/README.md` for the verified setup
 state, original orchestration scripts, and current official licensing links.

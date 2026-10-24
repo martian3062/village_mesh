@@ -122,9 +122,9 @@ Before replacing residents, complete custom Punjabi clothing, review garment fit
 
 ## Source and licensing
 
-The profile and project-authored orchestration are published with the repository's source license. Epic technology and generated MetaHuman binary art are **not** relabelled MIT. All pilot `.uasset` files remain under the ignored `Content` tree. No downloaded grooms, garments, DNA or textures are added to Git by this workflow.
+The profile and project-authored orchestration are published with the repository's source license. Epic technology and generated MetaHuman binary art are **not** relabelled MIT. Following the user's asset-publication request, the saved pilot `.uasset` files are included through Git LFS. The generated character and assembled grooms, garment, rig and textures retain their applicable Epic terms. The full Creator Core Data library and engine/plugin distribution are not bundled. See the [LFS manifest and clone instructions](../LFS/README.md).
 
-For UE 5.8, Epic's current [MetaHuman licensing page](https://www.metahuman.com/license) points to the [Unreal Engine EULA](https://www.unrealengine.com/eula/unreal). The proposal's older MetaHuman Creator EULA reference is not the basis for this implementation. Keeping binary art local is this repository's publication policy, not a claim that every form of MetaHuman asset distribution is universally prohibited. Any later release must follow the applicable Epic and individual asset terms.
+For UE 5.8, Epic's current [MetaHuman licensing page](https://www.metahuman.com/license) points to the [Unreal Engine EULA](https://www.unrealengine.com/eula/unreal). The proposal's older MetaHuman Creator EULA reference is not the basis for this implementation. Epic's current MetaHuman FAQ permits packaging created assets for distribution through Fab and third-party marketplaces. This project includes its generated character under the applicable Epic terms, without relabelling Epic material as MIT. Other releases must follow the applicable Epic and individual asset terms.
 
 The NPC policy's numeric state data remains separate from MetaHuman assets. The pilot workflow does not use MetaHuman characters, DNA, animation or rendered output as AI/ML training data.
 

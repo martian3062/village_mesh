@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scene_date": "2026-10-23",
+  "timezone": "Asia/Kolkata",
+  "start_hour": 13.5,
+  "game_minutes_per_real_minute": 5,
+  "active_npcs": 8,
+  "decision_interval_seconds": 0.4,
+  "max_inflight_batches": 1,
+  "stale_result_seconds": 1,
+  "save_version": 1,
+  "default_policy": "rules",
+  "experimental_policy_switch": "-V25Learned",
+  "dialogue_mode": "draft_subtitles_and_choices",
+  "crop_progression_enabled": false
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "traffic_side": "left",
+  "confidence": "procedural inference; widths not surveyed",
+  "profiles": [
+    {
+      "id": "connector",
+      "surface": "existing_asphalt",
+      "width_cm": 450,
+      "crown_cm": 6,
+      "wet_speed_factor": 0.7
+    },
+    {
+      "id": "lane",
+      "surface": "existing_V2_paved_lane",
+      "width_cm": 420,
+      "crown_cm": 6,
+      "wet_speed_factor": 0.6
+    },
+    {
+      "id": "field_track",
+      "surface": "compacted_soil",
+      "width_cm": 280,
+      "crown_cm": 3,
+      "wet_speed_factor": 0.5
+    }
+  ],
+  "passages": [
+    {
+      "id": "farm_passage",
+      "nodes": [
+        "lane_14",
+        "farm_gate",
+        "farm_south"
+      ],
+      "capacity": 1,
+      "release_on_cancel": true
+    }
+  ],
+  "measurement_status": "unmeasured_design",
+  "engineering_compliance_claim": false
+}
