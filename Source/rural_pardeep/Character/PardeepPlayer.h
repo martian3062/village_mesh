@@ -43,12 +43,16 @@ private:
     void UpdateSurface();
     void CheckRuntime(float Dt);
     void AttachTurban();
+    void CycleInspection();
+    void UpdateInspectionCamera();
     UPROPERTY(VisibleAnywhere) TObjectPtr<USpringArmComponent> CameraBoom;
     UPROPERTY() TObjectPtr<AActor> Visual;
     UPROPERTY() TObjectPtr<USkeletalMeshComponent> Body;
     UPROPERTY() TObjectPtr<UBlendSpace> Locomotion;
     UPROPERTY() TObjectPtr<UStaticMeshComponent> Turban;
     bool bFirstPerson=false,bRightShoulder=true,bReferenceAppearance=false;
+    int32 InspectionMode=0;
+    int32 PortraitFaceLOD=INDEX_NONE,HandBodyLOD=INDEX_NONE;
     float SurfaceTimer=0,Elapsed=0,Travel=0,FootTravel=0;
     FVector LastPosition=FVector::ZeroVector,LastFoot=FVector::ZeroVector;
     bool bHaveFoot=false,bCheck=false,bGrounded=true,bWalkingSeen=false,bRunningSeen=false;

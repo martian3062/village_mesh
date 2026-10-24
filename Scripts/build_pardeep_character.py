@@ -70,7 +70,7 @@ try:
         save_packages(CHARACTER,False)
     params=unreal.MetaHumanCharacterEditorBuildParameters()
     params.pipeline_type=unreal.MetaHumanDefaultPipelineType.OPTIMIZED
-    params.pipeline_quality=unreal.MetaHumanQualityLevel.MEDIUM
+    params.pipeline_quality=unreal.MetaHumanQualityLevel.HIGH
     params.absolute_build_path=ASSEMBLY;params.name_override='Pardeep'
     params.common_folder_path=ASSEMBLY+'/Common';params.enable_wardrobe_item_validation=True
     started=time.time();log=ROOT/'Saved/Logs/PardeepCharacterBuild.log'
@@ -92,7 +92,7 @@ try:
     report['engine_assembly_succeeded']=True;report['stage']='saving_assembled_packages';save_report()
     save_packages(ASSEMBLY,False)
     report['generated_assets_saved']=True;save_report()
-    validate_assembly({'assembly_root':ASSEMBLY,'name':'Pardeep'},report,started,save_packages=save_packages)
+    validate_assembly({'assembly_root':ASSEMBLY,'name':'Pardeep','quality':'High'},report,started,save_packages=save_packages)
     # Keep a stable runtime slot even though Epic's assembler nests its actor
     # inside a name-specific folder. Only this generated alias is replaced.
     refresh_runtime_actor(report)

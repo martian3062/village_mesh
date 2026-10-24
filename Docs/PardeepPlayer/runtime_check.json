@@ -1,1 +1,12 @@
-{"passed":true,"third_person":true,"turban_attached":true,"camera_collision_enabled":true,"grounded":true,"walk_seen":true,"run_seen":true,"travel_cm":2676.63,"foot_motion_cm":2739.36,"appearance":"reference-guided preview; owner likeness review pending"}
+{
+  "passed": true,
+  "third_person": true,
+  "turban_attached": true,
+  "camera_collision_enabled": true,
+  "grounded": true,
+  "walk_seen": true,
+  "run_seen": true,
+  "travel_cm": 2670.75,
+  "foot_motion_cm": 2740.69,
+  "appearance": "reference-guided preview; owner likeness review pending"
+}

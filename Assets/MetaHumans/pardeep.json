@@ -10,6 +10,8 @@
   "fallback_visual_source": "/Game/VillageMeshV3/Player/BP_PardeepAppearance",
   "turban_mesh": "/Game/VillageMeshV3/Player/Headwear/SM_PardeepTurban",
   "turban_color": "black",
+  "assembly_quality": "UE Optimized High",
+  "inspection_key": "P cycles face, hand and third-person views",
   "face_design": "pardeep_face_design.json",
   "reference_status": "Four owner-selected local portraits; source files excluded from publication",
   "notes": "The owner supplied a new reference location after the temporary appearance. This separate MetaHuman uses a manual reference-guided face sculpt and original folded turban. It is an artistic likeness preview, not a verified 3D scan. No mixed-archive photo was assigned to another named character."

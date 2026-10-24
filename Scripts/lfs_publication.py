@@ -9,6 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / 'Docs/LFS/assets.json'
 NAMES = ('VillageMesh', 'VillageMeshV2', 'VillageMeshV25', 'VillageMeshV3', 'MetaHumanPilot')
 RAW_ROOTS = ('Content/V25', 'Content/V3')
+# Loaded directly by VillageExplorer and VillageDiagnostics, outside the asset registry.
+EXACT_RUNTIME_FILES = ('Content/Validation/pilot.json',)
 
 
 def sha(path):
@@ -22,6 +24,8 @@ def sha(path):
 def approved_path(relative):
     if '\\' in relative or '..' in Path(relative).parts or Path(relative).is_absolute():
         return False
+    if relative in EXACT_RUNTIME_FILES:
+        return True
     if relative.startswith('Assets/Downloaded/'):
         return relative in pinned_downloads()
     if any(relative.startswith(prefix + '/') for prefix in RAW_ROOTS):
@@ -50,6 +54,7 @@ def prepare():
             paths.update(path for path in folder.rglob('*') if path.is_file() and path.suffix in ('.uasset', '.umap', '.ubulk', '.uexp'))
     for folder in RAW_ROOTS:
         paths.update(path for path in (ROOT / folder).rglob('*') if path.is_file())
+    paths.update(ROOT / name for name in EXACT_RUNTIME_FILES)
     pinned = pinned_downloads()
     paths.update(ROOT / name for name in pinned)
     records = []
@@ -63,7 +68,7 @@ def prepare():
         group = ('poly_haven_cc0' if relative in pinned else
                  'epic_metahuman' if (relative.startswith('Content/MetaHumanPilot/') or
                                       relative == 'Content/VillageMeshV3/Player/BP_PardeepAppearance.uasset') else
-                 'runtime_inputs' if relative.startswith(tuple(p + '/' for p in RAW_ROOTS)) else
+                 'runtime_inputs' if relative in EXACT_RUNTIME_FILES or relative.startswith(tuple(p + '/' for p in RAW_ROOTS)) else
                  'generated_village')
         records.append({'path': relative, 'bytes': path.stat().st_size, 'sha256': digest, 'group': group,
                         'lfs': path.suffix in ('.uasset', '.umap', '.ubulk', '.uexp') or relative in pinned})

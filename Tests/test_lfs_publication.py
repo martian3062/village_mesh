@@ -15,9 +15,11 @@ class LFSPublicationTests(unittest.TestCase):
     def test_private_unreviewed_and_traversal_paths_rejected(self):
         for path in ('Saved/Kaggle/access_token', 'Content/Village/Unknown.uasset',
                      'Content/VillageMesh/../../secret.uasset', 'Content/VillageMesh/secret.env',
-                     'Assets/Downloaded/unpinned.jpg', 'C:/secret.uasset'):
+                     'Assets/Downloaded/unpinned.jpg', 'C:/secret.uasset',
+                     'Content/Validation/access_token.json'):
             with self.subTest(path=path):
                 self.assertFalse(publication.approved_path(path))
+        self.assertTrue(publication.approved_path('Content/Validation/pilot.json'))
 
     def test_pointer_or_changed_payload_cannot_pass_as_real_asset(self):
         with tempfile.TemporaryDirectory() as directory:

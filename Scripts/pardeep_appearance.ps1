@@ -18,6 +18,10 @@ if($Action -eq 'Character'){
     $ProcessHandle=$Process.Handle;$Process.WaitForExit()
     $Report=Get-Item -LiteralPath "$Root/Saved/PardeepPlayer/character_build.json"
     if(-not $Report -or $Report.LastWriteTimeUtc -lt $Started -or -not (Get-Content $Report.FullName -Raw|ConvertFrom-Json).passed){throw 'Character assembly failed or its report is stale'}
+    $BuildEvidence=Get-Content $Report.FullName -Raw|ConvertFrom-Json
+    $BuildEvidence | Add-Member -NotePropertyName assembly_editor_exit_code -NotePropertyValue $Process.ExitCode -Force
+    $BuildEvidence | Add-Member -NotePropertyName assembly_editor_clean_exit -NotePropertyValue ($null -ne $Process.ExitCode -and $Process.ExitCode -eq 0) -Force
+    $BuildEvidence | ConvertTo-Json -Depth 32 | Set-Content -LiteralPath $Report.FullName -Encoding UTF8
     # Accept saved output only after a separate process can reload every asset.
     if($null -eq $Process.ExitCode -or $Process.ExitCode -ne 0){Write-Warning "Assembly editor exit code: $($Process.ExitCode). Checking saved assets in a fresh process."}
     & "$EngineRoot/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" $Project -run=pythonscript "-script=$PSScriptRoot/validate_pardeep_saved.py" -unattended -NullRHI -nosound "-abslog=$Root/Saved/Logs/PardeepSavedAssetCheck.log"

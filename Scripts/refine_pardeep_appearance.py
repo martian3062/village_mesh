@@ -7,7 +7,7 @@ import unreal
 root=Path(unreal.Paths.project_dir());sys.path.insert(0,str(root/'Scripts'))
 from pardeep_character_finish import finish_materials
 path=root/'Saved/PardeepPlayer/character_build.json'
-report=json.loads(path.read_text())
+report=json.loads(path.read_text(encoding='utf-8-sig'))
 if not report['passed']:raise RuntimeError('Assemble the Pardeep character first')
 finish_materials(report)
 runpy.run_path(str(root/'Scripts/build_pardeep_turban.py'),run_name='__main__')

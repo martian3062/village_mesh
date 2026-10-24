@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "started_at_utc": "2026-10-24T12:27:29.753871+00:00",
+  "started_at_utc": "2026-10-24T13:03:01.645408+00:00",
   "character_asset": "/Game/MetaHumanPilot/Pardeep/Characters/MH_Pardeep",
   "appearance": "Reference-guided artistic approximation; owner likeness review required",
   "source_photos_copied": false,
@@ -279,15 +279,10 @@
     ]
   },
   "stage": "complete",
-  "control_rig_migration_diagnostics": [
-    "MetaHumanCharacterEditorSubsystem: /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc : Cannot break link Multiply.Result.Z -> RerouteNode_1.Value in package /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc",
-    "MetaHumanCharacterEditorSubsystem: /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc : Cannot break link RerouteNode_1.Value -> Add.C in package /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc",
-    "MetaHumanCharacterEditorSubsystem: /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig : Cannot break link MathFloatAdd_6_1.Result -> RerouteNode_19_1.Value in package /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig",
-    "MetaHumanCharacterEditorSubsystem: /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig : Cannot break link RerouteNode_19_1.Value -> SetControlVector2D_1_1.Vector.X in package /Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig"
-  ],
   "engine_assembly_succeeded": true,
   "generated_assets_saved": true,
   "compiled_blueprints": [
+    "/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep.BP_Pardeep",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Animation/ABP_Clothing_PostProcess.ABP_Clothing_PostProcess",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Animation/ABP_MH_LiveLink.ABP_MH_LiveLink",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Animation/CR_PlaceHolder.CR_PlaceHolder",
@@ -299,210 +294,15 @@
     "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig.Face_ControlBoard_CtrlRig",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/BP_Pardeep.BP_Pardeep"
   ],
-  "restored_control_rig_links": [
-    {
-      "asset": "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc.CR_MetaHuman_HeadMovement_IK_Proc",
-      "source": "Multiply.Result.Z",
-      "target": "Add.C"
-    },
-    {
-      "asset": "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Face/Face_ControlBoard_CtrlRig.Face_ControlBoard_CtrlRig",
-      "source": "MathFloatAdd_6_1.Result",
-      "target": "SetControlVector2D_1_1.Vector.X"
-    }
-  ],
-  "migration_link_evidence": {
-    "CR_MetaHuman_HeadMovement_IK_Proc": [
-      [
-        "Multiply.Result.Z",
-        "Add.C"
-      ]
-    ],
-    "Face_ControlBoard_CtrlRig": [
-      [
-        "MathFloatAdd_6_1.Result",
-        "SetControlVector2D_1_1.Vector.X"
-      ]
-    ]
-  },
-  "migration_graph_inventory": {
-    "CR_MetaHuman_HeadMovement_IK_Proc": {
-      "graphs": 2,
-      "links": 50,
-      "sample": [
-        [
-          "Add.Result",
-          "RigUnit_SetTransform_5.Value.Translation.Z"
-        ],
-        [
-          "Absolute.Result",
-          "Add.A"
-        ],
-        [
-          "Absolute_1.Result",
-          "Add.B"
-        ],
-        [
-          "RigUnit_GetTransform_6.Transform",
-          "SpawnControl_2.InitialValue"
-        ],
-        [
-          "SpawnControl_2.ExecutePin",
-          "SetDefaultParent.ExecutePin"
-        ]
-      ],
-      "related": [
-        [
-          "Subtract_3.Result",
-          "Multiply_2.A"
-        ],
-        [
-          "Multiply_2.Result.X",
-          "RigUnit_SetTransform_5.Value.Translation.X"
-        ],
-        [
-          "Multiply_2.Result.Y",
-          "RigUnit_SetTransform_5.Value.Translation.Y"
-        ],
-        [
-          "Multiply_2.Result",
-          "Multiply.A"
-        ],
-        [
-          "Multiply.Result.X",
-          "Absolute.Value"
-        ],
-        [
-          "Multiply.Result.Y",
-          "Absolute_1.Value"
-        ],
-        [
-          "Multiply.Result.Z",
-          "Add.C"
-        ]
-      ]
-    },
-    "Face_ControlBoard_CtrlRig": {
-      "graphs": 1,
-      "links": 1428,
-      "sample": [
-        [
-          "InverseExecution.ExecutePin",
-          "SequenceExecution_1.ExecuteContext"
-        ],
-        [
-          "SequenceExecution.B",
-          "RerouteNode_27.Value"
-        ],
-        [
-          "RerouteNode_15.Value",
-          "RerouteNode_6.Value"
-        ],
-        [
-          "SequenceExecution_1.B",
-          "RerouteNode_15.Value"
-        ],
-        [
-          "RerouteNode_6.Value",
-          "SequenceExecution_2.ExecuteContext"
-        ]
-      ],
-      "related": [
-        [
-          "RerouteNode_15.Value",
-          "RerouteNode_6.Value"
-        ],
-        [
-          "SequenceExecution_1.B",
-          "RerouteNode_15.Value"
-        ],
-        [
-          "SequenceExecution_2.A",
-          "RerouteNode_16.Value"
-        ],
-        [
-          "SequenceExecution_2.C",
-          "RerouteNode_17.Value"
-        ],
-        [
-          "SequenceExecution_2.B",
-          "RerouteNode_18.Value"
-        ],
-        [
-          "SequenceExecution_3.C",
-          "RerouteNode_14.Value"
-        ],
-        [
-          "RerouteNode_14.Value",
-          "RerouteNode_26.Value"
-        ],
-        [
-          "MathFloatRemap_5_1.Result",
-          "MathFloatAdd_6_1.A"
-        ],
-        [
-          "MathFloatAdd_7_1.Result",
-          "SetControlVector2D_1_1.Vector.Y"
-        ],
-        [
-          "SetControlFloat_4_1_1.ExecutePin",
-          "SetControlVector2D_1_1.ExecutePin"
-        ],
-        [
-          "GetCurveValue_7_3.Value",
-          "MathFloatAdd_6_1.B"
-        ],
-        [
-          "RerouteNode_16.Value",
-          "RigUnit_SetControlFloat_13_1.ExecutePin"
-        ],
-        [
-          "RerouteNode_18.Value",
-          "RigUnit_SetControlFloat_18_1.ExecutePin"
-        ],
-        [
-          "RerouteNode_17.Value",
-          "RigUnit_SetControlFloat_27_1.ExecutePin"
-        ],
-        [
-          "RerouteNode_1.Value",
-          "RigUnit_SetControlFloat_52_1.ExecutePin"
-        ],
-        [
-          "RerouteNode_25_1.Value",
-          "RerouteNode_1.Value"
-        ],
-        [
-          "RigUnit_GetCurveValue_125_1.Value",
-          "RigUnit_MathFloatAdd_6_1.A"
-        ],
-        [
-          "RigUnit_MathFloatRemap_6_1.Result",
-          "RigUnit_MathFloatAdd_6_1.B"
-        ],
-        [
-          "RigUnit_MathFloatAdd_6_1.Result",
-          "RigUnit_SetControlFloat_80_1.FloatValue"
-        ],
-        [
-          "MathFloatAdd_6_1.Result",
-          "SetControlVector2D_1_1.Vector.X"
-        ]
-      ]
-    }
-  },
-  "migrated_direct_links_verified": {
-    "CR_MetaHuman_HeadMovement_IK_Proc": true,
-    "Face_ControlBoard_CtrlRig": true
-  },
   "assembled_blueprints": [
+    "/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep.BP_Pardeep",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/BP_Pardeep.BP_Pardeep"
   ],
   "fresh_assembled_blueprints": [
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/BP_Pardeep.BP_Pardeep"
   ],
-  "saved_asset_count": 318,
-  "scope": "Optimized Medium assembly; no PIE, locomotion, packaging or performance claim",
+  "saved_asset_count": 337,
+  "scope": "Optimized High assembly; no PIE, locomotion, packaging or performance claim",
   "runtime_blueprint": "/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep",
   "dark_groom_materials": [
     "/Game/MetaHumanPilot/Pardeep/Assembled/Common/Materials/MI_Facial_Hair.MI_Facial_Hair",
@@ -515,7 +315,11 @@
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/Face/Materials/MI_EyeR_Baked.MI_EyeR_Baked"
   ],
   "skin_roughness_materials": [
+    "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/Body/Materials/MI_Body_Baked_VT.MI_Body_Baked_VT",
+    "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/Face/Materials/MI_Face_Skin_Baked_LOD1_VT.MI_Face_Skin_Baked_LOD1_VT",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/Face/Materials/MI_Face_Skin_Baked_LOD3_VT.MI_Face_Skin_Baked_LOD3_VT",
     "/Game/MetaHumanPilot/Pardeep/Assembled/Pardeep/Face/Materials/MI_Face_Skin_Baked_LOD5to7_VT.MI_Face_Skin_Baked_LOD5to7_VT"
-  ]
+  ],
+  "assembly_editor_exit_code": -1073741819,
+  "assembly_editor_clean_exit": false
 }

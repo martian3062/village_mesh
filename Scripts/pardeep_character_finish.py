@@ -36,8 +36,16 @@ def finish_materials(report):
             mel.set_material_instance_vector_parameter_value(material,'Iris Color Multiply',unreal.LinearColor(.45,.26,.18,1))
             mel.update_material_instance(material)
             eye_materials.append(path)
-        if '/Pardeep/Face/Materials/MI_Face_Skin_Baked_' in path:
-            mel.set_material_instance_scalar_parameter_value(material,'Roughness Global Offset Post-Bake',.08)
+        is_face='/Pardeep/Face/Materials/MI_Face_Skin_Baked_' in path
+        is_body='/Pardeep/Body/Materials/MI_Body_Baked' in path
+        if is_face or is_body:
+            values={'Roughness Global Offset Post-Bake':.08 if is_face else .04,
+                    'Specular Global Multiply Post-Bake':.85,
+                    'Micro Skin Normal Strength':.8 if is_face else .85,
+                    'Normal Global Strength Post-Bake':1.0 if is_face else 1.05}
+            for name,value in values.items():
+                if name in names:mel.set_material_instance_scalar_parameter_value(material,name,value)
+            mel.update_material_instance(material)
             skin_materials.append(path)
     if len(eye_materials)!=2:raise RuntimeError('Expected both assembled eye materials')
     save_packages(assembly,True)

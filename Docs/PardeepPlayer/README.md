@@ -10,19 +10,25 @@ Supporting characters can use separately selected references. The existing eight
 
 ## Verified local preview — 24 October 2026
 
-The UE 5.8.4 editor build passed. All 44 Python tests passed. The latest standalone third-person check loaded the separate Pardeep actor and recorded 26.77 m of player travel, 27.39 m of accumulated component-space foot motion, walking and running speeds, continuous grounded movement, and the turban attached to the animated head. Camera collision is enabled; that flag is not an exhaustive wall-obstruction test. The walking, idle and front portrait captures were reviewed. No new packaged build or sustained performance result is claimed.
+The UE 5.8.4 editor build passed. All 44 Python tests passed. The latest standalone third-person check loaded the separate Pardeep actor and recorded 26.71 m of player travel, 27.41 m of accumulated component-space foot motion, walking and running speeds, continuous grounded movement, and the turban attached to the animated head. Camera collision is enabled; that flag is not an exhaustive wall-obstruction test. The walking, idle, front portrait and hand-detail captures were reviewed. No new packaged build or sustained performance result is claimed.
 
-A separate commandlet reloaded all 320 saved Pardeep assets and the runtime Blueprint successfully. The project dependency audit checked 9,046 packages without missing or excluded project references. The new character has brown eyes, retained facial hair and original black folded headwear. The portrait is a likeness preview for owner review, not a claim of identity accuracy.
+A separate commandlet reloaded all 338 saved Pardeep assets and the runtime Blueprint successfully. The new character has brown eyes, retained facial hair and original black folded headwear. The portrait is a likeness preview for owner review, not a claim of identity accuracy.
+
+The skin update uses an **Optimized High** assembly: 19,283 vertices in the most detailed exported face mesh and 25,328 in the body. The saved body has 4K colour and 8K normal/surface maps; the face has 2K colour and 4K normal/surface maps. The shader retains colour variation and subsurface scattering, with adjusted highlight roughness and fine normal detail. These are generated MetaHuman materials, not a scan of the owner's hands or body.
+
+The default play/check commands now render at 100% screen percentage with full-resolution skin scattering. Use `-ScreenPercentage 67` with the play command if a lower rendering cost is needed. The saved texture and mesh inventory is in [skin_asset_audit.json](skin_asset_audit.json); actual close-up LOD and rendering settings are in [skin_runtime_quality.json](skin_runtime_quality.json).
+
+The High assembly saved its packages but the editor exited with an access violation during shutdown (`-1073741819`); [character_build.json](character_build.json) records `assembly_editor_clean_exit: false`. The independent reload succeeded. One early High runtime launch encountered a GPU device-hung/page-fault error in virtual-shadow-map rendering. A retry and the final material/camera refinement check succeeded. The failure is not considered resolved by a short successful run; sustained stability remains unverified.
 
 The initial runtime check caught a reference-pose failure despite actor movement. The generator now explicitly validates and resamples the blend space's runtime data before saving it; a fresh engine run passed after the correction.
 
-The earlier street/temporary-player preview passed manual checks of the V first/third-person toggle, Q shoulder swap, and M full-map open/close controls. The updated appearance was opened in the live preview after its automated movement and portrait checks.
+The earlier street/temporary-player preview passed manual checks of the V first/third-person toggle, Q shoulder swap, and M full-map open/close controls. The updated appearance preview was launched after its automated checks. Manual testing of the new P inspection key was interrupted when computer control was stopped; the automated run exercised both inspection cameras.
 
 ![Third-person player walking on the brick lane](third_person_walk.png)
 
 ![Reference-guided Pardeep portrait with the original black turban](pardeep_portrait.png)
 
-[Idle view](third_person_idle.png) · [Runtime result](runtime_check.json) · [World build result](build_report.json).
+[Hand detail](hand_detail.png) · [Idle view](third_person_idle.png) · [Runtime result](runtime_check.json) · [World build result](build_report.json).
 
 ## Play
 
@@ -37,11 +43,14 @@ The earlier street/temporary-player preview passed manual checks of the V first/
 | Space | Jump |
 | V | Third-person / first-person view |
 | Q | Change camera shoulder |
+| P | Cycle face close-up, sun-facing hand close-up and third-person view |
 | M | Village map |
 | Tab / Enter | Select / visit map destination |
 | T | Talk |
 | E / right mouse | Door or physics grab / throw |
 | F6 / F7 | Weather / time |
+
+This preview launcher uses `-V25NoSave`, so it does not write the normal village-life save.
 
 The spring arm retracts against camera collision. Movement turns the visible character independently of camera yaw. A three-sample locomotion blend space follows actual horizontal speed. Jump physics work; a dedicated airborne animation is not included. The HUD adds heading, speed and the material under the player's feet while retaining the village map and destination distances.
 
@@ -76,7 +85,7 @@ The separate actor is `/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep`. Its s
 .\Scripts\pardeep_appearance.ps1 -Action Character
 # Rebuild just the original cloth mesh/material after headwear edits.
 .\Scripts\pardeep_appearance.ps1 -Action Turban
-# Update cloth and eye/hair materials without repeating facial rigging.
+# Update cloth, eyes, hair and skin materials without repeating facial rigging.
 .\Scripts\pardeep_appearance.ps1 -Action Refine
 # Reload every saved Pardeep asset in a fresh editor process.
 .\Scripts\pardeep_appearance.ps1 -Action Verify

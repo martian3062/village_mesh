@@ -67,6 +67,8 @@ __pycache__/
 !/Content/V25/**
 !/Content/V3/
 !/Content/V3/**
+!/Content/Validation/
+!/Content/Validation/pilot.json
 # Generated World Partition conversion settings stay local.
 /Content/VillageMesh/Lvl_PandoriNijjaran.ini
 /Content/VillageMeshV2/Lvl_PandoriV2.ini

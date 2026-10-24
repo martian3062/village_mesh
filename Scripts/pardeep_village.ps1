@@ -1,7 +1,8 @@
 param(
     [ValidateSet('Build','Check','Play','Editor')][string]$Action='Play',
     [string]$EngineRoot='E:\U.E\UE_5.8',
-    [switch]$SkipCompile
+    [switch]$SkipCompile,
+    [ValidateRange(50,100)][int]$ScreenPercentage=100
 )
 $ErrorActionPreference='Stop'
 $Root=Split-Path $PSScriptRoot -Parent
@@ -34,7 +35,7 @@ try {
         return
     }
     $Args+=@('-game','-windowed','-ResX=1440','-ResY=900','-ForceRes',
-        '-ExecCmds=r.ScreenPercentage 67,t.MaxFPS 60,r.LumenScene.SurfaceCache.CardTexelDensityScale 50')
+        "-ExecCmds=sg.TextureQuality 3,sg.ShadingQuality 3,r.ScreenPercentage $ScreenPercentage,r.SSS.Scale 1,r.SSS.Quality 1,r.SSS.HalfRes 0,t.MaxFPS 60,r.LumenScene.SurfaceCache.CardTexelDensityScale 50")
     if($Action -eq 'Play'){
         Start-Process -FilePath $Editor -ArgumentList ($Args|ForEach-Object {'"'+$_+'"'})
         return

@@ -24,4 +24,5 @@ Assets/Farms/*.geojson -text whitespace=cr-at-eol
 Assets/Downloaded/** filter=lfs diff=lfs merge=lfs -text
 Content/V25/** -text whitespace=cr-at-eol
 Content/V3/** -text whitespace=cr-at-eol
+Content/Validation/pilot.json -text whitespace=cr-at-eol
 Content/V25/Fonts/OFL.txt whitespace=cr-at-eol,-blank-at-eol

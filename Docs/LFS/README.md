@@ -1,8 +1,8 @@
 # Published Unreal assets with Git LFS
 
-The repository includes the saved V1/V2/V2.5/V3 village assets, the separate Pardeep third-person village, their World Partition actors/objects, the generated Manpreet and reference-guided Pardeep MetaHumans, original turban geometry, pinned CC0 source textures/vegetation, and runtime data/fonts. The current snapshot contains **9,096 files / 1,777,875,292 bytes**. Of these, **9,078 files** use LFS. Duplicate content is stored once by LFS, so uploaded storage can be smaller than the file total.
+The repository includes the saved V1/V2/V2.5/V3 village assets, the separate Pardeep third-person village, their World Partition actors/objects, the generated Manpreet and reference-guided Pardeep MetaHumans, original turban geometry, pinned CC0 source textures/vegetation, and runtime data/fonts. The current snapshot contains **9,115 files / 1,943,686,355 bytes**. Of these, **9,096 files** use LFS. Duplicate content is stored once by LFS, so uploaded storage can be smaller than the file total.
 
-The largest file is `Content/MetaHumanPilot/Pardeep/Characters/MH_Pardeep.uasset` (144,975,163 bytes). It is stored as an LFS object; Git contains its small pointer. Existing history is preserved without a migration or force push.
+The largest file is `Content/MetaHumanPilot/Pardeep/Characters/MH_Pardeep.uasset` (144,975,169 bytes). It is stored as an LFS object; Git contains its small pointer. Existing history is preserved without a migration or force push.
 
 ## Clone and open
 
@@ -28,6 +28,7 @@ Use a licensed Unreal Engine **5.8.4** installation to build `rural_pardeepEdito
 | `Content/MetaHumanPilot` | Generated Manpreet and Pardeep characters and assembled assets, subject to applicable Epic terms, **not MIT**. |
 | Exact pinned files under `Assets/Downloaded` | Poly Haven CC0, checked against `textures.lock.json` and `models.lock.json`. |
 | `Content/V25`, `Content/V3` | Runtime copies of authored/geographic inputs and the SIL OFL Gurmukhi font. |
+| `Content/Validation/pilot.json` | Exact runtime route and pilot-room destination data read by the explorer and diagnostics; geographic attribution is retained. |
 
 The [asset manifest](assets.json) records the exact file allowlist, SHA-256, size, source group and LFS status. [Third-party notices](../../THIRD_PARTY_NOTICES.md) retain the relevant attribution. Epic's [current MetaHuman FAQ](https://www.metahuman.com/license) permits packaging created MetaHuman assets for distribution through Fab and third-party marketplaces; the [Unreal Engine EULA](https://www.unrealengine.com/en-US/eula/unreal) still governs Epic technology and its restrictions. Publication here does not grant MIT rights to Epic material or permit using MetaHuman assets for AI training/testing. The Kaggle job remains limited to synthetic numeric controller states.
 
@@ -35,7 +36,7 @@ The old imported `Content/Village` assets and unrelated template content are exc
 
 ## Verification and future asset updates
 
-The read-only Unreal dependency audit checked **9,046 packages**, including hard/soft references and World Partition packages, with no missing or excluded project dependencies. Required installation mounts are listed in the manifest. This verifies saved package references; it is not a new clean-machine play or package test. All 320 Pardeep character assets also passed a fresh-process reload. The separate local third-person movement check and portrait are documented in [the player guide](../PardeepPlayer/README.md).
+The read-only Unreal dependency audit checked **9,064 packages**, including hard/soft references and World Partition packages, with no missing or excluded project dependencies. Required installation mounts are listed in the manifest. This verifies saved package references; it is not a new clean-machine play or package test. All 338 Pardeep character assets also passed a fresh-process reload. The separate local third-person movement check and portrait are documented in [the player guide](../PardeepPlayer/README.md).
 
 Run the audit using the installed editor commandlet, then prepare and verify a new snapshot:
 

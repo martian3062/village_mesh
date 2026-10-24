@@ -12,12 +12,15 @@
 #include "Animation/BlendSpace.h"
 #include "Animation/AnimSingleNodeInstance.h"
 #include "Engine/Canvas.h"
+#include "Engine/DirectionalLight.h"
+#include "EngineUtils.h"
 #include "Materials/MaterialInterface.h"
 #include "Misc/CommandLine.h"
 #include "Misc/Parse.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 #include "HAL/FileManager.h"
+#include "HAL/IConsoleManager.h"
 #include "UnrealClient.h"
 #if WITH_EDITOR
 #include "Misc/PackageName.h"
@@ -162,9 +165,11 @@ void APardeepPlayer::SetupPlayerInputComponent(UInputComponent* Input)
     Super::SetupPlayerInputComponent(Input);
     Input->BindKey(EKeys::V,IE_Pressed,this,&APardeepPlayer::ToggleView);
     Input->BindKey(EKeys::Q,IE_Pressed,this,&APardeepPlayer::SwapShoulder);
+    Input->BindKey(EKeys::P,IE_Pressed,this,&APardeepPlayer::CycleInspection);
 }
 void APardeepPlayer::ApplyView()
 {
+    Camera->SetFieldOfView(75);
     CameraBoom->TargetArmLength=bFirstPerson?0:340;
     CameraBoom->TargetOffset=FVector(0,0,bFirstPerson?70:60);
     if(bFirstPerson)CameraBoom->SocketOffset=FVector::ZeroVector;
@@ -173,8 +178,40 @@ void APardeepPlayer::ApplyView()
     bUseControllerRotationYaw=bFirstPerson;
     GetCharacterMovement()->bOrientRotationToMovement=!bFirstPerson;
 }
-void APardeepPlayer::ToggleView(){bFirstPerson=!bFirstPerson;ApplyView();}
-void APardeepPlayer::SwapShoulder(){bRightShoulder=!bRightShoulder;ApplyView();}
+void APardeepPlayer::ToggleView(){InspectionMode=0;bFirstPerson=!bFirstPerson;ApplyView();}
+void APardeepPlayer::SwapShoulder(){InspectionMode=0;bRightShoulder=!bRightShoulder;ApplyView();}
+void APardeepPlayer::CycleInspection()
+{
+    InspectionMode=(InspectionMode+1)%3;bFirstPerson=false;ApplyView();
+    if(InspectionMode)UpdateInspectionCamera();
+}
+void APardeepPlayer::UpdateInspectionCamera()
+{
+    if(!Controller||!Body)return;
+    CameraBoom->SocketOffset=FVector::ZeroVector;CameraBoom->bEnableCameraLag=false;
+    if(InspectionMode==1)
+    {
+        CameraBoom->TargetArmLength=115;CameraBoom->TargetOffset=FVector(0,0,78);Camera->SetFieldOfView(42);
+        Controller->SetControlRotation(FRotator(-3,GetActorRotation().Yaw+180,0));
+    }
+    else if(InspectionMode==2)
+    {
+        FVector ToSun=GetActorForwardVector();
+        for(TActorIterator<ADirectionalLight> It(GetWorld());It;++It){ToSun=-It->GetActorForwardVector();break;}
+        const float Side=FVector::DotProduct(GetActorRightVector(),ToSun)>=0?1.f:-1.f;
+        const FName HandBone=Side>0?TEXT("hand_r"):TEXT("hand_l");
+        const FName FingerBone=Side>0?TEXT("middle_03_r"):TEXT("middle_03_l");
+        if(!Body->DoesSocketExist(HandBone)||!Body->DoesSocketExist(FingerBone))return;
+        const FVector Wrist=Body->GetSocketLocation(HandBone);
+        const FVector Fingertip=Body->GetSocketLocation(FingerBone);
+        const FVector Centre=(Wrist+Fingertip)*.5f;
+        // Inspect the hand facing the existing sun, without adding portrait lights.
+        const float Front=FVector::DotProduct(GetActorForwardVector(),ToSun)>=0?1.f:-1.f;
+        const FVector Away=(GetActorRightVector()*Side*.9f+GetActorForwardVector()*Front*.35f+FVector(0,0,.15f)).GetSafeNormal();
+        CameraBoom->TargetOffset=Centre-GetActorLocation();CameraBoom->TargetArmLength=60;Camera->SetFieldOfView(42);
+        Controller->SetControlRotation((-Away).Rotation());
+    }
+}
 void APardeepPlayer::UpdateSurface()
 {
     FHitResult Hit;FCollisionQueryParams Qry;Qry.AddIgnoredActor(this);Qry.AddIgnoredActor(Visual);Qry.bReturnPhysicalMaterial=true;
@@ -189,7 +226,8 @@ void APardeepPlayer::UpdateSurface()
 void APardeepPlayer::Tick(float Dt)
 {
     Super::Tick(Dt);SurfaceTimer+=Dt;
-    if(!bFirstPerson)CameraBoom->SocketOffset=FMath::VInterpTo(CameraBoom->SocketOffset,FVector(0,bRightShoulder?48:-48,8),Dt,10);
+    if(InspectionMode)UpdateInspectionCamera();
+    else if(!bFirstPerson)CameraBoom->SocketOffset=FMath::VInterpTo(CameraBoom->SocketOffset,FVector(0,bRightShoulder?48:-48,8),Dt,10);
     if(SurfaceTimer>.25f){SurfaceTimer=0;UpdateSurface();}
     // The installed walk and run clips are authored near 1.8 and 4.2 m/s.
     if(Body&&Locomotion&&Body->GetSingleNodeInstance())Body->GetSingleNodeInstance()->SetBlendSpacePosition(FVector(GetVelocity().Size2D(),0,0));
@@ -210,18 +248,30 @@ void APardeepPlayer::CheckRuntime(float Dt)
     if(Elapsed>23&&Elapsed-Dt<=23)FScreenshotRequest::RequestScreenshot(Out/TEXT("third_person_walk.png"),true,false);
     if(Elapsed>32&&Elapsed-Dt<=32)SwapShoulder();
     if(Elapsed>33&&Elapsed-Dt<=33)FScreenshotRequest::RequestScreenshot(Out/TEXT("third_person_idle.png"),true,false);
-    if(Elapsed>34)
+    if(Elapsed>34&&Elapsed<40)
     {
-        CameraBoom->TargetArmLength=115;CameraBoom->TargetOffset=FVector(0,0,78);Camera->SetFieldOfView(42);
-        CameraBoom->SocketOffset=FVector::ZeroVector;CameraBoom->bEnableCameraLag=false;
-        if(Controller)Controller->SetControlRotation(FRotator(-3,GetActorRotation().Yaw+180,0));
+        InspectionMode=1;UpdateInspectionCamera();
     }
-    if(Elapsed>36&&Elapsed-Dt<=36)FScreenshotRequest::RequestScreenshot(Out/TEXT("pardeep_portrait.png"),true,false);
-    if(Elapsed>38)
+    if(Elapsed>36&&Elapsed-Dt<=36)
+    {
+        TArray<USkeletalMeshComponent*> Parts;if(Visual)Visual->GetComponents(Parts);
+        for(auto* Part:Parts)if(Part->GetName().Equals(TEXT("Face"),ESearchCase::IgnoreCase))PortraitFaceLOD=Part->GetPredictedLODLevel();
+        FScreenshotRequest::RequestScreenshot(Out/TEXT("pardeep_portrait.png"),true,false);
+    }
+    if(Elapsed>40){InspectionMode=2;UpdateInspectionCamera();}
+    if(Elapsed>42&&Elapsed-Dt<=42)
+    {
+        if(Body)HandBodyLOD=Body->GetPredictedLODLevel();
+        FScreenshotRequest::RequestScreenshot(Out/TEXT("hand_detail.png"),true,false);
+    }
+    if(Elapsed>44)
     {
         const bool TurbanAttached=Turban&&Turban->GetAttachParent()==Body&&Turban->GetAttachSocketName()==TEXT("head");
         const bool Passed=Body&&Locomotion&&bReferenceAppearance&&TurbanAttached&&bGrounded&&bWalkingSeen&&bRunningSeen&&Travel>1200&&FootTravel>100&&CameraBoom->bDoCollisionTest;
         const FString Json=FString::Printf(TEXT("{\"passed\":%s,\"third_person\":true,\"turban_attached\":%s,\"camera_collision_enabled\":%s,\"grounded\":%s,\"walk_seen\":%s,\"run_seen\":%s,\"travel_cm\":%.2f,\"foot_motion_cm\":%.2f,\"appearance\":\"reference-guided preview; owner likeness review pending\"}"),Passed?TEXT("true"):TEXT("false"),TurbanAttached?TEXT("true"):TEXT("false"),CameraBoom->bDoCollisionTest?TEXT("true"):TEXT("false"),bGrounded?TEXT("true"):TEXT("false"),bWalkingSeen?TEXT("true"):TEXT("false"),bRunningSeen?TEXT("true"):TEXT("false"),Travel,FootTravel);
+        const auto ReadCVar=[](const TCHAR* Name){const auto* Value=IConsoleManager::Get().FindConsoleVariable(Name);return Value?Value->GetFloat():-1.f;};
+        const FString SkinJson=FString::Printf(TEXT("{\"portrait_face_lod\":%d,\"hand_body_lod\":%d,\"screen_percentage\":%.1f,\"sss_quality\":%.0f,\"sss_half_res\":%.0f,\"virtual_textures\":%.0f}"),PortraitFaceLOD,HandBodyLOD,ReadCVar(TEXT("r.ScreenPercentage")),ReadCVar(TEXT("r.SSS.Quality")),ReadCVar(TEXT("r.SSS.HalfRes")),ReadCVar(TEXT("r.VirtualTextures")));
+        FFileHelper::SaveStringToFile(SkinJson,*(Out/TEXT("skin_runtime_quality.json")));
         FFileHelper::SaveStringToFile(Json,*(Out/TEXT("runtime_check.json")));
         UE_LOG(LogTemp,Display,TEXT("PARDEEP_RUNTIME %s"),*Json);bCheck=false;FPlatformMisc::RequestExitWithStatus(false,Passed?0:1);
     }
@@ -235,7 +285,7 @@ void APardeepVillageHUD::DrawHUD()
     DrawRect(FLinearColor(.018f,.045f,.045f,.9f),26,112,380,88);
     DrawText(TEXT("PARDEEP  /  APPEARANCE PREVIEW"),Accent,40,122,nullptr,.95f);
     DrawText(Player->SurfaceName+FString::Printf(TEXT("  |  %.1f km/h"),Player->GetVelocity().Size2D()*.036f),Text,40,148,nullptr,.9f);
-    DrawText(TEXT("V camera view   Q swap shoulder   Space jump"),Text,40,174,nullptr,.8f);
+    DrawText(TEXT("V camera   Q shoulder   P face / hands   Space jump"),Text,40,174,nullptr,.72f);
     const float Yaw=GetOwningPlayerController()->GetControlRotation().Yaw;
     // Project axes are +X east and +Y north, unlike Unreal's conventional compass.
     const float Bearing=FMath::Fmod(450.f-Yaw,360.f);

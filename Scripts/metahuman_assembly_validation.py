@@ -80,4 +80,4 @@ def validate_assembly(profile, report, not_before, save_packages=None):
     report['assembled_blueprints'] = blueprints
     report['fresh_assembled_blueprints'] = fresh
     report['saved_asset_count'] = len(assets)
-    report['scope'] = 'Optimized Medium assembly; no PIE, locomotion, packaging or performance claim'
+    report['scope'] = 'Optimized '+profile.get('quality','Medium')+' assembly; no PIE, locomotion, packaging or performance claim'
