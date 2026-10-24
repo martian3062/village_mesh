@@ -1,0 +1,722 @@
+VILLAGE_MESH V2.5 — PUNJABI NPCs, TINY MODELS, APPAREL, FARMS AND ROADS
+Pandori Nijjaran, Punjab | Plan date: 23 October 2026 (IST)
+
+This version extends the V2 hyperrealism plan. It is a proposed design, not an
+implemented release or a report of measured performance.
+
+Interpretation of the request:
+"100k to 1m" means total model parameters. The recommended NPC configuration
+uses 319,600 parameters across two shared models. An optional experimental
+language decoder raises the combined total to 915,696. All learned NPC
+components, embeddings and output heads are included in those totals.
+
+1. THE V2.5 GOAL
+
+Create a contemporary Punjabi village in which people have places to go,
+appropriate clothing, understandable short conversations and activities that
+match the farms, roads, weather and season.
+
+Retain the V2 foundation:
+- The 1.28 km × 1.28 km mapped area and existing 821 building shells.
+- A detailed 150–250 m pilot street with 12–20 reviewed frontages.
+- Two or three enterable spaces.
+- Separate authored content, regeneration overrides, HLODs and package checks.
+- A proposed 30 FPS playable target on the documented RTX 4050 laptop,
+  subject to measurement.
+
+Add a connected pilot:
+- Eight initially active named fictional villagers; scale after profiling.
+- Three to five adjoining field parcels.
+- One paved connector, one built-up lane and one field-access track.
+- One tractor/trolley route, with turning and passing space.
+- A reference-based wardrobe and a small set of animals if performance allows.
+- One consistent scene date and dry/rainy variants.
+
+These are scope proposals, not observations about the real village.
+Real residents, occupations, parcel ownership and private interiors must not
+be invented and presented as factual.
+
+2. THE MODEL LIMIT: WHAT IS PRACTICAL
+
+A 100k–1m-parameter network can be useful for a narrow learned decision task.
+It does not establish broad language understanding or fluent Punjabi dialogue.
+
+No off-the-shelf Punjabi conversational model with verified total parameters
+within this limit was established during this review.
+
+Use:
+- Tiny learned models for action ranking and optional intent classification.
+- StateTree, navigation and rules for valid execution.
+- Structured per-person memory for identity and continuity.
+- Reviewed Punjabi lines and recorded voices for dependable dialogue.
+- An optional custom micro language model only as a gated experiment.
+
+A model name is not a parameter audit. For example, the official configuration
+of TinyStories-1M has 50,257 vocabulary entries and width 64. Its token
+embedding alone therefore contains 3,216,448 parameters, exceeding this cap.
+Do not adopt it on the strength of the "1M" name. [R1]
+
+Quantization changes storage and computation; it does not reduce the number
+of parameters. Frozen embeddings still count. Do not hide a larger ASR, TTS,
+translation, planning or emotion model behind the small headline model.
+
+The budget here covers deployed learned NPC models. Animation assets, dialogue
+text, audio files and deterministic game logic are separate resources and
+must still be included in memory/performance measurements.
+
+3. EXACT MODEL OPTIONS
+
+A. Recommended action policy: 121,520 parameters
+
+Architecture:
+64 normalized state features
+-> Linear 64 to 256 + ReLU
+-> Linear 256 to 256 + ReLU
+-> Linear 256 to 128 + ReLU
+-> Linear 128 to 48 action logits
+
+Biases are enabled. ReLU has no learned parameters.
+
+Layer counts:
+64 × 256 + 256       = 16,640
+256 × 256 + 256      = 65,792
+256 × 128 + 128      = 32,896
+128 × 48 + 48        =  6,192
+Total               = 121,520
+
+Proposed 64-feature groups:
+- 8 time/weather/environment features;
+- 8 needs and short-term status values;
+- 8 current-task/schedule features;
+- 8 local interaction availability features;
+- 8 navigation/destination summaries;
+- 8 relationship and recent-event summaries;
+- 8 task/resource/farm-state summaries;
+- 8 individual preferences and role capabilities.
+
+Define an exact schema, normalization, missing-value behaviour and version.
+Do not encode social stereotypes as capabilities. Occupation and skills are
+explicit authored attributes for each character.
+
+The 48 outputs are high-level action IDs, not text or animation frames.
+Begin with a smaller implemented action subset and mask unused outputs.
+Examples include go to task, inspect plot, wait, greet, converse, carry an item,
+sit, enter shelter, open shop, queue, yield, return home and replan.
+
+B. Optional Punjabi text-intent model: 198,080 parameters
+
+Architecture:
+259-token UTF-8 byte vocabulary
+-> Embedding 259 × 96
+-> single-layer, unidirectional GRU, input 96, hidden 192
+-> Linear 192 to 32 intent classes
+
+Count:
+Embedding           = 24,864
+GRU with two biases = 167,040
+Classifier          =  6,176
+Total               = 198,080
+
+The vocabulary is 256 byte values plus three reserved tokens.
+Byte coverage can represent Gurmukhi and Roman Punjabi; it does not prove
+that the model understands either.
+
+Use a fixed maximum input length, for example 256 bytes, with a documented
+padding/length policy. Ask for a shorter supported question when input is too
+long rather than silently discarding its meaning.
+
+Support a limited set of intents: greeting, farewell, directions, asking
+whether a shop is open, asking about work, weather, help, acknowledgement,
+thanks and an explicit unsupported/unknown route.
+
+Recommended combined configuration:
+Action policy + intent model = 319,600 parameters.
+FP32 weight values alone are approximately 1.22 MiB.
+Runtime libraries, buffers, activations, audio and assets are additional.
+
+C. Optional recurrent policy replacement: 116,208 parameters
+
+GRU(input 64, hidden 160, one layer, biases enabled)
++ Linear 160 to 48.
+
+Use this instead of the MLP only if temporal behaviour improves in evaluation.
+Do not deploy both policies without a specific reason.
+GRU policy + intent model = 314,288 parameters.
+Keep a separate hidden state per NPC and deliberately reset or restore it.
+
+D. Optional actual language-model experiment: 596,096 parameters
+
+This is an untrained custom design, not a pretrained Punjabi model.
+
+Architecture:
+- 259-token byte vocabulary;
+- width 128;
+- 256 learned position embeddings;
+- 4 causal decoder blocks;
+- 4 attention heads;
+- QKV and attention output projections, with biases;
+- feed-forward width 256, with biases;
+- two affine LayerNorms per block and one final LayerNorm;
+- token embedding tied to output projection, with no output bias.
+
+Count:
+Token embedding: 259 × 128                 =  33,152
+Position embedding: 256 × 128              =  32,768
+One decoder block                         = 132,480
+Four blocks                               = 529,920
+Final LayerNorm                           =     256
+Total                                     = 596,096
+
+Action policy + intent model + micro decoder:
+121,520 + 198,080 + 596,096 = 915,696 parameters.
+Headroom below one million = 84,304 parameters.
+FP32 weights alone are approximately 3.49 MiB.
+
+Purpose:
+Explore short, tightly constrained Punjabi utterances conditioned on a small
+state summary. Keep identity, places, prices and quest facts in structured
+slots; the model must not invent authoritative world facts.
+
+Limits:
+256 byte tokens are not 256 Punjabi words. Gurmukhi characters often require
+multiple bytes. Keep prompts and output short, with external long-term memory.
+Validate UTF-8, allowed topics, slot values and output length. Reject failed
+outputs and use a reviewed line.
+
+Ship the curated-dialogue mode first. Enable the decoder only if native-speaker
+review and runtime tests justify it. There is no promised fluency or accuracy.
+
+4. THE NPC EXECUTION LOOP
+
+Use the following responsibilities:
+
+World state:
+Time, weather, plot state, shop opening, available tools, doors, road occupancy
+and valid destinations.
+
+Character state:
+Stable ID, home, capabilities, preferences, current commitment, fatigue,
+relationship records and a short recent-event history.
+
+Decision layer:
+Schedules and utility/rule logic propose valid tasks. The tiny policy ranks
+eligible high-level choices. A validity mask, cooldowns and minimum task
+duration prevent impossible actions and rapid switching.
+
+Execution layer:
+StateTree/behaviour tasks, NavMesh paths, Smart Object reservations, animation
+and interaction components perform the action. The neural network never
+directly changes arbitrary world objects or executes generated code.
+
+Dialogue layer:
+The intent classifier, if enabled, identifies a supported request. The dialogue
+manager chooses a reviewed line using actual world state and allowed slots.
+Optional micro-LM output passes validation before it can be displayed.
+
+Failure path:
+Missing model, low confidence, invalid output, unavailable target or an
+all-invalid action mask -> deterministic idle/replan/clarification behaviour.
+
+Examples of hard prerequisites:
+- Do not start work on a plot without an assigned job.
+- Do not sit in an occupied interaction slot.
+- Do not claim that a closed shop is open.
+- Do not cross into a reserved vehicle passage.
+- Do not operate a vehicle before reaching its interaction point.
+- Release a task reservation when an actor streams out or the task is cancelled.
+
+5. PUNJABI PERSONALITY AND LANGUAGE
+
+Give each fictional villager an individual profile, rather than using a
+single "Punjabi personality."
+
+Proposed differences:
+- Talkativeness and willingness to stop.
+- Familiarity with the player.
+- Daily commitments and preferred gathering places.
+- Work responsibilities, interests and available tools.
+- Greeting style, vocabulary and language preference.
+- How quickly the character resumes an interrupted task.
+
+Keep religion, occupation and behaviour independent of appearance.
+Do not infer caste, occupation or temperament from clothing, name or turban.
+Include contemporary everyday life alongside traditional forms.
+
+Use a local reviewer for Pandori/Doaba vocabulary and speech patterns.
+Start with clear Punjabi, then introduce locally reviewed variation.
+Do not manufacture an exaggerated accent as a substitute for local speech.
+
+Dialogue data fields:
+line_id, intent, speaker_style, context_requirements, permitted_slots,
+Gurmukhi_text, Roman_transliteration, English_gloss, audio_id,
+cooldown, reviewer, review_status.
+
+Illustrative lines for review:
+- ਸਤ ਸ੍ਰੀ ਅਕਾਲ ਜੀ।
+  Sat Sri Akal ji. / A respectful greeting.
+- ਤੁਸੀਂ ਕਿੱਥੇ ਜਾਣਾ ਹੈ?
+  Tusi kithe jana hai? / Where would you like to go?
+- ਮੀਂਹ ਆ ਰਿਹਾ ਹੈ, ਅੰਦਰ ਆ ਜਾਓ।
+  Meenh aa riha hai, andar aa jao. / It is raining; come inside.
+- ਦੁਕਾਨ ਅਜੇ ਬੰਦ ਹੈ।
+  Dukan aje band hai. / The shop is still closed.
+- ਮੈਨੂੰ ਇਸ ਬਾਰੇ ਪਤਾ ਨਹੀਂ।
+  Mainu is bare pata nahi. / I do not know about this.
+
+These examples are proposed lines, not a locally validated dialogue corpus.
+Roman transliteration has variation; choose and document a consistent scheme.
+
+Use a properly licensed Gurmukhi-capable font and test shaping, punctuation,
+line wrapping and fallback in the packaged game. Normalize text consistently
+without stripping meaningful vowel signs.
+
+For speech, begin with consented recorded lines. Use dialogue selection or
+typed input. General speech recognition and neural TTS are not included in
+the parameter budget. Arbitrary generated text can remain subtitle-only.
+
+6. A SMALL CAST THAT ACTUALLY DOES THINGS
+
+Example fictional cast, assigned individually after local reference review:
+- A person with a farm-inspection and irrigation-check schedule.
+- A shopkeeper with opening, stocking and conversation tasks.
+- A vehicle operator with a farm-to-village route.
+- A teacher or worker commuting at a defined time.
+- A student or young adult going between appropriate destinations.
+- A resident doing household errands.
+- A resident meeting others in a courtyard.
+- A visitor who asks directions.
+
+Roles are examples, not a demographic claim about Pandori.
+
+For each character author:
+home, daily activity windows, destination IDs, alternate rainy-day tasks,
+outfit, voice set, relationship facts and allowed interactions.
+
+A day should contain meaningful transitions:
+leave home -> travel -> work or visit -> pause -> another destination -> return.
+Task timing should vary within plausible windows, with commitments persisting
+through player movement and streaming.
+
+Use observable microbehaviours:
+look toward the speaker, pause before replying, turn naturally, yield at a
+narrow passage, wait for a free seat, put down a carried object before sitting.
+Prioritize clean animation and contact over adding more decision outputs.
+
+7. APPAREL AND CLOTH
+
+Build a modular wardrobe from contemporary local references.
+
+Candidate garment families:
+- Kurta/pajama and salwar/kameez combinations.
+- Shirts, T-shirts, trousers and jeans.
+- Sweaters, cardigans, jackets and shawls for appropriate weather.
+- Turbans, patkas, dupattas or other headwear when appropriate to the specific
+  character; also characters without these items.
+- Jutti, sandals, shoes and task-appropriate footwear.
+
+Include variation in silhouette, fit, fabric thickness, stitching, wear and
+accessories. Avoid changing only the colour of one garment.
+Keep ceremonial clothing tied to a specific event rather than ordinary work.
+
+Runtime implementation:
+- Rig garments to compatible character skeletons.
+- Use body-section hiding where needed to prevent underlying mesh clipping.
+- Skin fitted clothing normally.
+- Reserve Chaos Cloth for selected loose sections near the player.
+- Use simpler or skinned fallbacks at distance.
+- Test animation and cloth transitions together.
+
+Epic's Clothing Tool supports cloth assets, painted motion constraints and
+physics-asset collision. It provides the simulation tools, not the garment
+patterns or culturally accurate clothing. [R4]
+
+Test walking, sitting on a charpai or chair, bending, carrying, turning and
+vehicle entry. Prevent cloth/body intersections and unstable simulation.
+Keep tightly wrapped headwear stable; do not turn it into a flapping scarf.
+
+Use the common weather wind to drive cloth response, with local shelter and
+material-specific damping. The existing Well trace can remain gust modulation.
+It does not replace Chaos Cloth or provide a fabric simulation.
+
+Clothing should change logically:
+a character may add a shawl for cold conditions or use a rain-related item
+when authored. Do not randomly swap outfits every time an NPC streams in.
+
+8. FARM PARCELS AS PERSISTENT PLACES
+
+Make the pilot's 3–5 parcels real scene objects with stable state.
+
+Proposed fields:
+plot_id, polygon, access_point, assigned_jobs, crop_type, variety_if_known,
+sowing_date, growth_stage, irrigation_state, residue_state, soil_visual_state,
+machinery_route, source, confidence.
+
+Visual and functional layers:
+- Field boundaries and bunds.
+- An accessible gate or track connection.
+- Irrigation channel, pipe or tubewell feature where supported by reference.
+- Crop rows or planting pattern appropriate to the selected crop.
+- Headland/turning space for machinery.
+- Footpaths, small edge vegetation and reference-based utility structures.
+- Distinct soil, residue and water states.
+
+Use instanced crop clusters and distance-based detail. Animate near vegetation
+selectively; do not create a full physics actor for every plant.
+
+The plot state drives the job:
+inspection, irrigation check, carrying supplies, preparing land, operating
+a machine, harvesting or residue management. An NPC's dialogue and animation
+must agree with that state.
+
+9. ONE COHERENT SEASON
+
+Make date and season explicit. Do not combine every attractive crop stage
+into the same timeless field scene.
+
+PAU's Kharif 2026 and Rabi 2025–26 publications document multiple Punjab crops
+and rotations, with variety-dependent timing. Use them as reference for a
+simplified visual calendar, then confirm local appearance with dated photos.
+The retrieved Rabi document is 2025–26, not a verified 2026–27 edition. [R5, R6]
+
+For a late-October demonstration, a proposed mix is:
+- A parcel with maturing rice where local reference supports it.
+- A harvested parcel with managed residue.
+- A prepared parcel awaiting the next crop.
+- An additional fodder or other locally evidenced plot.
+
+This is an art/simulation proposal, not observed ownership or crop state.
+Avoid mature wheat everywhere in an October scene. PAU describes wheat sowing
+windows around late October/November depending on variety. [R6]
+
+PAU also documents alternatives to residue burning, including residue
+management and suitable seeding approaches. Include those possibilities;
+do not make all fields burnt as a shortcut for rural authenticity. [R5]
+
+Other selectable presets can show winter growth and spring maturity.
+A fast-forward or season change should update the entire world consistently:
+crop stage, activities, clothing, daylight, ambience and soil appearance.
+
+Keep crop progression on a separate simulation timescale. Walking for five
+minutes must not automatically turn seedlings into mature crops.
+This remains an illustrative farming simulation, not a yield-prediction model.
+
+10. RURAL INDIAN ROADS WITH LOCAL VARIATION
+
+Create three distinct road profiles from actual local reference.
+
+A. Village connector
+Paved surface where observed, with road edge, shoulder or verge, repaired
+sections, adjacent drainage and realistic junction transitions.
+
+B. Built-up village lane
+Concrete, interlocking paving, brick or asphalt according to evidence.
+Connect to doorsteps, courtyards and side drains. Include drain covers and
+entrance crossings where present.
+
+C. Field-access track
+Compacted soil or granular material where observed, with wheel tracks,
+field entrances, edge vegetation and weather-dependent surface appearance.
+
+Measure local widths and cross-sections. Do not assign an official standard
+width to an existing lane and present it as a measurement. Do not assume every
+road belongs to PMGSY.
+
+The Ministry of Rural Development's published PMGSY explanation identifies
+traffic, soil, rainfall and site drainage as design considerations. It is useful
+for road-component vocabulary, not proof of this village's road dimensions or
+current engineering compliance. [R7]
+
+Important visual details:
+- Continuous road/ground transitions.
+- Crossfall or local drainage that fits the observed surface.
+- Culverts or drain crossings where supported.
+- Plausible patch repairs and edge wear.
+- Texture scale that matches aggregate, paving and tyre marks.
+- Maintained sections as well as worn sections.
+- Road furniture, markings and signs only where present or clearly inferred.
+
+Avoid making every rural road broken, muddy, littered or unmarked.
+Build a locally specific place rather than a generic rural stereotype.
+
+Behaviour:
+- Author left-side travel for the intended local traffic simulation.
+- At a narrow lane, use passing places and yielding reservations.
+- Check the tractor/trolley swept path at corners and gates.
+- Pedestrians wait or use a suitable edge when a vehicle occupies the passage.
+- Vehicles do not clip walls, drains, people or crop boundaries.
+- Use wetness/passability flags to influence speed and route selection,
+  without claiming a calibrated road-vehicle physics model.
+
+11. COUPLE THE SYSTEMS
+
+The strongest realism comes from agreement between systems.
+
+Example: rain begins while a character is checking a plot.
+1. Weather state changes.
+2. The scheduled task is reconsidered at an appropriate interruption point.
+3. The NPC finishes or safely cancels the current interaction.
+4. The policy ranks valid alternatives, including shelter.
+5. StateTree navigates to an available sheltered position.
+6. Rain stops appearing through the roof; local cloth wind is reduced.
+7. A reviewed Punjabi line acknowledges the rain.
+8. The plot and road visual states change gradually.
+9. The character resumes or reschedules the job when conditions permit.
+
+Example: tractor reaches a narrow lane.
+1. Vehicle requests the passage.
+2. Road controller determines who can proceed.
+3. NPCs yield or wait at valid locations.
+4. A short appropriate callout can play.
+5. Animation, wheel contact and engine sound match movement.
+6. The passage reservation is released when the vehicle clears it.
+
+The models choose among meaningful possibilities; geometry, rules and world
+state make the result physically and socially coherent.
+
+12. UNREAL RUNTIME DESIGN
+
+Use offline training and packaged local inference.
+
+Proposed components:
+- VillageNPCSubsystem: persistent identities, schedules and event memory.
+- TinyNPCPolicyService: model loading, feature snapshots and bounded inference.
+- PunjabiDialogueManager: intents, line selection, slots and voice playback.
+- WardrobeComponent: outfit assembly, body visibility and cloth quality.
+- FarmPlotComponent: parcel state and available work.
+- RuralRoadController: passages, vehicle paths and yield points.
+- Existing WeatherManager: common weather/wind state.
+
+These are proposed names, not existing implemented classes.
+
+Epic NNE exposes CPU inference and documents shared immutable model weights,
+separate instances and caller-owned buffers. CPU inference is a sensible
+starting point while the laptop GPU renders the scene. [R2]
+
+Integration:
+1. Export the selected trained models and preprocessing specification.
+2. Import and test through the installed NNE CPU runtime.
+3. Verify model creation, supported operators, tensor shapes and run results.
+4. Snapshot state on the game thread.
+5. Run a bounded worker task on plain buffers.
+6. Apply validated, non-stale results on the game thread.
+7. Preserve deterministic fallbacks.
+
+Do not call the same mutable model instance concurrently. Serialize work or
+use separately owned instances sharing weights. Keep buffers alive and
+unchanged throughout inference.
+
+Suggested starting scheduling choices, all subject to measurement:
+- Immediate collision/navigation handling stays in deterministic game logic.
+- Near-NPC high-level decisions at roughly 2–5 Hz, staggered or batched.
+- Distant NPCs use low-frequency schedule updates.
+- Intent inference runs when the player submits text.
+- Experimental text generation runs for one active conversational speaker,
+  with cancellation, length and queue limits.
+
+Tiny parameter count does not guarantee cheap autoregressive decoding.
+Do not run language generation for every NPC every frame.
+
+Prove a packaged Windows build early. Enabled NNE/ORT plugins in the README
+are not evidence that these particular models already run successfully.
+
+13. TRAINING AND DATA
+
+A. Behaviour model
+Begin with a deterministic reference controller and human-authored scenarios.
+Record state, eligible actions, chosen action and outcome across different
+times, routes, weather and blocked interactions.
+
+Train a policy to imitate the reviewed choices. Compare it with the reference
+controller. Keep the learned version only if it improves variety, task
+selection or authoring effort without reducing correctness.
+
+B. Intent model
+Collect reviewed examples from multiple Punjabi-speaking authors:
+Gurmukhi, Roman Punjabi, spelling variants, short code-switching and unsupported
+requests. Label only the supported intents.
+
+Normalize inputs consistently. Keep unknown requests and length limits visible.
+Use a clarification menu when confidence is inadequate.
+
+C. Optional micro language model
+Train on original or appropriately licensed short Punjabi utterances with
+structured state prefixes. Use a small reviewed vocabulary of places and
+templates. Evaluate on genuinely held-out phrasing and contexts.
+
+Training a tiny decoder does not itself demonstrate conversational quality.
+If it repeats, produces malformed text or adds incorrect facts, use the
+reviewed line library and keep the experiment out of the release.
+
+Splits:
+Hold out authors/paraphrase families for language.
+Hold out routes, schedule combinations, weather cases and simulation seeds
+for behaviour. Avoid random splits of adjacent or near-duplicate log records.
+
+No larger runtime model or paid API is required by this plan.
+Larger offline tools are not assumed necessary for the training pipeline.
+
+14. MODEL VERIFICATION AND PARAMETER ACCOUNTING
+
+Maintain a generated manifest containing:
+architecture version, all learned parameter counts, vocabulary, feature schema,
+model hash, export format/opset, preprocessing version, training data version,
+evaluation split and runtime compatibility result.
+
+Check PyTorch -> exported model -> packaged Unreal output parity.
+For GRUs, use a verified exporter and test sequence/hidden-state handling;
+PyTorch/ONNX gate conventions must not be assumed interchangeable. [R3]
+
+Confirm tied embedding/output weights remain handled correctly after export.
+Report serialized storage as well as unique learned parameters. If an exporter
+duplicates a tied tensor, count and report the physical representation too.
+Even one extra copy of the 33,152-entry decoder embedding would keep this
+proposed combined design under one million, but further changes need a recount.
+
+Release configurations:
+- Basic: 121,520-parameter policy + dialogue choices.
+- Recommended: 319,600 parameters with text intents.
+- Research: 915,696 parameters including the optional decoder.
+
+The counts are architectural calculations, independently checked in this plan.
+They are not counts of a trained checkpoint already delivered.
+
+15. ASSETS, SAVE STATE AND REPRODUCIBILITY
+
+Persist:
+NPC identity, schedule, current task, relationships, outfit, plot state,
+door state and relevant interaction state.
+
+On streaming:
+Release transient reservations and references.
+Save meaningful state.
+Restore consistently without spawning duplicate characters or jobs.
+Do not rely on raw actor pointers as permanent identity.
+
+Keep new authored content in the reviewed namespace established by V2.
+Update the dependency audit and asset distribution process.
+Version the model files, reference manifests and authored assets so a clean
+clone can reproduce the pilot.
+
+Proposed new data files:
+Assets/NPC/personas.json
+Assets/NPC/schedules.json
+Assets/NPC/action_schema.json
+Assets/Dialogue/punjabi_lines.jsonl
+Assets/Models/npc_model_manifest.json
+Assets/Wardrobe/outfits.json
+Assets/Farms/parcels.geojson
+Assets/Farms/crop_calendar.json
+Assets/Roads/road_profiles.json
+Assets/Routes/tractor_route.json
+Docs/V25_ACCEPTANCE.txt
+
+Keep measured data, reviewed local observations and procedural inference
+separately labelled.
+
+16. IMPLEMENTATION ORDER
+
+Milestone 1 — World and character contracts
+Define scene date, eight characters, three to five parcels, road types and
+the exact action/state schemas. Build deterministic schedules and fallbacks.
+
+Milestone 2 — One complete daily activity
+Implement one character leaving home, reaching a plot or shop, doing a task,
+responding to an interruption and returning. Add a reviewed outfit and voice.
+
+Milestone 3 — Clothes, farms and roads
+Finish the connected pilot's wardrobe, field boundaries, crop state,
+drainage, surfaces and tractor passage. Build/update HLODs and profile.
+
+Milestone 4 — Tiny policy
+Train and export the 121,520-parameter policy.
+Compare against deterministic behaviour and prove packaged CPU inference.
+
+Milestone 5 — Punjabi dialogue
+Ship curated Gurmukhi/romanized dialogue and recorded lines.
+Add the 198,080-parameter intent model only when evaluated on held-out inputs.
+
+Milestone 6 — Combined realism pass
+Add weather responses, cloth fallbacks, spatial audio, field work and
+pedestrian/tractor interactions. Validate state across streaming.
+
+Milestone 7 — Optional micro-LM
+Train/test the 596,096-parameter decoder as a separate experiment.
+Ship it only if quality, factual consistency and latency pass review.
+V2.5 can ship successfully with the recommended 319,600-parameter mode.
+
+Milestone 8 — Release evidence
+Package, run a clean-environment check, record matched dry/rainy traversals,
+and publish limitations and measured results.
+
+17. ACCEPTANCE CRITERIA
+
+Model budget:
+Every deployed learned NPC component is counted, including embeddings.
+The selected configuration stays under the agreed one-million limit.
+
+Behaviour:
+In the defined test suite, no invalid task passes the execution validator.
+Test all-invalid masks, unavailable targets, interruptions and failed inference.
+Compare repetitive behaviour and task completion against the rule baseline.
+
+Punjabi:
+Native-speaker review of pronunciation, wording, Gurmukhi rendering and tone.
+Report intent macro-F1, confusion matrix and unsupported-input false acceptance.
+For generated text, report invalid/rejected output rates and local review;
+do not replace those measurements with a claimed "realism percentage."
+
+Clothing:
+Check walking, sitting, bending, carrying and vehicle entry at all relevant LODs.
+No release-blocking clipping, explosions or outfit loss after streaming.
+
+Farms:
+Each plot has a plausible date/stage/history. Work and dialogue agree with it.
+Access paths and machinery turning space remain usable.
+
+Roads:
+Measure and review representative cross-sections. Test junctions, drainage
+crossings, tractor clearance, yielding and pedestrian routes.
+
+Performance:
+Record frame-time distributions, CPU inference time, queue delay, game-thread
+overhead, memory and cloth/crowd cost.
+Keep V2's three repeatable traversals and 30-minute session.
+The prior 30 FPS objective is a target, not a measured result.
+
+Delivery:
+A packaged build starts without authoring-only dependencies, missing models
+or locally untracked assets. A missing model still leaves a usable village.
+
+18. SOURCES AND EVIDENCE
+
+[R1] TinyStories-1M official configuration; vocabulary and embedding width
+https://huggingface.co/roneneldan/TinyStories-1M/blob/main/config.json
+
+[R2] Epic Unreal Engine NNE overview; CPU interfaces and model instances
+https://dev.epicgames.com/documentation/unreal-engine/neural-network-engine-overview-in-unreal-engine?application_version=5.8
+
+[R3] PyTorch GRU reference
+https://docs.pytorch.org/docs/stable/generated/torch.nn.GRU.html
+
+[R4] Epic Clothing Tool / Chaos Cloth
+https://dev.epicgames.com/documentation/en-us/unreal-engine/clothing-tool-in-unreal-engine
+
+[R5] Punjab Agricultural University — Kharif 2026 practices
+https://pau.edu/content/ccil/pf/pp_kharif.pdf
+
+[R6] Punjab Agricultural University — retrieved Rabi 2025–26 practices
+https://pau.edu/content/ccil/pf/pp_rabi.pdf
+
+[R7] Ministry of Rural Development / PIB — rural-road design considerations,
+published 18 September 2020; terminology/reference, not a current design audit
+https://www.pib.gov.in/PressReleasePage.aspx?PRID=1656170&lang=2&reg=48
+
+Base project evidence:
+README(20261023-131009).md and VALIDATION.md supplied by the user.
+Inherited plan:
+Village_Mesh_V2_Hyperrealism_Plan_20261023.txt.
+
+The scene, model configurations, component names, population sizes and
+milestones above are proposals. Exact parameter arithmetic was checked.
+No trained models, Unreal modifications or new performance results are
+claimed as completed.

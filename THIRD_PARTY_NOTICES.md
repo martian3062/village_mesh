@@ -66,3 +66,16 @@ https://www.openstreetmap.org/copyright.
 Poly Haven `tree_small_02` and `shrub_01`, geometry and textures, CC0 1.0.
 Download paths and checksums are pinned in `Assets/models.lock.json`.
 Public village photos/videos are reference links only and are not redistributed.
+
+## V2.5 Gurmukhi font
+
+Noto Sans Gurmukhi, copyright The Noto Project Authors, SIL Open Font License
+1.1. The font and original OFL text are included under `Assets/Fonts` and staged
+with the V2.5 package. The exact source commit, URL and SHA256 are recorded in
+`Assets/v25_assets.lock.json`. Source: https://github.com/google/fonts/tree/main/ofl/notosansgurmukhi.
+
+The V2.5 action policy was trained from this repository's original synthetic
+controller and is distributed under the repository MIT license. No external
+pretrained language, speech-recognition or voice model is included. The current
+character/vehicle prototype geometry is original procedural code. Quaternius
+assets were researched but not acquired or included after a download quota error.

@@ -1,0 +1,85 @@
+﻿{
+    "run_id":  "packaged_rendered",
+    "exe_sha256":  "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+    "fps_cap":  60,
+    "cvars":  "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+    "gpu_scope":  "whole adapter, includes other applications",
+    "samples":  [
+                    {
+                        "seconds":  0.10672459999999999,
+                        "adapter_mib_temperature_c":  "330, 62"
+                    },
+                    {
+                        "seconds":  10.2143841,
+                        "adapter_mib_temperature_c":  "3682, 77"
+                    },
+                    {
+                        "seconds":  20.278622199999997,
+                        "adapter_mib_temperature_c":  "3682, 79"
+                    },
+                    {
+                        "seconds":  30.3763623,
+                        "adapter_mib_temperature_c":  "3680, 80"
+                    },
+                    {
+                        "seconds":  40.4744172,
+                        "adapter_mib_temperature_c":  "3680, 80"
+                    },
+                    {
+                        "seconds":  50.586352899999994,
+                        "adapter_mib_temperature_c":  "3680, 79"
+                    },
+                    {
+                        "seconds":  60.6689249,
+                        "adapter_mib_temperature_c":  "3680, 80"
+                    },
+                    {
+                        "seconds":  70.7787037,
+                        "adapter_mib_temperature_c":  "3680, 82"
+                    },
+                    {
+                        "seconds":  80.8507865,
+                        "adapter_mib_temperature_c":  "3680, 80"
+                    },
+                    {
+                        "seconds":  90.9611702,
+                        "adapter_mib_temperature_c":  "3680, 83"
+                    },
+                    {
+                        "seconds":  101.0434801,
+                        "adapter_mib_temperature_c":  "3680, 85"
+                    },
+                    {
+                        "seconds":  111.10014609999999,
+                        "adapter_mib_temperature_c":  "3680, 85"
+                    },
+                    {
+                        "seconds":  121.1614773,
+                        "adapter_mib_temperature_c":  "3680, 81"
+                    },
+                    {
+                        "seconds":  131.2322007,
+                        "adapter_mib_temperature_c":  "3680, 83"
+                    },
+                    {
+                        "seconds":  141.3268192,
+                        "adapter_mib_temperature_c":  "3680, 80"
+                    },
+                    {
+                        "seconds":  151.44385599999998,
+                        "adapter_mib_temperature_c":  "3680, 87"
+                    },
+                    {
+                        "seconds":  161.6085146,
+                        "adapter_mib_temperature_c":  "3681, 85"
+                    },
+                    {
+                        "seconds":  171.6890956,
+                        "adapter_mib_temperature_c":  "3658, 86"
+                    },
+                    {
+                        "seconds":  181.78496909999998,
+                        "adapter_mib_temperature_c":  "3673, 85"
+                    }
+                ]
+}

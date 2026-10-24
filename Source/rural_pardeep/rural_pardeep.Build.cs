@@ -15,6 +15,7 @@ public class rural_pardeep : ModuleRules
 			"Core",
 			"CoreUObject",
 			"Json",
+			"NNE",
 			"SunPosition",
 			"Engine",
 			"InputCore",

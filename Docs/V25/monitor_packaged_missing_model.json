@@ -1,0 +1,61 @@
+﻿{
+    "run_id":  "packaged_missing_model",
+    "exe_sha256":  "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+    "fps_cap":  60,
+    "cvars":  "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+    "gpu_scope":  "whole adapter, includes other applications",
+    "samples":  [
+                    {
+                        "seconds":  0.0902403,
+                        "adapter_mib_temperature_c":  "331, 62"
+                    },
+                    {
+                        "seconds":  10.136602,
+                        "adapter_mib_temperature_c":  "328, 60"
+                    },
+                    {
+                        "seconds":  20.2075431,
+                        "adapter_mib_temperature_c":  "328, 58"
+                    },
+                    {
+                        "seconds":  30.2655806,
+                        "adapter_mib_temperature_c":  "328, 57"
+                    },
+                    {
+                        "seconds":  40.3362641,
+                        "adapter_mib_temperature_c":  "328, 56"
+                    },
+                    {
+                        "seconds":  50.385929399999995,
+                        "adapter_mib_temperature_c":  "328, 55"
+                    },
+                    {
+                        "seconds":  60.4267993,
+                        "adapter_mib_temperature_c":  "328, 55"
+                    },
+                    {
+                        "seconds":  70.4858383,
+                        "adapter_mib_temperature_c":  "328, 54"
+                    },
+                    {
+                        "seconds":  80.5266515,
+                        "adapter_mib_temperature_c":  "328, 53"
+                    },
+                    {
+                        "seconds":  90.57964299999999,
+                        "adapter_mib_temperature_c":  "328, 53"
+                    },
+                    {
+                        "seconds":  100.6393042,
+                        "adapter_mib_temperature_c":  "328, 52"
+                    },
+                    {
+                        "seconds":  110.7291583,
+                        "adapter_mib_temperature_c":  "328, 52"
+                    },
+                    {
+                        "seconds":  120.808054,
+                        "adapter_mib_temperature_c":  "328, 52"
+                    }
+                ]
+}

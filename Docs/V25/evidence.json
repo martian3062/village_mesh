@@ -1,0 +1,3115 @@
+{
+  "recorded_at_utc": "2026-10-24T05:44:57.531519+00:00",
+  "engine": "5.8.3",
+  "model_sha256": "870943b41190a844225788c9e5930455711646aa783b85d180f5f01daecede84",
+  "deployed_parameters": 121520,
+  "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+  "runs": [
+    {
+      "passed": true,
+      "reason": "Bounded runtime checks passed",
+      "run_id": "packaged_rendered",
+      "editor_build": false,
+      "wall_seconds": 180.0026515983045,
+      "rendered": true,
+      "learned_mode": true,
+      "missing_model_test": false,
+      "p95_frame_ms": 16.814298927783966,
+      "max_frame_ms": 198.324803262949,
+      "p95_inference_batch_ms": 0.34279748797416687,
+      "p50_frame_ms": 16.66489988565445,
+      "p99_frame_ms": 17.01520010828972,
+      "frame_samples": 9580,
+      "p95_queue_ms": 0.08789822459220886,
+      "p95_director_tick_ms": 0.05709996912628412,
+      "inference_batches": 449,
+      "stale_results_rejected": 0,
+      "invalid_results_rejected": 0,
+      "model_parameters": 121520,
+      "parity_max_abs_error": 0,
+      "policy_status": "ORT CPU ready; 121520 parameters",
+      "save_roundtrip": true,
+      "resident_restore": true,
+      "stream_restores": 1,
+      "tractor_legs": 0,
+      "contract_python_cpp_parity": true,
+      "loaded_door_restore": true,
+      "final_state": {
+        "version": 1,
+        "scene_date": "2026-10-23",
+        "hour": 15.745569229125977,
+        "weather_preset": 0,
+        "residents": [
+          {
+            "id": "resident_00",
+            "outfit": "outfit_00",
+            "target": "farm_shelter",
+            "position": [
+              2376.1644520372042,
+              -1420.8281647874219,
+              90.37192085424047
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 2,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "15.01:yield",
+              "15.01:shelter",
+              "15.02:yield",
+              "15.02:shelter",
+              "15.03:yield",
+              "15.03:shelter",
+              "15.04:yield",
+              "15.04:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_01",
+            "outfit": "outfit_01",
+            "target": "farm_shelter",
+            "position": [
+              2514.58847053482,
+              -1433.1036687060002,
+              90.24389548780977
+            ],
+            "fatigue": 0.168629989027977,
+            "completed_tasks": 3,
+            "visits": 1,
+            "task_progress": 0.8112854957580566,
+            "action": 4,
+            "recent_events": [
+              "14.80:yield",
+              "14.81:shelter",
+              "14.81:yield",
+              "14.81:shelter",
+              "14.82:yield",
+              "14.82:shelter",
+              "14.83:yield",
+              "14.83:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_02",
+            "outfit": "outfit_02",
+            "target": "farm_shelter",
+            "position": [
+              2690.485468283374,
+              -1430.5169565460217,
+              90.2953091009774
+            ],
+            "fatigue": 0.10419969260692596,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0.23334631323814392,
+            "action": 4,
+            "recent_events": [
+              "13.51:travel",
+              "14.22:work",
+              "14.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_03",
+            "outfit": "outfit_03",
+            "target": "farm_shelter",
+            "position": [
+              2761.500840107869,
+              -1435.505126409766,
+              90.08898768042941
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "13.51:travel",
+              "14.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_04",
+            "outfit": "outfit_04",
+            "target": "farm_shelter",
+            "position": [
+              2424.039630080472,
+              -1287.0807397787155,
+              90.13848720358389
+            ],
+            "fatigue": 0.189656600356102,
+            "completed_tasks": 4,
+            "visits": 1,
+            "task_progress": 0.9779654741287231,
+            "action": 4,
+            "recent_events": [
+              "15.22:yield",
+              "15.22:shelter",
+              "15.23:yield",
+              "15.23:shelter",
+              "15.24:yield",
+              "15.24:shelter",
+              "15.25:yield",
+              "15.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_05",
+            "outfit": "outfit_05",
+            "target": "farm_shelter",
+            "position": [
+              2515.340302738557,
+              -1281.5771972805053,
+              90.13611691825042
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "15.44:yield",
+              "15.45:shelter",
+              "15.45:yield",
+              "15.46:shelter",
+              "15.46:yield",
+              "15.47:shelter",
+              "15.47:yield",
+              "15.48:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_06",
+            "outfit": "outfit_06",
+            "target": "farm_shelter",
+            "position": [
+              3885.6884046117802,
+              -2270.596718997874,
+              90.11308090285213
+            ],
+            "fatigue": 0.168629989027977,
+            "completed_tasks": 3,
+            "visits": 0,
+            "task_progress": 0.8112854957580566,
+            "action": 4,
+            "recent_events": [
+              "15.65:yield",
+              "15.65:shelter",
+              "15.66:yield",
+              "15.66:shelter",
+              "15.67:yield",
+              "15.67:shelter",
+              "15.68:yield",
+              "15.68:shelter"
+            ],
+            "current_node": "lane_14",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "farm_gate",
+              "farm_shelter"
+            ]
+          },
+          {
+            "id": "resident_07",
+            "outfit": "outfit_07",
+            "target": "farm_shelter",
+            "position": [
+              4362.804028558212,
+              -2137.3605482826374,
+              95.68364311518356
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 7,
+            "recent_events": [
+              "15.71:shelter",
+              "15.71:yield",
+              "15.72:shelter",
+              "15.72:yield",
+              "15.73:shelter",
+              "15.73:yield",
+              "15.74:shelter",
+              "15.74:yield"
+            ],
+            "current_node": "lane_14",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          }
+        ],
+        "plots": [
+          {
+            "plot_id": "plot_0",
+            "polygon_cm": [
+              [
+                200,
+                -1800
+              ],
+              [
+                1250,
+                -1800
+              ],
+              [
+                1250,
+                -3300
+              ],
+              [
+                200,
+                -3300
+              ],
+              [
+                200,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "rice",
+            "growth_stage": "maturing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_1",
+            "polygon_cm": [
+              [
+                1600,
+                -1800
+              ],
+              [
+                2650,
+                -1800
+              ],
+              [
+                2650,
+                -3300
+              ],
+              [
+                1600,
+                -3300
+              ],
+              [
+                1600,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "managed_residue",
+            "growth_stage": "harvested",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_2",
+            "polygon_cm": [
+              [
+                200,
+                -4000
+              ],
+              [
+                1250,
+                -4000
+              ],
+              [
+                1250,
+                -5500
+              ],
+              [
+                200,
+                -5500
+              ],
+              [
+                200,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "prepared_soil",
+            "growth_stage": "awaiting_sowing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_3",
+            "polygon_cm": [
+              [
+                1600,
+                -4000
+              ],
+              [
+                2650,
+                -4000
+              ],
+              [
+                2650,
+                -5500
+              ],
+              [
+                1600,
+                -5500
+              ],
+              [
+                1600,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "fodder",
+            "growth_stage": "vegetative",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          }
+        ],
+        "doors": {
+          "21ca042c-29c1-4dce-9190-fa42dbbbd6a5:entry": true
+        }
+      },
+      "peak_process_bytes": 1660334080,
+      "file": "runtime_packaged_rendered.json"
+    },
+    {
+      "passed": true,
+      "reason": "Bounded runtime checks passed",
+      "run_id": "packaged_missing_model",
+      "editor_build": false,
+      "wall_seconds": 120.008262000978,
+      "rendered": false,
+      "learned_mode": false,
+      "missing_model_test": true,
+      "p95_frame_ms": 16.830500215291977,
+      "max_frame_ms": 17.746202647686005,
+      "p95_inference_batch_ms": 0,
+      "p50_frame_ms": 16.666002571582794,
+      "p99_frame_ms": 16.962099820375443,
+      "frame_samples": 6001,
+      "p95_queue_ms": 0,
+      "p95_director_tick_ms": 0.08099997648969293,
+      "inference_batches": 0,
+      "stale_results_rejected": 0,
+      "invalid_results_rejected": 0,
+      "model_parameters": 0,
+      "parity_max_abs_error": 0,
+      "policy_status": "model unavailable; rules fallback",
+      "save_roundtrip": true,
+      "resident_restore": true,
+      "stream_restores": 1,
+      "tractor_legs": 1,
+      "contract_python_cpp_parity": true,
+      "loaded_door_restore": true,
+      "final_state": {
+        "version": 1,
+        "scene_date": "2026-10-23",
+        "hour": 14.997097969055176,
+        "weather_preset": 0,
+        "residents": [
+          {
+            "id": "resident_00",
+            "outfit": "outfit_00",
+            "target": "plot_access",
+            "position": [
+              998.9210813504551,
+              2210.6856249362536,
+              94.84152722122805
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 1,
+            "recent_events": [
+              "13.51:travel",
+              "14.21:yield",
+              "14.22:travel",
+              "14.68:yield",
+              "14.68:travel"
+            ],
+            "current_node": "lane_05",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "lane_06",
+              "lane_07",
+              "lane_08",
+              "lane_09",
+              "lane_10",
+              "lane_11",
+              "lane_12",
+              "lane_13",
+              "lane_14",
+              "farm_gate",
+              "plot_access"
+            ]
+          },
+          {
+            "id": "resident_01",
+            "outfit": "outfit_01",
+            "target": "lane_06",
+            "position": [
+              1557.1469836469723,
+              2275.3731545354517,
+              94.81253303313768
+            ],
+            "fatigue": 0.2584538757801056,
+            "completed_tasks": 8,
+            "visits": 0,
+            "task_progress": 0.8014468550682068,
+            "action": 2,
+            "recent_events": [
+              "13.51:travel",
+              "13.68:work"
+            ],
+            "current_node": "lane_06",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_02",
+            "outfit": "outfit_02",
+            "target": "vehicle_stop",
+            "position": [
+              3449.9706054923977,
+              -5157.410178182241,
+              90.29626706423862
+            ],
+            "fatigue": 0.1936396211385727,
+            "completed_tasks": 5,
+            "visits": 0,
+            "task_progress": 0.2013905942440033,
+            "action": 2,
+            "recent_events": [
+              "13.51:travel",
+              "14.22:work"
+            ],
+            "current_node": "vehicle_stop",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_03",
+            "outfit": "outfit_03",
+            "target": "lane_21",
+            "position": [
+              -279.1292689478154,
+              -10190.088778109373,
+              94.72063968955383
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 1,
+            "recent_events": [
+              "13.51:travel"
+            ],
+            "current_node": "lane_20",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "lane_21"
+            ]
+          },
+          {
+            "id": "resident_04",
+            "outfit": "outfit_04",
+            "target": "lane_17",
+            "position": [
+              -730.336193332266,
+              -8051.635759702769,
+              96.15000152587884
+            ],
+            "fatigue": 0.27945807576179504,
+            "completed_tasks": 9,
+            "visits": 0,
+            "task_progress": 0.9681163430213928,
+            "action": 2,
+            "recent_events": [
+              "13.51:work"
+            ],
+            "current_node": "lane_17",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_05",
+            "outfit": "outfit_05",
+            "target": "lane_08",
+            "position": [
+              4447.453034026062,
+              -2612.6655613458115,
+              94.99347816169791
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 1,
+            "recent_events": [
+              "13.51:travel"
+            ],
+            "current_node": "lane_15",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "lane_14",
+              "lane_13",
+              "lane_12",
+              "lane_11",
+              "lane_10",
+              "lane_09",
+              "lane_08"
+            ]
+          },
+          {
+            "id": "resident_06",
+            "outfit": "outfit_06",
+            "target": "lane_05",
+            "position": [
+              -327.50898834661746,
+              1906.3848933433587,
+              94.91614121662354
+            ],
+            "fatigue": 0.2584538757801056,
+            "completed_tasks": 8,
+            "visits": 0,
+            "task_progress": 0.8014468550682068,
+            "action": 2,
+            "recent_events": [
+              "13.51:travel",
+              "13.68:work"
+            ],
+            "current_node": "lane_05",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_07",
+            "outfit": "outfit_07",
+            "target": "lane_12",
+            "position": [
+              4390.681063578468,
+              -2412.1751200360677,
+              94.86133905933352
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 1,
+            "recent_events": [
+              "13.51:travel"
+            ],
+            "current_node": "lane_15",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "lane_14",
+              "lane_13",
+              "lane_12"
+            ]
+          }
+        ],
+        "plots": [
+          {
+            "plot_id": "plot_0",
+            "polygon_cm": [
+              [
+                200,
+                -1800
+              ],
+              [
+                1250,
+                -1800
+              ],
+              [
+                1250,
+                -3300
+              ],
+              [
+                200,
+                -3300
+              ],
+              [
+                200,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "rice",
+            "growth_stage": "maturing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "dry",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_1",
+            "polygon_cm": [
+              [
+                1600,
+                -1800
+              ],
+              [
+                2650,
+                -1800
+              ],
+              [
+                2650,
+                -3300
+              ],
+              [
+                1600,
+                -3300
+              ],
+              [
+                1600,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "managed_residue",
+            "growth_stage": "harvested",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "dry",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_2",
+            "polygon_cm": [
+              [
+                200,
+                -4000
+              ],
+              [
+                1250,
+                -4000
+              ],
+              [
+                1250,
+                -5500
+              ],
+              [
+                200,
+                -5500
+              ],
+              [
+                200,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "prepared_soil",
+            "growth_stage": "awaiting_sowing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "checked",
+            "residue_state": "managed",
+            "soil_visual_state": "dry",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23",
+            "last_inspection_hour": 14.966951370239258
+          },
+          {
+            "plot_id": "plot_3",
+            "polygon_cm": [
+              [
+                1600,
+                -4000
+              ],
+              [
+                2650,
+                -4000
+              ],
+              [
+                2650,
+                -5500
+              ],
+              [
+                1600,
+                -5500
+              ],
+              [
+                1600,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "fodder",
+            "growth_stage": "vegetative",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "dry",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          }
+        ],
+        "doors": {
+          "21ca042c-29c1-4dce-9190-fa42dbbbd6a5:entry": true
+        }
+      },
+      "peak_process_bytes": 374816768,
+      "file": "runtime_packaged_missing_model.json"
+    },
+    {
+      "passed": true,
+      "reason": "Bounded runtime checks passed",
+      "run_id": "packaged_rules",
+      "editor_build": false,
+      "wall_seconds": 180.0098103992641,
+      "rendered": true,
+      "learned_mode": false,
+      "missing_model_test": false,
+      "p95_frame_ms": 16.845598816871643,
+      "max_frame_ms": 184.97449904680252,
+      "p95_inference_batch_ms": 0.491999089717865,
+      "p50_frame_ms": 16.664501279592514,
+      "p99_frame_ms": 17.10740104317665,
+      "frame_samples": 9578,
+      "p95_queue_ms": 0.10830163955688477,
+      "p95_director_tick_ms": 0.07259997073560953,
+      "inference_batches": 449,
+      "stale_results_rejected": 0,
+      "invalid_results_rejected": 0,
+      "model_parameters": 121520,
+      "parity_max_abs_error": 0,
+      "policy_status": "ORT CPU ready; 121520 parameters",
+      "save_roundtrip": true,
+      "resident_restore": true,
+      "stream_restores": 1,
+      "tractor_legs": 0,
+      "contract_python_cpp_parity": true,
+      "loaded_door_restore": true,
+      "final_state": {
+        "version": 1,
+        "scene_date": "2026-10-23",
+        "hour": 15.745721817016602,
+        "weather_preset": 0,
+        "residents": [
+          {
+            "id": "resident_00",
+            "outfit": "outfit_00",
+            "target": "farm_shelter",
+            "position": [
+              2376.1827692265797,
+              -1419.9753455701746,
+              90.18184809149311
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 2,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "15.01:yield",
+              "15.02:shelter",
+              "15.02:yield",
+              "15.03:shelter",
+              "15.03:yield",
+              "15.03:shelter",
+              "15.04:yield",
+              "15.04:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_01",
+            "outfit": "outfit_01",
+            "target": "farm_shelter",
+            "position": [
+              2514.5767049601254,
+              -1433.1069371590381,
+              90.2585934806705
+            ],
+            "fatigue": 0.16862331330776215,
+            "completed_tasks": 3,
+            "visits": 1,
+            "task_progress": 0.8113770484924316,
+            "action": 4,
+            "recent_events": [
+              "14.80:yield",
+              "14.81:shelter",
+              "14.81:yield",
+              "14.82:shelter",
+              "14.82:yield",
+              "14.83:shelter",
+              "14.83:yield",
+              "14.84:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_02",
+            "outfit": "outfit_02",
+            "target": "farm_shelter",
+            "position": [
+              2690.0929395854378,
+              -1429.7910975619488,
+              90.29104246484
+            ],
+            "fatigue": 0.104202039539814,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0.2334747016429901,
+            "action": 4,
+            "recent_events": [
+              "13.51:travel",
+              "14.22:work",
+              "14.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_03",
+            "outfit": "outfit_03",
+            "target": "farm_shelter",
+            "position": [
+              2761.967657143317,
+              -1435.0775281226952,
+              90.10635702124809
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "13.51:travel",
+              "14.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_04",
+            "outfit": "outfit_04",
+            "target": "farm_shelter",
+            "position": [
+              2424.0096908725427,
+              -1286.2533410757362,
+              90.12794273335707
+            ],
+            "fatigue": 0.18972525000572205,
+            "completed_tasks": 4,
+            "visits": 1,
+            "task_progress": 0.9824949502944946,
+            "action": 4,
+            "recent_events": [
+              "15.22:yield",
+              "15.22:shelter",
+              "15.23:yield",
+              "15.23:shelter",
+              "15.24:yield",
+              "15.24:shelter",
+              "15.25:yield",
+              "15.25:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_05",
+            "outfit": "outfit_05",
+            "target": "farm_shelter",
+            "position": [
+              3553.1885014500667,
+              -2288.716402179976,
+              90.2671734631847
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 0,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "15.64:yield",
+              "15.64:shelter",
+              "15.65:yield",
+              "15.65:shelter",
+              "15.66:yield",
+              "15.66:shelter",
+              "15.67:yield",
+              "15.67:shelter"
+            ],
+            "current_node": "lane_14",
+            "stuck_seconds": 0,
+            "remaining_path": [
+              "farm_gate",
+              "farm_shelter"
+            ]
+          },
+          {
+            "id": "resident_06",
+            "outfit": "outfit_06",
+            "target": "farm_shelter",
+            "position": [
+              4468.534229353555,
+              -2098.017735441327,
+              94.73881390875445
+            ],
+            "fatigue": 0.16862331330776215,
+            "completed_tasks": 3,
+            "visits": 0,
+            "task_progress": 0.8113770484924316,
+            "action": 4,
+            "recent_events": [
+              "15.71:yield",
+              "15.71:shelter",
+              "15.72:yield",
+              "15.72:shelter",
+              "15.73:yield",
+              "15.73:shelter",
+              "15.74:yield",
+              "15.74:shelter"
+            ],
+            "current_node": "lane_14",
+            "stuck_seconds": 0.18333469331264496,
+            "remaining_path": [
+              "farm_gate",
+              "farm_shelter"
+            ]
+          },
+          {
+            "id": "resident_07",
+            "outfit": "outfit_07",
+            "target": "farm_shelter",
+            "position": [
+              2790.9942073044563,
+              -1285.969745365844,
+              90.13533100751077
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "15.44:yield",
+              "15.45:shelter",
+              "15.45:yield",
+              "15.46:shelter",
+              "15.46:yield",
+              "15.47:shelter",
+              "15.47:yield",
+              "15.48:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          }
+        ],
+        "plots": [
+          {
+            "plot_id": "plot_0",
+            "polygon_cm": [
+              [
+                200,
+                -1800
+              ],
+              [
+                1250,
+                -1800
+              ],
+              [
+                1250,
+                -3300
+              ],
+              [
+                200,
+                -3300
+              ],
+              [
+                200,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "rice",
+            "growth_stage": "maturing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_1",
+            "polygon_cm": [
+              [
+                1600,
+                -1800
+              ],
+              [
+                2650,
+                -1800
+              ],
+              [
+                2650,
+                -3300
+              ],
+              [
+                1600,
+                -3300
+              ],
+              [
+                1600,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "managed_residue",
+            "growth_stage": "harvested",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_2",
+            "polygon_cm": [
+              [
+                200,
+                -4000
+              ],
+              [
+                1250,
+                -4000
+              ],
+              [
+                1250,
+                -5500
+              ],
+              [
+                200,
+                -5500
+              ],
+              [
+                200,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "prepared_soil",
+            "growth_stage": "awaiting_sowing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_3",
+            "polygon_cm": [
+              [
+                1600,
+                -4000
+              ],
+              [
+                2650,
+                -4000
+              ],
+              [
+                2650,
+                -5500
+              ],
+              [
+                1600,
+                -5500
+              ],
+              [
+                1600,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "fodder",
+            "growth_stage": "vegetative",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          }
+        ],
+        "doors": {
+          "21ca042c-29c1-4dce-9190-fa42dbbbd6a5:entry": true
+        }
+      },
+      "peak_process_bytes": 1569181696,
+      "file": "runtime_packaged_rules.json"
+    },
+    {
+      "passed": true,
+      "reason": "Bounded runtime checks passed",
+      "run_id": "packaged_soak",
+      "editor_build": false,
+      "wall_seconds": 1800.0041825026274,
+      "rendered": true,
+      "learned_mode": true,
+      "missing_model_test": false,
+      "p95_frame_ms": 28.68960052728653,
+      "max_frame_ms": 58.35900083184242,
+      "p95_inference_batch_ms": 0.4034005105495453,
+      "p50_frame_ms": 16.66649803519249,
+      "p99_frame_ms": 29.849499464035034,
+      "frame_samples": 102045,
+      "p95_queue_ms": 0.11060014367103577,
+      "p95_director_tick_ms": 0.09869999485090375,
+      "inference_batches": 4480,
+      "stale_results_rejected": 0,
+      "invalid_results_rejected": 0,
+      "model_parameters": 121520,
+      "parity_max_abs_error": 0,
+      "policy_status": "ORT CPU ready; 121520 parameters",
+      "save_roundtrip": true,
+      "resident_restore": true,
+      "stream_restores": 1,
+      "tractor_legs": 4,
+      "contract_python_cpp_parity": true,
+      "loaded_door_restore": true,
+      "final_state": {
+        "version": 1,
+        "scene_date": "2026-10-23",
+        "hour": 11.9750337600708,
+        "weather_preset": 2,
+        "residents": [
+          {
+            "id": "resident_00",
+            "outfit": "outfit_00",
+            "target": "farm_shelter",
+            "position": [
+              2446.5533942225566,
+              -1431.835364001585,
+              90.0805108562623
+            ],
+            "fatigue": 0.19874827563762665,
+            "completed_tasks": 5,
+            "visits": 3,
+            "task_progress": 0.48127827048301697,
+            "action": 4,
+            "recent_events": [
+              "8.74:yield",
+              "8.74:travel",
+              "8.75:yield",
+              "8.75:travel",
+              "8.76:yield",
+              "8.77:travel",
+              "8.91:work",
+              "9.73:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_01",
+            "outfit": "outfit_01",
+            "target": "farm_shelter",
+            "position": [
+              2503.324045306633,
+              -1427.2738975324432,
+              90.2806528581066
+            ],
+            "fatigue": 0.46185073256492615,
+            "completed_tasks": 20,
+            "visits": 5,
+            "task_progress": 0.0895487442612648,
+            "action": 4,
+            "recent_events": [
+              "10.35:yield",
+              "10.35:shelter",
+              "10.36:yield",
+              "10.36:shelter",
+              "10.37:yield",
+              "10.37:shelter",
+              "10.38:yield",
+              "10.38:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_02",
+            "outfit": "outfit_02",
+            "target": "farm_shelter",
+            "position": [
+              2675.557876699461,
+              -1434.1143158429297,
+              90.15000319292923
+            ],
+            "fatigue": 0.28364452719688416,
+            "completed_tasks": 10,
+            "visits": 2,
+            "task_progress": 0.2000058889389038,
+            "action": 4,
+            "recent_events": [
+              "9.81:yield",
+              "9.82:shelter",
+              "9.82:yield",
+              "9.83:shelter",
+              "9.83:yield",
+              "9.84:shelter",
+              "9.84:yield",
+              "9.85:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_03",
+            "outfit": "outfit_03",
+            "target": "farm_shelter",
+            "position": [
+              2764.5262981186256,
+              -1437.0838352902417,
+              89.90004470927543
+            ],
+            "fatigue": 0.18762269616127014,
+            "completed_tasks": 4,
+            "visits": 3,
+            "task_progress": 0.8668773770332336,
+            "action": 4,
+            "recent_events": [
+              "10.16:yield",
+              "10.17:shelter",
+              "10.17:yield",
+              "10.18:shelter",
+              "10.18:yield",
+              "10.19:shelter",
+              "10.19:yield",
+              "10.20:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_04",
+            "outfit": "outfit_04",
+            "target": "lane_17",
+            "position": [
+              2388.531155908806,
+              -1279.9275917241835,
+              90.18037088120303
+            ],
+            "fatigue": 0.36956679821014404,
+            "completed_tasks": 14,
+            "visits": 3,
+            "task_progress": 0.9724345803260803,
+            "action": 4,
+            "recent_events": [
+              "9.69:yield",
+              "9.70:travel",
+              "9.70:yield",
+              "9.71:travel",
+              "9.71:yield",
+              "9.72:travel",
+              "9.72:yield",
+              "9.73:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_05",
+            "outfit": "outfit_05",
+            "target": "farm_shelter",
+            "position": [
+              2492.4361292472886,
+              -1266.0696682387127,
+              90.12067610700183
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 4,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "10.79:yield",
+              "10.79:shelter",
+              "10.80:yield",
+              "10.80:shelter",
+              "10.81:yield",
+              "10.81:shelter",
+              "10.82:yield",
+              "10.82:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_06",
+            "outfit": "outfit_06",
+            "target": "farm_shelter",
+            "position": [
+              2600.4784049186633,
+              -1248.6482660517106,
+              90.32438684754183
+            ],
+            "fatigue": 0.4251728951931,
+            "completed_tasks": 18,
+            "visits": 4,
+            "task_progress": 0.05833554267883301,
+            "action": 4,
+            "recent_events": [
+              "10.56:yield",
+              "10.56:shelter",
+              "10.57:yield",
+              "10.57:shelter",
+              "10.58:yield",
+              "10.58:shelter",
+              "10.59:yield",
+              "10.59:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          },
+          {
+            "id": "resident_07",
+            "outfit": "outfit_07",
+            "target": "lane_12",
+            "position": [
+              2739.4519113349857,
+              -1271.7974774580014,
+              90.13793940140752
+            ],
+            "fatigue": 0.10000000149011612,
+            "completed_tasks": 0,
+            "visits": 1,
+            "task_progress": 0,
+            "action": 4,
+            "recent_events": [
+              "9.69:yield",
+              "9.70:travel",
+              "9.70:yield",
+              "9.71:travel",
+              "9.71:yield",
+              "9.72:travel",
+              "9.72:yield",
+              "9.73:shelter"
+            ],
+            "current_node": "farm_shelter",
+            "stuck_seconds": 0,
+            "remaining_path": []
+          }
+        ],
+        "plots": [
+          {
+            "plot_id": "plot_0",
+            "polygon_cm": [
+              [
+                200,
+                -1800
+              ],
+              [
+                1250,
+                -1800
+              ],
+              [
+                1250,
+                -3300
+              ],
+              [
+                200,
+                -3300
+              ],
+              [
+                200,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "rice",
+            "growth_stage": "maturing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "checked",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23",
+            "last_inspection_hour": 9.656912803649902
+          },
+          {
+            "plot_id": "plot_1",
+            "polygon_cm": [
+              [
+                1600,
+                -1800
+              ],
+              [
+                2650,
+                -1800
+              ],
+              [
+                2650,
+                -3300
+              ],
+              [
+                1600,
+                -3300
+              ],
+              [
+                1600,
+                -1800
+              ]
+            ],
+            "access_node": "farm_gate",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "managed_residue",
+            "growth_stage": "harvested",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          },
+          {
+            "plot_id": "plot_2",
+            "polygon_cm": [
+              [
+                200,
+                -4000
+              ],
+              [
+                1250,
+                -4000
+              ],
+              [
+                1250,
+                -5500
+              ],
+              [
+                200,
+                -5500
+              ],
+              [
+                200,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "prepared_soil",
+            "growth_stage": "awaiting_sowing",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "checked",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23",
+            "last_inspection_hour": 15.71617603302002
+          },
+          {
+            "plot_id": "plot_3",
+            "polygon_cm": [
+              [
+                1600,
+                -4000
+              ],
+              [
+                2650,
+                -4000
+              ],
+              [
+                2650,
+                -5500
+              ],
+              [
+                1600,
+                -5500
+              ],
+              [
+                1600,
+                -4000
+              ]
+            ],
+            "access_node": "farm_south",
+            "assigned_jobs": [
+              "inspect",
+              "irrigation_check"
+            ],
+            "crop_type": "fodder",
+            "growth_stage": "vegetative",
+            "sowing_date": null,
+            "variety_if_known": null,
+            "irrigation_state": "check_due",
+            "residue_state": "managed",
+            "soil_visual_state": "wet",
+            "machinery_route": "farm_shuttle",
+            "source": "original demonstration design on flat V2 terrain",
+            "confidence": "procedural inference",
+            "ownership": null,
+            "scene_date": "2026-10-23"
+          }
+        ],
+        "doors": {
+          "02a0dd7c-d9f1-4ef6-a70c-558cbfc757a7:entry": true
+        }
+      },
+      "peak_process_bytes": 1638928384,
+      "file": "runtime_packaged_soak.json"
+    }
+  ],
+  "monitors": [
+    {
+      "run_id": "packaged_rendered",
+      "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+      "fps_cap": 60,
+      "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+      "gpu_scope": "whole adapter, includes other applications",
+      "samples": [
+        {
+          "seconds": 0.10672459999999999,
+          "adapter_mib_temperature_c": "330, 62"
+        },
+        {
+          "seconds": 10.2143841,
+          "adapter_mib_temperature_c": "3682, 77"
+        },
+        {
+          "seconds": 20.278622199999997,
+          "adapter_mib_temperature_c": "3682, 79"
+        },
+        {
+          "seconds": 30.3763623,
+          "adapter_mib_temperature_c": "3680, 80"
+        },
+        {
+          "seconds": 40.4744172,
+          "adapter_mib_temperature_c": "3680, 80"
+        },
+        {
+          "seconds": 50.586352899999994,
+          "adapter_mib_temperature_c": "3680, 79"
+        },
+        {
+          "seconds": 60.6689249,
+          "adapter_mib_temperature_c": "3680, 80"
+        },
+        {
+          "seconds": 70.7787037,
+          "adapter_mib_temperature_c": "3680, 82"
+        },
+        {
+          "seconds": 80.8507865,
+          "adapter_mib_temperature_c": "3680, 80"
+        },
+        {
+          "seconds": 90.9611702,
+          "adapter_mib_temperature_c": "3680, 83"
+        },
+        {
+          "seconds": 101.0434801,
+          "adapter_mib_temperature_c": "3680, 85"
+        },
+        {
+          "seconds": 111.10014609999999,
+          "adapter_mib_temperature_c": "3680, 85"
+        },
+        {
+          "seconds": 121.1614773,
+          "adapter_mib_temperature_c": "3680, 81"
+        },
+        {
+          "seconds": 131.2322007,
+          "adapter_mib_temperature_c": "3680, 83"
+        },
+        {
+          "seconds": 141.3268192,
+          "adapter_mib_temperature_c": "3680, 80"
+        },
+        {
+          "seconds": 151.44385599999998,
+          "adapter_mib_temperature_c": "3680, 87"
+        },
+        {
+          "seconds": 161.6085146,
+          "adapter_mib_temperature_c": "3681, 85"
+        },
+        {
+          "seconds": 171.6890956,
+          "adapter_mib_temperature_c": "3658, 86"
+        },
+        {
+          "seconds": 181.78496909999998,
+          "adapter_mib_temperature_c": "3673, 85"
+        }
+      ]
+    },
+    {
+      "run_id": "packaged_missing_model",
+      "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+      "fps_cap": 60,
+      "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+      "gpu_scope": "whole adapter, includes other applications",
+      "samples": [
+        {
+          "seconds": 0.0902403,
+          "adapter_mib_temperature_c": "331, 62"
+        },
+        {
+          "seconds": 10.136602,
+          "adapter_mib_temperature_c": "328, 60"
+        },
+        {
+          "seconds": 20.2075431,
+          "adapter_mib_temperature_c": "328, 58"
+        },
+        {
+          "seconds": 30.2655806,
+          "adapter_mib_temperature_c": "328, 57"
+        },
+        {
+          "seconds": 40.3362641,
+          "adapter_mib_temperature_c": "328, 56"
+        },
+        {
+          "seconds": 50.385929399999995,
+          "adapter_mib_temperature_c": "328, 55"
+        },
+        {
+          "seconds": 60.4267993,
+          "adapter_mib_temperature_c": "328, 55"
+        },
+        {
+          "seconds": 70.4858383,
+          "adapter_mib_temperature_c": "328, 54"
+        },
+        {
+          "seconds": 80.5266515,
+          "adapter_mib_temperature_c": "328, 53"
+        },
+        {
+          "seconds": 90.57964299999999,
+          "adapter_mib_temperature_c": "328, 53"
+        },
+        {
+          "seconds": 100.6393042,
+          "adapter_mib_temperature_c": "328, 52"
+        },
+        {
+          "seconds": 110.7291583,
+          "adapter_mib_temperature_c": "328, 52"
+        },
+        {
+          "seconds": 120.808054,
+          "adapter_mib_temperature_c": "328, 52"
+        }
+      ]
+    },
+    {
+      "run_id": "packaged_rules",
+      "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+      "fps_cap": 60,
+      "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+      "gpu_scope": "whole adapter, includes other applications",
+      "samples": [
+        {
+          "seconds": 0.21180179999999998,
+          "adapter_mib_temperature_c": "327, 66"
+        },
+        {
+          "seconds": 10.3989966,
+          "adapter_mib_temperature_c": "3686, 79"
+        },
+        {
+          "seconds": 20.493334,
+          "adapter_mib_temperature_c": "3684, 79"
+        },
+        {
+          "seconds": 30.559278199999998,
+          "adapter_mib_temperature_c": "3684, 81"
+        },
+        {
+          "seconds": 40.6504962,
+          "adapter_mib_temperature_c": "3685, 81"
+        },
+        {
+          "seconds": 50.7196353,
+          "adapter_mib_temperature_c": "3684, 79"
+        },
+        {
+          "seconds": 60.8025471,
+          "adapter_mib_temperature_c": "3656, 80"
+        },
+        {
+          "seconds": 71.1526677,
+          "adapter_mib_temperature_c": "3673, 81"
+        },
+        {
+          "seconds": 81.2599875,
+          "adapter_mib_temperature_c": "3684, 81"
+        },
+        {
+          "seconds": 91.38499069999999,
+          "adapter_mib_temperature_c": "3684, 85"
+        },
+        {
+          "seconds": 101.4988633,
+          "adapter_mib_temperature_c": "3684, 84"
+        },
+        {
+          "seconds": 111.57036699999999,
+          "adapter_mib_temperature_c": "3684, 84"
+        },
+        {
+          "seconds": 121.6453129,
+          "adapter_mib_temperature_c": "3684, 86"
+        },
+        {
+          "seconds": 131.7150576,
+          "adapter_mib_temperature_c": "3684, 85"
+        },
+        {
+          "seconds": 141.7767993,
+          "adapter_mib_temperature_c": "3684, 82"
+        },
+        {
+          "seconds": 151.8476431,
+          "adapter_mib_temperature_c": "3684, 84"
+        },
+        {
+          "seconds": 161.9166454,
+          "adapter_mib_temperature_c": "3684, 86"
+        },
+        {
+          "seconds": 172.0158404,
+          "adapter_mib_temperature_c": "3684, 86"
+        },
+        {
+          "seconds": 182.08508089999998,
+          "adapter_mib_temperature_c": "3684, 85"
+        }
+      ]
+    },
+    {
+      "run_id": "packaged_soak",
+      "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+      "fps_cap": 60,
+      "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+      "gpu_scope": "whole adapter, includes other applications",
+      "samples": [
+        {
+          "seconds": 0.07176099999999999,
+          "adapter_mib_temperature_c": "328, 51"
+        },
+        {
+          "seconds": 10.2119734,
+          "adapter_mib_temperature_c": "3686, 70"
+        },
+        {
+          "seconds": 20.25686,
+          "adapter_mib_temperature_c": "3686, 71"
+        },
+        {
+          "seconds": 30.3242412,
+          "adapter_mib_temperature_c": "3686, 73"
+        },
+        {
+          "seconds": 40.3945254,
+          "adapter_mib_temperature_c": "3686, 74"
+        },
+        {
+          "seconds": 50.4625669,
+          "adapter_mib_temperature_c": "3686, 75"
+        },
+        {
+          "seconds": 60.543315899999996,
+          "adapter_mib_temperature_c": "3687, 77"
+        },
+        {
+          "seconds": 70.62893509999999,
+          "adapter_mib_temperature_c": "3687, 76"
+        },
+        {
+          "seconds": 80.7037655,
+          "adapter_mib_temperature_c": "3687, 76"
+        },
+        {
+          "seconds": 90.8479332,
+          "adapter_mib_temperature_c": "3687, 77"
+        },
+        {
+          "seconds": 100.9372628,
+          "adapter_mib_temperature_c": "3687, 78"
+        },
+        {
+          "seconds": 111.0922634,
+          "adapter_mib_temperature_c": "3681, 77"
+        },
+        {
+          "seconds": 121.2669353,
+          "adapter_mib_temperature_c": "3681, 78"
+        },
+        {
+          "seconds": 131.3937291,
+          "adapter_mib_temperature_c": "3681, 78"
+        },
+        {
+          "seconds": 141.47038469999998,
+          "adapter_mib_temperature_c": "3661, 79"
+        },
+        {
+          "seconds": 151.54361749999998,
+          "adapter_mib_temperature_c": "3645, 79"
+        },
+        {
+          "seconds": 161.6460782,
+          "adapter_mib_temperature_c": "3682, 80"
+        },
+        {
+          "seconds": 171.7153035,
+          "adapter_mib_temperature_c": "3686, 80"
+        },
+        {
+          "seconds": 181.77548439999998,
+          "adapter_mib_temperature_c": "3686, 78"
+        },
+        {
+          "seconds": 191.84221649999998,
+          "adapter_mib_temperature_c": "3688, 80"
+        },
+        {
+          "seconds": 201.90538479999998,
+          "adapter_mib_temperature_c": "3688, 79"
+        },
+        {
+          "seconds": 211.9630823,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 222.0294449,
+          "adapter_mib_temperature_c": "3691, 81"
+        },
+        {
+          "seconds": 232.10668969999998,
+          "adapter_mib_temperature_c": "3691, 82"
+        },
+        {
+          "seconds": 242.1674651,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 252.2194854,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 262.2932835,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 272.3590367,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 282.40460079999997,
+          "adapter_mib_temperature_c": "3688, 83"
+        },
+        {
+          "seconds": 292.4670107,
+          "adapter_mib_temperature_c": "3688, 82"
+        },
+        {
+          "seconds": 302.52796589999997,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 312.5910623,
+          "adapter_mib_temperature_c": "3688, 81"
+        },
+        {
+          "seconds": 322.650758,
+          "adapter_mib_temperature_c": "3688, 83"
+        },
+        {
+          "seconds": 332.7172845,
+          "adapter_mib_temperature_c": "3688, 83"
+        },
+        {
+          "seconds": 342.7808488,
+          "adapter_mib_temperature_c": "3688, 82"
+        },
+        {
+          "seconds": 352.8287249,
+          "adapter_mib_temperature_c": "3419, 80"
+        },
+        {
+          "seconds": 362.8804887,
+          "adapter_mib_temperature_c": "3419, 80"
+        },
+        {
+          "seconds": 372.9420417,
+          "adapter_mib_temperature_c": "3419, 81"
+        },
+        {
+          "seconds": 383.00458399999997,
+          "adapter_mib_temperature_c": "3419, 79"
+        },
+        {
+          "seconds": 393.07522389999997,
+          "adapter_mib_temperature_c": "3419, 79"
+        },
+        {
+          "seconds": 403.1443106,
+          "adapter_mib_temperature_c": "3419, 78"
+        },
+        {
+          "seconds": 413.2145263,
+          "adapter_mib_temperature_c": "3419, 79"
+        },
+        {
+          "seconds": 423.2969157,
+          "adapter_mib_temperature_c": "3419, 79"
+        },
+        {
+          "seconds": 433.37662919999997,
+          "adapter_mib_temperature_c": "3419, 78"
+        },
+        {
+          "seconds": 443.4592418,
+          "adapter_mib_temperature_c": "3420, 78"
+        },
+        {
+          "seconds": 453.5168382,
+          "adapter_mib_temperature_c": "3395, 80"
+        },
+        {
+          "seconds": 463.625885,
+          "adapter_mib_temperature_c": "3420, 78"
+        },
+        {
+          "seconds": 473.69860669999997,
+          "adapter_mib_temperature_c": "3419, 78"
+        },
+        {
+          "seconds": 483.76095019999997,
+          "adapter_mib_temperature_c": "3419, 79"
+        },
+        {
+          "seconds": 493.8323549,
+          "adapter_mib_temperature_c": "3419, 80"
+        },
+        {
+          "seconds": 503.89124339999995,
+          "adapter_mib_temperature_c": "3419, 78"
+        },
+        {
+          "seconds": 513.955967,
+          "adapter_mib_temperature_c": "3422, 79"
+        },
+        {
+          "seconds": 524.024562,
+          "adapter_mib_temperature_c": "3422, 79"
+        },
+        {
+          "seconds": 534.0857311,
+          "adapter_mib_temperature_c": "3422, 79"
+        },
+        {
+          "seconds": 544.1560518,
+          "adapter_mib_temperature_c": "3419, 80"
+        },
+        {
+          "seconds": 554.2146627,
+          "adapter_mib_temperature_c": "3419, 77"
+        },
+        {
+          "seconds": 564.2805429,
+          "adapter_mib_temperature_c": "3419, 77"
+        },
+        {
+          "seconds": 574.3508717,
+          "adapter_mib_temperature_c": "3419, 78"
+        },
+        {
+          "seconds": 584.3976322,
+          "adapter_mib_temperature_c": "3420, 78"
+        },
+        {
+          "seconds": 594.4675626999999,
+          "adapter_mib_temperature_c": "3420, 77"
+        },
+        {
+          "seconds": 604.5296601,
+          "adapter_mib_temperature_c": "3548, 77"
+        },
+        {
+          "seconds": 614.6244643,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 624.730562,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 634.790225,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 644.8726613,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 654.9586605,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 665.0280066,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 675.0969964999999,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 685.1604308999999,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 695.2763474,
+          "adapter_mib_temperature_c": "3424, 77"
+        },
+        {
+          "seconds": 705.3441855,
+          "adapter_mib_temperature_c": "3424, 76"
+        },
+        {
+          "seconds": 715.3895971,
+          "adapter_mib_temperature_c": "3422, 75"
+        },
+        {
+          "seconds": 725.4654638999999,
+          "adapter_mib_temperature_c": "3421, 75"
+        },
+        {
+          "seconds": 735.5494732999999,
+          "adapter_mib_temperature_c": "3409, 76"
+        },
+        {
+          "seconds": 745.6202274,
+          "adapter_mib_temperature_c": "3422, 76"
+        },
+        {
+          "seconds": 755.7321807999999,
+          "adapter_mib_temperature_c": "3397, 76"
+        },
+        {
+          "seconds": 765.7877457999999,
+          "adapter_mib_temperature_c": "3422, 76"
+        },
+        {
+          "seconds": 775.8420949,
+          "adapter_mib_temperature_c": "3422, 77"
+        },
+        {
+          "seconds": 785.9688467999999,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 796.0859532999999,
+          "adapter_mib_temperature_c": "3421, 75"
+        },
+        {
+          "seconds": 806.1538633,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 816.2180399,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 826.2774033999999,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 836.3200054,
+          "adapter_mib_temperature_c": "3421, 75"
+        },
+        {
+          "seconds": 846.3641087,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 856.4315686,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 866.4973084,
+          "adapter_mib_temperature_c": "3421, 77"
+        },
+        {
+          "seconds": 876.5885293,
+          "adapter_mib_temperature_c": "3424, 76"
+        },
+        {
+          "seconds": 886.6447592,
+          "adapter_mib_temperature_c": "3424, 76"
+        },
+        {
+          "seconds": 896.7103205,
+          "adapter_mib_temperature_c": "3423, 77"
+        },
+        {
+          "seconds": 906.7739055,
+          "adapter_mib_temperature_c": "3549, 78"
+        },
+        {
+          "seconds": 916.8854081999999,
+          "adapter_mib_temperature_c": "3421, 76"
+        },
+        {
+          "seconds": 926.9832361,
+          "adapter_mib_temperature_c": "3422, 77"
+        },
+        {
+          "seconds": 937.0479196,
+          "adapter_mib_temperature_c": "3422, 80"
+        },
+        {
+          "seconds": 947.1636254,
+          "adapter_mib_temperature_c": "3423, 80"
+        },
+        {
+          "seconds": 957.2203905,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 967.2607366999999,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 977.3191413999999,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 987.3961678999999,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 997.4657798999999,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1007.5682604,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1017.6362131999999,
+          "adapter_mib_temperature_c": "3423, 80"
+        },
+        {
+          "seconds": 1027.7162835,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1037.800757,
+          "adapter_mib_temperature_c": "3412, 78"
+        },
+        {
+          "seconds": 1047.8819098,
+          "adapter_mib_temperature_c": "3424, 79"
+        },
+        {
+          "seconds": 1057.9601937,
+          "adapter_mib_temperature_c": "3415, 80"
+        },
+        {
+          "seconds": 1068.0532278,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1078.126927,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1088.1910278999999,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1098.2724572,
+          "adapter_mib_temperature_c": "3423, 80"
+        },
+        {
+          "seconds": 1108.350448,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1118.4200564,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1128.4762713,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1138.5340664,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1148.6240450999999,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1158.726303,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1168.7991114,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1178.8648243,
+          "adapter_mib_temperature_c": "3423, 79"
+        },
+        {
+          "seconds": 1188.9288413,
+          "adapter_mib_temperature_c": "3421, 79"
+        },
+        {
+          "seconds": 1199.003563,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1209.0710191,
+          "adapter_mib_temperature_c": "3423, 78"
+        },
+        {
+          "seconds": 1219.1341341999998,
+          "adapter_mib_temperature_c": "3417, 79"
+        },
+        {
+          "seconds": 1229.1848533,
+          "adapter_mib_temperature_c": "3423, 80"
+        },
+        {
+          "seconds": 1239.267709,
+          "adapter_mib_temperature_c": "3421, 79"
+        },
+        {
+          "seconds": 1249.3480912,
+          "adapter_mib_temperature_c": "3421, 78"
+        },
+        {
+          "seconds": 1259.4155251,
+          "adapter_mib_temperature_c": "3421, 79"
+        },
+        {
+          "seconds": 1269.473074,
+          "adapter_mib_temperature_c": "3421, 78"
+        },
+        {
+          "seconds": 1279.5435129999998,
+          "adapter_mib_temperature_c": "3417, 78"
+        },
+        {
+          "seconds": 1289.6133063,
+          "adapter_mib_temperature_c": "3424, 76"
+        },
+        {
+          "seconds": 1299.7289892,
+          "adapter_mib_temperature_c": "3424, 77"
+        },
+        {
+          "seconds": 1309.8376246,
+          "adapter_mib_temperature_c": "3424, 77"
+        },
+        {
+          "seconds": 1319.8983464,
+          "adapter_mib_temperature_c": "3422, 77"
+        },
+        {
+          "seconds": 1329.9413181999998,
+          "adapter_mib_temperature_c": "3411, 76"
+        },
+        {
+          "seconds": 1340.0062994,
+          "adapter_mib_temperature_c": "3412, 77"
+        },
+        {
+          "seconds": 1350.0779376,
+          "adapter_mib_temperature_c": "3412, 76"
+        },
+        {
+          "seconds": 1360.1593607999998,
+          "adapter_mib_temperature_c": "3425, 78"
+        },
+        {
+          "seconds": 1370.2289394,
+          "adapter_mib_temperature_c": "3424, 76"
+        },
+        {
+          "seconds": 1380.3066936,
+          "adapter_mib_temperature_c": "3695, 79"
+        },
+        {
+          "seconds": 1390.4199881,
+          "adapter_mib_temperature_c": "3719, 77"
+        },
+        {
+          "seconds": 1400.5240055,
+          "adapter_mib_temperature_c": "3714, 74"
+        },
+        {
+          "seconds": 1410.5857408,
+          "adapter_mib_temperature_c": "3729, 76"
+        },
+        {
+          "seconds": 1420.6433003,
+          "adapter_mib_temperature_c": "3725, 74"
+        },
+        {
+          "seconds": 1430.7001217,
+          "adapter_mib_temperature_c": "3725, 78"
+        },
+        {
+          "seconds": 1440.7649727,
+          "adapter_mib_temperature_c": "3722, 73"
+        },
+        {
+          "seconds": 1450.8640874,
+          "adapter_mib_temperature_c": "3698, 72"
+        },
+        {
+          "seconds": 1460.9195829,
+          "adapter_mib_temperature_c": "3698, 73"
+        },
+        {
+          "seconds": 1470.9655358999998,
+          "adapter_mib_temperature_c": "3698, 72"
+        },
+        {
+          "seconds": 1481.0421582,
+          "adapter_mib_temperature_c": "3698, 72"
+        },
+        {
+          "seconds": 1491.1079215999998,
+          "adapter_mib_temperature_c": "3697, 72"
+        },
+        {
+          "seconds": 1501.1725887999999,
+          "adapter_mib_temperature_c": "3696, 72"
+        },
+        {
+          "seconds": 1511.2732368,
+          "adapter_mib_temperature_c": "3696, 73"
+        },
+        {
+          "seconds": 1521.34223,
+          "adapter_mib_temperature_c": "3696, 71"
+        },
+        {
+          "seconds": 1531.429349,
+          "adapter_mib_temperature_c": "3696, 71"
+        },
+        {
+          "seconds": 1541.4915116999998,
+          "adapter_mib_temperature_c": "3699, 70"
+        },
+        {
+          "seconds": 1551.5554058,
+          "adapter_mib_temperature_c": "3699, 71"
+        },
+        {
+          "seconds": 1561.6558218999999,
+          "adapter_mib_temperature_c": "3694, 71"
+        },
+        {
+          "seconds": 1571.7279807,
+          "adapter_mib_temperature_c": "3694, 71"
+        },
+        {
+          "seconds": 1581.811591,
+          "adapter_mib_temperature_c": "3694, 71"
+        },
+        {
+          "seconds": 1591.8564231,
+          "adapter_mib_temperature_c": "3694, 69"
+        },
+        {
+          "seconds": 1601.9149859,
+          "adapter_mib_temperature_c": "3694, 70"
+        },
+        {
+          "seconds": 1611.9726497,
+          "adapter_mib_temperature_c": "3694, 70"
+        },
+        {
+          "seconds": 1622.0486337,
+          "adapter_mib_temperature_c": "3694, 69"
+        },
+        {
+          "seconds": 1632.1216187,
+          "adapter_mib_temperature_c": "3684, 74"
+        },
+        {
+          "seconds": 1642.2066175,
+          "adapter_mib_temperature_c": "3696, 75"
+        },
+        {
+          "seconds": 1652.2658149,
+          "adapter_mib_temperature_c": "3684, 74"
+        },
+        {
+          "seconds": 1662.3246723,
+          "adapter_mib_temperature_c": "3696, 77"
+        },
+        {
+          "seconds": 1672.3748125999998,
+          "adapter_mib_temperature_c": "3696, 78"
+        },
+        {
+          "seconds": 1682.4251052,
+          "adapter_mib_temperature_c": "3696, 77"
+        },
+        {
+          "seconds": 1692.4744266999999,
+          "adapter_mib_temperature_c": "3695, 76"
+        },
+        {
+          "seconds": 1702.5644071,
+          "adapter_mib_temperature_c": "3695, 76"
+        },
+        {
+          "seconds": 1712.6233857,
+          "adapter_mib_temperature_c": "3722, 76"
+        },
+        {
+          "seconds": 1722.6828421,
+          "adapter_mib_temperature_c": "3746, 76"
+        },
+        {
+          "seconds": 1732.7452314,
+          "adapter_mib_temperature_c": "3713, 80"
+        },
+        {
+          "seconds": 1742.8293821999998,
+          "adapter_mib_temperature_c": "3709, 80"
+        },
+        {
+          "seconds": 1752.9308291999998,
+          "adapter_mib_temperature_c": "3709, 81"
+        },
+        {
+          "seconds": 1762.9961612,
+          "adapter_mib_temperature_c": "3708, 81"
+        },
+        {
+          "seconds": 1773.0704342,
+          "adapter_mib_temperature_c": "3708, 81"
+        },
+        {
+          "seconds": 1783.1477052,
+          "adapter_mib_temperature_c": "3708, 81"
+        },
+        {
+          "seconds": 1793.2190386999998,
+          "adapter_mib_temperature_c": "3739, 78"
+        },
+        {
+          "seconds": 1803.3138116999999,
+          "adapter_mib_temperature_c": "3659, 80"
+        }
+      ]
+    }
+  ],
+  "traversals": [
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "v25_daylight1",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.37248229980469,
+      "samples": 3439,
+      "wall_seconds": 77.36417439952493,
+      "median_frame_ms": 16.666598618030548,
+      "p95_frame_ms": 16.982998698949814,
+      "p99_frame_ms": 17.471298575401306,
+      "max_frame_ms": 21.859001368284225,
+      "peak_process_physical_bytes": 1710686208,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.447723388671875,
+      "local_hour_utc_plus_5_5": 13.606276512145996,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.1719271766606,
+        -10474.873114744603,
+        96.05535215428205
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_daylight1",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "daylight"
+      },
+      "file": "route_daylight_v25_daylight1.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "v25_daylight2",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.38301086425781,
+      "samples": 3443,
+      "wall_seconds": 77.37964080274105,
+      "median_frame_ms": 16.665298491716385,
+      "p95_frame_ms": 16.831599175930023,
+      "p99_frame_ms": 17.054300755262375,
+      "max_frame_ms": 20.460601896047592,
+      "peak_process_physical_bytes": 1551663104,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.44599914550781,
+      "local_hour_utc_plus_5_5": 13.60626220703125,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -260.8875669560931,
+        -10478.470468001167,
+        96.10679436142821
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_daylight2",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "daylight"
+      },
+      "file": "route_daylight_v25_daylight2.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "daylight",
+      "run_id": "v25_daylight3",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.35858154296875,
+      "samples": 3442,
+      "wall_seconds": 77.35531579703093,
+      "median_frame_ms": 16.664698719978333,
+      "p95_frame_ms": 16.816500574350357,
+      "p99_frame_ms": 17.009299248456955,
+      "max_frame_ms": 17.567001283168793,
+      "peak_process_physical_bytes": 1598644224,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.447723388671875,
+      "local_hour_utc_plus_5_5": 13.606218338012695,
+      "wetness": 0,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.2408010473696,
+        -10474.688148931991,
+        96.10453300565555
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_daylight3",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "daylight"
+      },
+      "file": "route_daylight_v25_daylight3.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "rain",
+      "run_id": "v25_rain1",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.37063598632812,
+      "samples": 3442,
+      "wall_seconds": 77.36772419884801,
+      "median_frame_ms": 16.664698719978333,
+      "p95_frame_ms": 16.85269922018051,
+      "p99_frame_ms": 17.05840229988098,
+      "max_frame_ms": 19.512299448251724,
+      "peak_process_physical_bytes": 1597128704,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.447723388671875,
+      "local_hour_utc_plus_5_5": 13.60623836517334,
+      "wetness": 0.800000011920929,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.0572915317404,
+        -10475.2027240937,
+        96.00453758843149
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_rain1",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "rain"
+      },
+      "file": "route_rain_v25_rain1.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "rain",
+      "run_id": "v25_rain2",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.37934112548828,
+      "samples": 3442,
+      "wall_seconds": 77.3686001971364,
+      "median_frame_ms": 16.664598137140274,
+      "p95_frame_ms": 16.818899661302567,
+      "p99_frame_ms": 17.013799399137497,
+      "max_frame_ms": 25.29900148510933,
+      "peak_process_physical_bytes": 1624403968,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.447723388671875,
+      "local_hour_utc_plus_5_5": 13.606250762939453,
+      "wetness": 0.800000011920929,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -261.11743470826514,
+        -10477.82998491708,
+        96.04688211993566
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_rain2",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "rain"
+      },
+      "file": "route_rain_v25_rain2.json"
+    },
+    {
+      "passed": true,
+      "reason": "Collision-aware walking route completed",
+      "mode": "route",
+      "condition": "rain",
+      "run_id": "v25_rain3",
+      "map": "Lvl_PandoriV2_WP",
+      "simulation_seconds": 77.35995483398438,
+      "samples": 3442,
+      "wall_seconds": 77.35618560016155,
+      "median_frame_ms": 16.66479930281639,
+      "p95_frame_ms": 16.81690290570259,
+      "p99_frame_ms": 17.010599374771118,
+      "max_frame_ms": 17.775297164916992,
+      "peak_process_physical_bytes": 1630322688,
+      "rendered": true,
+      "p95_target_met": true,
+      "point_index": 22,
+      "sun_elevation_degrees": 42.44599914550781,
+      "local_hour_utc_plus_5_5": 13.606223106384277,
+      "wetness": 0.800000011920929,
+      "player_sheltered": false,
+      "player_position_cm": [
+        -262.143836939018,
+        -10474.949006448182,
+        96.08776465134048
+      ],
+      "measurement_scope": "Observed frame wall time after 20 simulation-second warmup. No separate CPU/GPU timing or VRAM metric. Captures and interaction runs are not traversal benchmarks.",
+      "editor_build": false,
+      "launch": {
+        "run_id": "v25_rain3",
+        "exe_sha256": "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+        "fps_cap": 60,
+        "cvars": "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+        "condition": "rain"
+      },
+      "file": "route_rain_v25_rain3.json"
+    }
+  ],
+  "soak_timeline": [
+    {
+      "wall_seconds": 60.0,
+      "completed_tasks": 10,
+      "tractor_legs": 0,
+      "inference_batches": 149
+    },
+    {
+      "wall_seconds": 120.0,
+      "completed_tasks": 30,
+      "tractor_legs": 1,
+      "inference_batches": 299
+    },
+    {
+      "wall_seconds": 180.0,
+      "completed_tasks": 54,
+      "tractor_legs": 1,
+      "inference_batches": 449
+    },
+    {
+      "wall_seconds": 240.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 599
+    },
+    {
+      "wall_seconds": 300.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 749
+    },
+    {
+      "wall_seconds": 360.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 899
+    },
+    {
+      "wall_seconds": 420.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1049
+    },
+    {
+      "wall_seconds": 480.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1199
+    },
+    {
+      "wall_seconds": 540.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1349
+    },
+    {
+      "wall_seconds": 600.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1499
+    },
+    {
+      "wall_seconds": 660.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1649
+    },
+    {
+      "wall_seconds": 720.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1799
+    },
+    {
+      "wall_seconds": 780.0,
+      "completed_tasks": 54,
+      "tractor_legs": 2,
+      "inference_batches": 1949
+    },
+    {
+      "wall_seconds": 840.0,
+      "completed_tasks": 54,
+      "tractor_legs": 3,
+      "inference_batches": 2099
+    },
+    {
+      "wall_seconds": 900.0,
+      "completed_tasks": 54,
+      "tractor_legs": 3,
+      "inference_batches": 2249
+    },
+    {
+      "wall_seconds": 960.0,
+      "completed_tasks": 54,
+      "tractor_legs": 3,
+      "inference_batches": 2399
+    },
+    {
+      "wall_seconds": 1020.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 2549
+    },
+    {
+      "wall_seconds": 1080.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 2699
+    },
+    {
+      "wall_seconds": 1140.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 2849
+    },
+    {
+      "wall_seconds": 1200.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 2999
+    },
+    {
+      "wall_seconds": 1260.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 3149
+    },
+    {
+      "wall_seconds": 1320.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 3299
+    },
+    {
+      "wall_seconds": 1380.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 3449
+    },
+    {
+      "wall_seconds": 1440.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 3596
+    },
+    {
+      "wall_seconds": 1500.0,
+      "completed_tasks": 54,
+      "tractor_legs": 4,
+      "inference_batches": 3743
+    },
+    {
+      "wall_seconds": 1560.0,
+      "completed_tasks": 56,
+      "tractor_legs": 4,
+      "inference_batches": 3890
+    },
+    {
+      "wall_seconds": 1620.0,
+      "completed_tasks": 71,
+      "tractor_legs": 4,
+      "inference_batches": 4036
+    },
+    {
+      "wall_seconds": 1680.0,
+      "completed_tasks": 71,
+      "tractor_legs": 4,
+      "inference_batches": 4183
+    },
+    {
+      "wall_seconds": 1740.0,
+      "completed_tasks": 71,
+      "tractor_legs": 4,
+      "inference_batches": 4331
+    },
+    {
+      "wall_seconds": 1800.0,
+      "completed_tasks": 71,
+      "tractor_legs": 4,
+      "inference_batches": 4480
+    }
+  ],
+  "images": [
+    {
+      "file": "dialogue.png",
+      "sha256": "c09ba80929359a7a5bde33e1191763195bc74a76136e8a7a268a41867095388c"
+    },
+    {
+      "file": "farms_rain.png",
+      "sha256": "3770ac1b9d7be916710abc82b7406b5bb96c8b69f8dbe3db1f3d119a2f7367fa"
+    }
+  ],
+  "limits": [
+    "procedural character/vehicle art",
+    "unreviewed Punjabi and no recorded voices",
+    "no independent fresh-machine test",
+    "no separate GPU frame timings",
+    "no complete StateTree/NavMesh/cloth implementation"
+  ]
+}

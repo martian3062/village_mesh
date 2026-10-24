@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Local package manifests and exact staged source bytes; not a fresh-machine or full licence audit",
+  "project_asset_namespaces": {
+    "VillageMeshV2": 522,
+    "VillageMeshV25": 2
+  },
+  "unreviewed_project_assets": [],
+  "staged_contract_sha256": {
+    "NPC/personas.json": "d593148d8a0257f1ff7cffcadcd0292aba937e42289c95d82d3f347751222066",
+    "NPC/schedules.json": "eefabab3778175baa65f5bbf67a3965d22cdc14e58eaabaa67aee1aedd407404",
+    "NPC/action_schema.json": "cb417e258f695edd10b71c2a754350068f9ee1a94d8cad214a6f51f9add34610",
+    "NPC/navigation.json": "a6e16956a36b75592a13785cae1204903955d24edad0bb291b74ff0bf66b47ec",
+    "NPC/scene.json": "16b83f4f39104f473b0136bde372a8508ec92e30661e8be6a3c8e42815f81380",
+    "Wardrobe/outfits.json": "562f6db8a0421a3adb8156f6b495fd6fb68208749a84a2f4bf2db017a2061da3",
+    "Farms/parcels.geojson": "117c34037f58c8957e2288df994c094af820d2d72ff19afc2d4b9b72fac67019",
+    "Farms/crop_calendar.json": "9b96f3e142f7ceb7c50e60b391667c4835df424badc707faf79d004f621f3e77",
+    "Roads/road_profiles.json": "81b89b37467e914d87c5187e6c2ac1027ac5db4db711a5408f096e5bc5978e95",
+    "Routes/tractor_route.json": "ae81b6fc9ff3d0f415f936c3905b5d053bfe7ec323419daede8c04fbcb3104cf",
+    "Dialogue/punjabi_lines.jsonl": "a6e64fe3296149f1efbadd2ea0ceca60f432ee02c4b36e2168cfa3735eaa0aaa",
+    "Models/npc_model_manifest.json": "c981c40fd96767770132867b3fbaed1b3dbec81a5a10e6e344e9ecbaca4887df",
+    "Models/policy_parity.json": "16350a9ed8ea35269ef68242c4e114adbc51d72a452de2f56897a57f129f4dfc"
+  },
+  "pinned_font_assets": [
+    {
+      "file": "Assets/Fonts/NotoSansGurmukhi.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notosansgurmukhi/NotoSansGurmukhi%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "1e6f728fa620e566f842d81e220265813faa12771214765d289c98e035adc5f2",
+      "bytes": 268608,
+      "license": "OFL-1.1"
+    },
+    {
+      "file": "Assets/Fonts/OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notosansgurmukhi/OFL.txt",
+      "sha256": "3f7451b7e2c8381be0c5712f7b0dd5c2d75fe787ae16a99f18b7fa45627a0fde",
+      "bytes": 4384,
+      "license": "OFL-1.1"
+    }
+  ],
+  "frozen_input_sha256": {
+    "Assets/Geodata/pandori_nijjaran.buildings.geojson": "db470631597c2d6902e45160333b6c2dc1dd71ac63eaeb19a18052778a547dbe",
+    "Assets/Geodata/pandori_nijjaran.osm.json": "242483fe262d1aae31ba2a1974edc5a419f57c5c835755b7d303f27ab7ca518c",
+    "Assets/textures.lock.json": "3eb6afaec4fae55334bcfedfb2776c85d579a5cfedc3610cf999ed008e94f2dd",
+    "Assets/models.lock.json": "a3879994f4d74c3e0230f834d1dd727d4fa42eb8047348507793b71b89975c87",
+    "Content/Well/wind.csv": "250baa33f08ea28c05a85d557994dd73e8e143b220b795730ca26a70e7d2f04a",
+    "Content/Well/wind.source.json": "e818b52c10827bfddf04b94d0c9ea3f42bc09836df7397a01779557a760cf54c"
+  }
+}

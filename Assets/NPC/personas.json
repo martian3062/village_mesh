@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "people": [
+    {
+      "id": "resident_00",
+      "name": "Harjit",
+      "fictional": true,
+      "adult": true,
+      "role": "plot_inspector",
+      "home_node": "lane_00",
+      "work_node": "plot_access",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_00",
+      "voice_set": null,
+      "capabilities": [
+        "inspect",
+        "carry"
+      ],
+      "preferences": {
+        "talkativeness": 0.25,
+        "rest_preference": 0.3
+      },
+      "relationships": {},
+      "assigned_plot": "plot_0",
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_01",
+      "name": "Simran",
+      "fictional": true,
+      "adult": true,
+      "role": "shopkeeper",
+      "home_node": "lane_05",
+      "work_node": "lane_06",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_01",
+      "voice_set": null,
+      "capabilities": [
+        "stock",
+        "converse"
+      ],
+      "preferences": {
+        "talkativeness": 0.33,
+        "rest_preference": 0.35
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_02",
+      "name": "Aman",
+      "fictional": true,
+      "adult": true,
+      "role": "vehicle_operator",
+      "home_node": "lane_10",
+      "work_node": "vehicle_stop",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_02",
+      "voice_set": null,
+      "capabilities": [
+        "drive",
+        "inspect"
+      ],
+      "preferences": {
+        "talkativeness": 0.41000000000000003,
+        "rest_preference": 0.4
+      },
+      "relationships": {},
+      "assigned_plot": "plot_2",
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_03",
+      "name": "Gurleen",
+      "fictional": true,
+      "adult": true,
+      "role": "commuter",
+      "home_node": "lane_12",
+      "work_node": "lane_21",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_03",
+      "voice_set": null,
+      "capabilities": [
+        "commute"
+      ],
+      "preferences": {
+        "talkativeness": 0.49,
+        "rest_preference": 0.3
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_04",
+      "name": "Navdeep",
+      "fictional": true,
+      "adult": true,
+      "role": "student_adult",
+      "home_node": "lane_17",
+      "work_node": "lane_17",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_04",
+      "voice_set": null,
+      "capabilities": [
+        "commute",
+        "visit"
+      ],
+      "preferences": {
+        "talkativeness": 0.5700000000000001,
+        "rest_preference": 0.35
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_05",
+      "name": "Mehar",
+      "fictional": true,
+      "adult": true,
+      "role": "errands",
+      "home_node": "lane_19",
+      "work_node": "lane_08",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_05",
+      "voice_set": null,
+      "capabilities": [
+        "carry",
+        "visit"
+      ],
+      "preferences": {
+        "talkativeness": 0.65,
+        "rest_preference": 0.4
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_06",
+      "name": "Kiran",
+      "fictional": true,
+      "adult": true,
+      "role": "courtyard_visitor",
+      "home_node": "lane_06",
+      "work_node": "lane_05",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_06",
+      "voice_set": null,
+      "capabilities": [
+        "visit",
+        "converse"
+      ],
+      "preferences": {
+        "talkativeness": 0.73,
+        "rest_preference": 0.3
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    },
+    {
+      "id": "resident_07",
+      "name": "Jas",
+      "fictional": true,
+      "adult": true,
+      "role": "visitor",
+      "home_node": "lane_20",
+      "work_node": "lane_12",
+      "shelter_node": "farm_shelter",
+      "outfit_id": "outfit_07",
+      "voice_set": null,
+      "capabilities": [
+        "visit"
+      ],
+      "preferences": {
+        "talkativeness": 0.81,
+        "rest_preference": 0.35
+      },
+      "relationships": {},
+      "assigned_plot": null,
+      "reviewer": null,
+      "review_status": "fictional_unreviewed_design"
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "plot_0",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.7240864861794,
+              31.46089752233453
+            ],
+            [
+              75.7241971886213,
+              31.46089752233453
+            ],
+            [
+              75.7241971886213,
+              31.460762624279972
+            ],
+            [
+              75.7240864861794,
+              31.460762624279972
+            ],
+            [
+              75.7240864861794,
+              31.46089752233453
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "plot_id": "plot_0",
+        "polygon_cm": [
+          [
+            200,
+            -1800
+          ],
+          [
+            1250,
+            -1800
+          ],
+          [
+            1250,
+            -3300
+          ],
+          [
+            200,
+            -3300
+          ],
+          [
+            200,
+            -1800
+          ]
+        ],
+        "access_node": "farm_gate",
+        "assigned_jobs": [
+          "inspect",
+          "irrigation_check"
+        ],
+        "crop_type": "rice",
+        "growth_stage": "maturing",
+        "sowing_date": null,
+        "variety_if_known": null,
+        "irrigation_state": "check_due",
+        "residue_state": "managed",
+        "soil_visual_state": "dry",
+        "machinery_route": "farm_shuttle",
+        "source": "original demonstration design on flat V2 terrain",
+        "confidence": "procedural inference",
+        "ownership": null,
+        "scene_date": "2026-10-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "plot_1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.72423408943527,
+              31.46089752233453
+            ],
+            [
+              75.72434479187716,
+              31.46089752233453
+            ],
+            [
+              75.72434479187716,
+              31.460762624279972
+            ],
+            [
+              75.72423408943527,
+              31.460762624279972
+            ],
+            [
+              75.72423408943527,
+              31.46089752233453
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "plot_id": "plot_1",
+        "polygon_cm": [
+          [
+            1600,
+            -1800
+          ],
+          [
+            2650,
+            -1800
+          ],
+          [
+            2650,
+            -3300
+          ],
+          [
+            1600,
+            -3300
+          ],
+          [
+            1600,
+            -1800
+          ]
+        ],
+        "access_node": "farm_gate",
+        "assigned_jobs": [
+          "inspect",
+          "irrigation_check"
+        ],
+        "crop_type": "managed_residue",
+        "growth_stage": "harvested",
+        "sowing_date": null,
+        "variety_if_known": null,
+        "irrigation_state": "check_due",
+        "residue_state": "managed",
+        "soil_visual_state": "dry",
+        "machinery_route": "farm_shuttle",
+        "source": "original demonstration design on flat V2 terrain",
+        "confidence": "procedural inference",
+        "ownership": null,
+        "scene_date": "2026-10-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "plot_2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.7240864861794,
+              31.46069967185451
+            ],
+            [
+              75.7241971886213,
+              31.46069967185451
+            ],
+            [
+              75.7241971886213,
+              31.460564773799952
+            ],
+            [
+              75.7240864861794,
+              31.460564773799952
+            ],
+            [
+              75.7240864861794,
+              31.46069967185451
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "plot_id": "plot_2",
+        "polygon_cm": [
+          [
+            200,
+            -4000
+          ],
+          [
+            1250,
+            -4000
+          ],
+          [
+            1250,
+            -5500
+          ],
+          [
+            200,
+            -5500
+          ],
+          [
+            200,
+            -4000
+          ]
+        ],
+        "access_node": "farm_south",
+        "assigned_jobs": [
+          "inspect",
+          "irrigation_check"
+        ],
+        "crop_type": "prepared_soil",
+        "growth_stage": "awaiting_sowing",
+        "sowing_date": null,
+        "variety_if_known": null,
+        "irrigation_state": "check_due",
+        "residue_state": "managed",
+        "soil_visual_state": "dry",
+        "machinery_route": "farm_shuttle",
+        "source": "original demonstration design on flat V2 terrain",
+        "confidence": "procedural inference",
+        "ownership": null,
+        "scene_date": "2026-10-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "plot_3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              75.72423408943527,
+              31.46069967185451
+            ],
+            [
+              75.72434479187716,
+              31.46069967185451
+            ],
+            [
+              75.72434479187716,
+              31.460564773799952
+            ],
+            [
+              75.72423408943527,
+              31.460564773799952
+            ],
+            [
+              75.72423408943527,
+              31.46069967185451
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "plot_id": "plot_3",
+        "polygon_cm": [
+          [
+            1600,
+            -4000
+          ],
+          [
+            2650,
+            -4000
+          ],
+          [
+            2650,
+            -5500
+          ],
+          [
+            1600,
+            -5500
+          ],
+          [
+            1600,
+            -4000
+          ]
+        ],
+        "access_node": "farm_south",
+        "assigned_jobs": [
+          "inspect",
+          "irrigation_check"
+        ],
+        "crop_type": "fodder",
+        "growth_stage": "vegetative",
+        "sowing_date": null,
+        "variety_if_known": null,
+        "irrigation_state": "check_due",
+        "residue_state": "managed",
+        "soil_visual_state": "dry",
+        "machinery_route": "farm_shuttle",
+        "source": "original demonstration design on flat V2 terrain",
+        "confidence": "procedural inference",
+        "ownership": null,
+        "scene_date": "2026-10-23"
+      }
+    }
+  ]
+}

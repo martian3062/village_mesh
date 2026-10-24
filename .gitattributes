@@ -10,3 +10,8 @@ Assets/Geodata/*.geojson -text whitespace=cr-at-eol
 *.ps1 text eol=crlf
 *.png binary
 *.jpg binary
+Assets/Fonts/* -text
+# Keep the pinned upstream licence verbatim, including its original line space.
+Assets/Fonts/OFL.txt whitespace=-blank-at-eol
+Assets/Models/*.onnx binary
+Assets/Farms/*.geojson -text whitespace=cr-at-eol

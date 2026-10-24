@@ -1,0 +1,14 @@
+﻿{
+    "recorded_at_utc":  "2026-10-23T18:01:10.2368149Z",
+    "os":  "Microsoft Windows 11 Home Single Language",
+    "os_version":  "10.0.26300",
+    "cpu":  [
+                "13th Gen Intel(R) Core(TM) i5-13450HX"
+            ],
+    "ram_mib":  24284,
+    "gpu_name_driver_total_mib":  "NVIDIA GeForce RTX 4050 Laptop GPU, 581.86, 6141",
+    "engine":  "5.8.3",
+    "python":  "3.12.10",
+    "build":  "Windows Development",
+    "scope":  "Local workstation with other applications open; not an isolated or fresh-machine benchmark"
+}

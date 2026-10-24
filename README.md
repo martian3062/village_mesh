@@ -1,5 +1,7 @@
 # village_mesh
 
+**V2.5 living-village prototype:** [build and play guide](Docs/V25/README.md) for eight fictional residents, four inferred farm plots, draft Punjabi subtitles, persistent state and the audited 121,520-parameter CPU policy. Character/vehicle art remains a procedural prototype; local wardrobe, voice and language review are pending.
+
 **V2 pilot work:** see the [V2 implementation guide](Docs/V2/README.md) for the separate 240 m street pilot, build/run commands, and milestone status. The V1 overview and recorded validation below remain available for comparison.
 
 An explorable Unreal Engine village based on **Pandori Nijjaran, Adampur, Punjab, India, PIN 144102**. OpenStreetMap road centerlines and Overture building footprints provide the geographic layout. Procedural architecture, CC0 materials and vegetation, dynamic weather, and interactive Chaos physics turn that layout into a playable environment.

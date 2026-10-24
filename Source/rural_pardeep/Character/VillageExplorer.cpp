@@ -8,6 +8,7 @@
 #include "Environment/WeatherManager.h"
 #include "Environment/VillageDoor.h"
 #include "Environment/VillageDiagnostics.h"
+#include "V25/VillageLife.h"
 #include "TimerManager.h"
 #include "Dom/JsonObject.h"
 #include "Serialization/JsonSerializer.h"
@@ -59,6 +60,17 @@ void AVillageExplorer::SetupPlayerInputComponent(UInputComponent* Input)
     Input->BindKey(EKeys::F8, IE_Pressed, this, &AVillageExplorer::VisitPhysicsYard);
     Input->BindKey(EKeys::F9, IE_Pressed, this, &AVillageExplorer::ToggleOverview);
     Input->BindKey(EKeys::F10, IE_Pressed, this, &AVillageExplorer::VisitPilotRoom);
+    auto BindV25=[&](FKey Key,TFunction<void(AVillageLifeDirector*)> Callback)
+    {
+        FInputKeyBinding Binding(FInputChord(Key),IE_Pressed);
+        Binding.KeyDelegate.GetDelegateForManualSet().BindLambda([this,Callback](){if(auto* Life=AVillageLifeDirector::Find(GetWorld()))Callback(Life);});
+        Input->KeyBindings.Add(MoveTemp(Binding));
+    };
+    BindV25(EKeys::T,[](AVillageLifeDirector* L){L->Talk();});
+    BindV25(EKeys::F11,[](AVillageLifeDirector* L){L->VisitFarm();});
+    BindV25(EKeys::F5,[](AVillageLifeDirector* L){L->TogglePolicy();});
+    const FKey Choices[]={EKeys::One,EKeys::Two,EKeys::Three,EKeys::Four,EKeys::Five};
+    for(int i=0;i<5;++i)BindV25(Choices[i],[i](AVillageLifeDirector* L){L->DialogueChoice(i+1);});
 }
 
 void AVillageExplorer::BeginPlay()
@@ -81,9 +93,12 @@ void AVillageExplorer::BeginPlay()
         }
     }
 #if !UE_BUILD_SHIPPING
-    if (FString(FCommandLine::Get()).Contains(TEXT("-VillageV2")))
+    const FString Arguments(FCommandLine::Get());
+    if (Arguments.Contains(TEXT("-VillageV2Capture="))||Arguments.Contains(TEXT("-VillageV2Route="))||Arguments.Contains(TEXT("-VillageV2Interactions="))||Arguments.Contains(TEXT("-VillageV2Soak=")))
         GetWorldTimerManager().SetTimerForNextTick([this]() { GetWorld()->SpawnActor<AVillageDiagnostics>(); });
 #endif
+    if(AVillageLifeDirector::Enabled()&&GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))
+        GetWorldTimerManager().SetTimerForNextTick([this](){GetWorld()->SpawnActor<AVillageLifeDirector>();});
 }
 void AVillageExplorer::Forward(float V) { AddMovementInput(GetActorForwardVector(), V); }
 void AVillageExplorer::Right(float V) { AddMovementInput(GetActorRightVector(), V); }
@@ -188,6 +203,7 @@ void AVillageExplorer::CycleWeather()
 }
 void AVillageExplorer::AdvanceTime()
 {
+    if(auto* Life=AVillageLifeDirector::Find(GetWorld())){Life->AdvanceClock();return;}
     for (TActorIterator<AWeatherManager> It(GetWorld()); It; ++It)
         It->TimeOfDayHours = FMath::Fmod(It->TimeOfDayHours + 3.f, 24.f);
 }
@@ -252,6 +268,11 @@ void AVillageExplorerHUD::DrawHUD()
     const bool bPandori = GetWorld()->GetMapName().Contains(TEXT("Pandori"));
     DrawText(GetWorld()->GetMapName().Contains(TEXT("PandoriV2")) ? TEXT("PANDORI NIJJARAN  /  V2 PILOT") : bPandori ? TEXT("PANDORI NIJJARAN  /  144102") : TEXT("VILLAGE MESH  /  OPEN WORLD"), FLinearColor(0.93f, 0.85f, 0.62f), 40, 34, nullptr, 1.2f);
     DrawText(TEXT("WASD walk  |  Shift run  |  Space jump"), FLinearColor::White, 40, 60);
+    if(auto* Life=AVillageLifeDirector::Find(GetWorld()))
+    {
+        DrawRect(FLinearColor(.02f,.025f,.02f,.75f),Canvas->ClipX-600,24,575,112);
+        DrawText(Life->HUDStatus(),FLinearColor(.92f,.89f,.73f),Canvas->ClipX-585,34,nullptr,.9f);
+    }
     DrawText(TEXT("E door/grab/drop | RMB throw | F6 weather | F7 time | F8 yard | F9 overview | F10 rooms"),
         FLinearColor::White, 30, Canvas->ClipY - 50);
     if (bPandori) DrawText(TEXT("Map: (c) OpenStreetMap contributors, Overture Maps | Building sources: Microsoft / Google | ODbL / CC BY 4.0"),

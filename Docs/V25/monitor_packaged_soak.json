@@ -1,0 +1,729 @@
+﻿{
+    "run_id":  "packaged_soak",
+    "exe_sha256":  "e6053a2d521e53a90a0c9be8602d8ece3291cffd03ce3d9d7744171e0e0fc946",
+    "fps_cap":  60,
+    "cvars":  "sg.ViewDistanceQuality 3,sg.AntiAliasingQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,sg.PostProcessQuality 3,sg.TextureQuality 3,sg.EffectsQuality 3,sg.FoliageQuality 3,sg.ShadingQuality 3,sg.LandscapeQuality 3,r.VSync 0,r.DynamicRes.OperationMode 0,t.MaxFPS 0,r.ScreenPercentage 67,t.MaxFPS 60",
+    "gpu_scope":  "whole adapter, includes other applications",
+    "samples":  [
+                    {
+                        "seconds":  0.071760999999999991,
+                        "adapter_mib_temperature_c":  "328, 51"
+                    },
+                    {
+                        "seconds":  10.2119734,
+                        "adapter_mib_temperature_c":  "3686, 70"
+                    },
+                    {
+                        "seconds":  20.25686,
+                        "adapter_mib_temperature_c":  "3686, 71"
+                    },
+                    {
+                        "seconds":  30.3242412,
+                        "adapter_mib_temperature_c":  "3686, 73"
+                    },
+                    {
+                        "seconds":  40.3945254,
+                        "adapter_mib_temperature_c":  "3686, 74"
+                    },
+                    {
+                        "seconds":  50.4625669,
+                        "adapter_mib_temperature_c":  "3686, 75"
+                    },
+                    {
+                        "seconds":  60.543315899999996,
+                        "adapter_mib_temperature_c":  "3687, 77"
+                    },
+                    {
+                        "seconds":  70.628935099999993,
+                        "adapter_mib_temperature_c":  "3687, 76"
+                    },
+                    {
+                        "seconds":  80.7037655,
+                        "adapter_mib_temperature_c":  "3687, 76"
+                    },
+                    {
+                        "seconds":  90.8479332,
+                        "adapter_mib_temperature_c":  "3687, 77"
+                    },
+                    {
+                        "seconds":  100.9372628,
+                        "adapter_mib_temperature_c":  "3687, 78"
+                    },
+                    {
+                        "seconds":  111.0922634,
+                        "adapter_mib_temperature_c":  "3681, 77"
+                    },
+                    {
+                        "seconds":  121.2669353,
+                        "adapter_mib_temperature_c":  "3681, 78"
+                    },
+                    {
+                        "seconds":  131.3937291,
+                        "adapter_mib_temperature_c":  "3681, 78"
+                    },
+                    {
+                        "seconds":  141.47038469999998,
+                        "adapter_mib_temperature_c":  "3661, 79"
+                    },
+                    {
+                        "seconds":  151.54361749999998,
+                        "adapter_mib_temperature_c":  "3645, 79"
+                    },
+                    {
+                        "seconds":  161.6460782,
+                        "adapter_mib_temperature_c":  "3682, 80"
+                    },
+                    {
+                        "seconds":  171.7153035,
+                        "adapter_mib_temperature_c":  "3686, 80"
+                    },
+                    {
+                        "seconds":  181.77548439999998,
+                        "adapter_mib_temperature_c":  "3686, 78"
+                    },
+                    {
+                        "seconds":  191.84221649999998,
+                        "adapter_mib_temperature_c":  "3688, 80"
+                    },
+                    {
+                        "seconds":  201.90538479999998,
+                        "adapter_mib_temperature_c":  "3688, 79"
+                    },
+                    {
+                        "seconds":  211.9630823,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  222.0294449,
+                        "adapter_mib_temperature_c":  "3691, 81"
+                    },
+                    {
+                        "seconds":  232.10668969999998,
+                        "adapter_mib_temperature_c":  "3691, 82"
+                    },
+                    {
+                        "seconds":  242.1674651,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  252.2194854,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  262.2932835,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  272.3590367,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  282.40460079999997,
+                        "adapter_mib_temperature_c":  "3688, 83"
+                    },
+                    {
+                        "seconds":  292.4670107,
+                        "adapter_mib_temperature_c":  "3688, 82"
+                    },
+                    {
+                        "seconds":  302.52796589999997,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  312.5910623,
+                        "adapter_mib_temperature_c":  "3688, 81"
+                    },
+                    {
+                        "seconds":  322.650758,
+                        "adapter_mib_temperature_c":  "3688, 83"
+                    },
+                    {
+                        "seconds":  332.7172845,
+                        "adapter_mib_temperature_c":  "3688, 83"
+                    },
+                    {
+                        "seconds":  342.7808488,
+                        "adapter_mib_temperature_c":  "3688, 82"
+                    },
+                    {
+                        "seconds":  352.8287249,
+                        "adapter_mib_temperature_c":  "3419, 80"
+                    },
+                    {
+                        "seconds":  362.8804887,
+                        "adapter_mib_temperature_c":  "3419, 80"
+                    },
+                    {
+                        "seconds":  372.9420417,
+                        "adapter_mib_temperature_c":  "3419, 81"
+                    },
+                    {
+                        "seconds":  383.00458399999997,
+                        "adapter_mib_temperature_c":  "3419, 79"
+                    },
+                    {
+                        "seconds":  393.07522389999997,
+                        "adapter_mib_temperature_c":  "3419, 79"
+                    },
+                    {
+                        "seconds":  403.1443106,
+                        "adapter_mib_temperature_c":  "3419, 78"
+                    },
+                    {
+                        "seconds":  413.2145263,
+                        "adapter_mib_temperature_c":  "3419, 79"
+                    },
+                    {
+                        "seconds":  423.2969157,
+                        "adapter_mib_temperature_c":  "3419, 79"
+                    },
+                    {
+                        "seconds":  433.37662919999997,
+                        "adapter_mib_temperature_c":  "3419, 78"
+                    },
+                    {
+                        "seconds":  443.4592418,
+                        "adapter_mib_temperature_c":  "3420, 78"
+                    },
+                    {
+                        "seconds":  453.5168382,
+                        "adapter_mib_temperature_c":  "3395, 80"
+                    },
+                    {
+                        "seconds":  463.625885,
+                        "adapter_mib_temperature_c":  "3420, 78"
+                    },
+                    {
+                        "seconds":  473.69860669999997,
+                        "adapter_mib_temperature_c":  "3419, 78"
+                    },
+                    {
+                        "seconds":  483.76095019999997,
+                        "adapter_mib_temperature_c":  "3419, 79"
+                    },
+                    {
+                        "seconds":  493.8323549,
+                        "adapter_mib_temperature_c":  "3419, 80"
+                    },
+                    {
+                        "seconds":  503.89124339999995,
+                        "adapter_mib_temperature_c":  "3419, 78"
+                    },
+                    {
+                        "seconds":  513.955967,
+                        "adapter_mib_temperature_c":  "3422, 79"
+                    },
+                    {
+                        "seconds":  524.024562,
+                        "adapter_mib_temperature_c":  "3422, 79"
+                    },
+                    {
+                        "seconds":  534.0857311,
+                        "adapter_mib_temperature_c":  "3422, 79"
+                    },
+                    {
+                        "seconds":  544.1560518,
+                        "adapter_mib_temperature_c":  "3419, 80"
+                    },
+                    {
+                        "seconds":  554.2146627,
+                        "adapter_mib_temperature_c":  "3419, 77"
+                    },
+                    {
+                        "seconds":  564.2805429,
+                        "adapter_mib_temperature_c":  "3419, 77"
+                    },
+                    {
+                        "seconds":  574.3508717,
+                        "adapter_mib_temperature_c":  "3419, 78"
+                    },
+                    {
+                        "seconds":  584.3976322,
+                        "adapter_mib_temperature_c":  "3420, 78"
+                    },
+                    {
+                        "seconds":  594.46756269999992,
+                        "adapter_mib_temperature_c":  "3420, 77"
+                    },
+                    {
+                        "seconds":  604.5296601,
+                        "adapter_mib_temperature_c":  "3548, 77"
+                    },
+                    {
+                        "seconds":  614.6244643,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  624.730562,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  634.790225,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  644.8726613,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  654.9586605,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  665.0280066,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  675.09699649999993,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  685.16043089999994,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  695.2763474,
+                        "adapter_mib_temperature_c":  "3424, 77"
+                    },
+                    {
+                        "seconds":  705.3441855,
+                        "adapter_mib_temperature_c":  "3424, 76"
+                    },
+                    {
+                        "seconds":  715.3895971,
+                        "adapter_mib_temperature_c":  "3422, 75"
+                    },
+                    {
+                        "seconds":  725.46546389999992,
+                        "adapter_mib_temperature_c":  "3421, 75"
+                    },
+                    {
+                        "seconds":  735.54947329999993,
+                        "adapter_mib_temperature_c":  "3409, 76"
+                    },
+                    {
+                        "seconds":  745.6202274,
+                        "adapter_mib_temperature_c":  "3422, 76"
+                    },
+                    {
+                        "seconds":  755.73218079999992,
+                        "adapter_mib_temperature_c":  "3397, 76"
+                    },
+                    {
+                        "seconds":  765.78774579999993,
+                        "adapter_mib_temperature_c":  "3422, 76"
+                    },
+                    {
+                        "seconds":  775.8420949,
+                        "adapter_mib_temperature_c":  "3422, 77"
+                    },
+                    {
+                        "seconds":  785.96884679999994,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  796.08595329999991,
+                        "adapter_mib_temperature_c":  "3421, 75"
+                    },
+                    {
+                        "seconds":  806.1538633,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  816.2180399,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  826.27740339999991,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  836.3200054,
+                        "adapter_mib_temperature_c":  "3421, 75"
+                    },
+                    {
+                        "seconds":  846.3641087,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  856.4315686,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  866.4973084,
+                        "adapter_mib_temperature_c":  "3421, 77"
+                    },
+                    {
+                        "seconds":  876.5885293,
+                        "adapter_mib_temperature_c":  "3424, 76"
+                    },
+                    {
+                        "seconds":  886.6447592,
+                        "adapter_mib_temperature_c":  "3424, 76"
+                    },
+                    {
+                        "seconds":  896.7103205,
+                        "adapter_mib_temperature_c":  "3423, 77"
+                    },
+                    {
+                        "seconds":  906.7739055,
+                        "adapter_mib_temperature_c":  "3549, 78"
+                    },
+                    {
+                        "seconds":  916.88540819999992,
+                        "adapter_mib_temperature_c":  "3421, 76"
+                    },
+                    {
+                        "seconds":  926.9832361,
+                        "adapter_mib_temperature_c":  "3422, 77"
+                    },
+                    {
+                        "seconds":  937.0479196,
+                        "adapter_mib_temperature_c":  "3422, 80"
+                    },
+                    {
+                        "seconds":  947.1636254,
+                        "adapter_mib_temperature_c":  "3423, 80"
+                    },
+                    {
+                        "seconds":  957.2203905,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  967.26073669999994,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  977.31914139999992,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  987.39616789999991,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  997.46577989999992,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1007.5682604,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1017.6362131999999,
+                        "adapter_mib_temperature_c":  "3423, 80"
+                    },
+                    {
+                        "seconds":  1027.7162835,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1037.800757,
+                        "adapter_mib_temperature_c":  "3412, 78"
+                    },
+                    {
+                        "seconds":  1047.8819098,
+                        "adapter_mib_temperature_c":  "3424, 79"
+                    },
+                    {
+                        "seconds":  1057.9601937,
+                        "adapter_mib_temperature_c":  "3415, 80"
+                    },
+                    {
+                        "seconds":  1068.0532278,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1078.126927,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1088.1910278999999,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1098.2724572,
+                        "adapter_mib_temperature_c":  "3423, 80"
+                    },
+                    {
+                        "seconds":  1108.350448,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1118.4200564,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1128.4762713,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1138.5340664,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1148.6240450999999,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1158.726303,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1168.7991114,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1178.8648243,
+                        "adapter_mib_temperature_c":  "3423, 79"
+                    },
+                    {
+                        "seconds":  1188.9288413,
+                        "adapter_mib_temperature_c":  "3421, 79"
+                    },
+                    {
+                        "seconds":  1199.003563,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1209.0710191,
+                        "adapter_mib_temperature_c":  "3423, 78"
+                    },
+                    {
+                        "seconds":  1219.1341341999998,
+                        "adapter_mib_temperature_c":  "3417, 79"
+                    },
+                    {
+                        "seconds":  1229.1848533,
+                        "adapter_mib_temperature_c":  "3423, 80"
+                    },
+                    {
+                        "seconds":  1239.267709,
+                        "adapter_mib_temperature_c":  "3421, 79"
+                    },
+                    {
+                        "seconds":  1249.3480912,
+                        "adapter_mib_temperature_c":  "3421, 78"
+                    },
+                    {
+                        "seconds":  1259.4155251,
+                        "adapter_mib_temperature_c":  "3421, 79"
+                    },
+                    {
+                        "seconds":  1269.473074,
+                        "adapter_mib_temperature_c":  "3421, 78"
+                    },
+                    {
+                        "seconds":  1279.5435129999998,
+                        "adapter_mib_temperature_c":  "3417, 78"
+                    },
+                    {
+                        "seconds":  1289.6133063,
+                        "adapter_mib_temperature_c":  "3424, 76"
+                    },
+                    {
+                        "seconds":  1299.7289892,
+                        "adapter_mib_temperature_c":  "3424, 77"
+                    },
+                    {
+                        "seconds":  1309.8376246,
+                        "adapter_mib_temperature_c":  "3424, 77"
+                    },
+                    {
+                        "seconds":  1319.8983464,
+                        "adapter_mib_temperature_c":  "3422, 77"
+                    },
+                    {
+                        "seconds":  1329.9413181999998,
+                        "adapter_mib_temperature_c":  "3411, 76"
+                    },
+                    {
+                        "seconds":  1340.0062994,
+                        "adapter_mib_temperature_c":  "3412, 77"
+                    },
+                    {
+                        "seconds":  1350.0779376,
+                        "adapter_mib_temperature_c":  "3412, 76"
+                    },
+                    {
+                        "seconds":  1360.1593607999998,
+                        "adapter_mib_temperature_c":  "3425, 78"
+                    },
+                    {
+                        "seconds":  1370.2289394,
+                        "adapter_mib_temperature_c":  "3424, 76"
+                    },
+                    {
+                        "seconds":  1380.3066936,
+                        "adapter_mib_temperature_c":  "3695, 79"
+                    },
+                    {
+                        "seconds":  1390.4199881,
+                        "adapter_mib_temperature_c":  "3719, 77"
+                    },
+                    {
+                        "seconds":  1400.5240055,
+                        "adapter_mib_temperature_c":  "3714, 74"
+                    },
+                    {
+                        "seconds":  1410.5857408,
+                        "adapter_mib_temperature_c":  "3729, 76"
+                    },
+                    {
+                        "seconds":  1420.6433003,
+                        "adapter_mib_temperature_c":  "3725, 74"
+                    },
+                    {
+                        "seconds":  1430.7001217,
+                        "adapter_mib_temperature_c":  "3725, 78"
+                    },
+                    {
+                        "seconds":  1440.7649727,
+                        "adapter_mib_temperature_c":  "3722, 73"
+                    },
+                    {
+                        "seconds":  1450.8640874,
+                        "adapter_mib_temperature_c":  "3698, 72"
+                    },
+                    {
+                        "seconds":  1460.9195829,
+                        "adapter_mib_temperature_c":  "3698, 73"
+                    },
+                    {
+                        "seconds":  1470.9655358999998,
+                        "adapter_mib_temperature_c":  "3698, 72"
+                    },
+                    {
+                        "seconds":  1481.0421582,
+                        "adapter_mib_temperature_c":  "3698, 72"
+                    },
+                    {
+                        "seconds":  1491.1079215999998,
+                        "adapter_mib_temperature_c":  "3697, 72"
+                    },
+                    {
+                        "seconds":  1501.1725887999999,
+                        "adapter_mib_temperature_c":  "3696, 72"
+                    },
+                    {
+                        "seconds":  1511.2732368,
+                        "adapter_mib_temperature_c":  "3696, 73"
+                    },
+                    {
+                        "seconds":  1521.34223,
+                        "adapter_mib_temperature_c":  "3696, 71"
+                    },
+                    {
+                        "seconds":  1531.429349,
+                        "adapter_mib_temperature_c":  "3696, 71"
+                    },
+                    {
+                        "seconds":  1541.4915116999998,
+                        "adapter_mib_temperature_c":  "3699, 70"
+                    },
+                    {
+                        "seconds":  1551.5554058,
+                        "adapter_mib_temperature_c":  "3699, 71"
+                    },
+                    {
+                        "seconds":  1561.6558218999999,
+                        "adapter_mib_temperature_c":  "3694, 71"
+                    },
+                    {
+                        "seconds":  1571.7279807,
+                        "adapter_mib_temperature_c":  "3694, 71"
+                    },
+                    {
+                        "seconds":  1581.811591,
+                        "adapter_mib_temperature_c":  "3694, 71"
+                    },
+                    {
+                        "seconds":  1591.8564231,
+                        "adapter_mib_temperature_c":  "3694, 69"
+                    },
+                    {
+                        "seconds":  1601.9149859,
+                        "adapter_mib_temperature_c":  "3694, 70"
+                    },
+                    {
+                        "seconds":  1611.9726497,
+                        "adapter_mib_temperature_c":  "3694, 70"
+                    },
+                    {
+                        "seconds":  1622.0486337,
+                        "adapter_mib_temperature_c":  "3694, 69"
+                    },
+                    {
+                        "seconds":  1632.1216187,
+                        "adapter_mib_temperature_c":  "3684, 74"
+                    },
+                    {
+                        "seconds":  1642.2066175,
+                        "adapter_mib_temperature_c":  "3696, 75"
+                    },
+                    {
+                        "seconds":  1652.2658149,
+                        "adapter_mib_temperature_c":  "3684, 74"
+                    },
+                    {
+                        "seconds":  1662.3246723,
+                        "adapter_mib_temperature_c":  "3696, 77"
+                    },
+                    {
+                        "seconds":  1672.3748125999998,
+                        "adapter_mib_temperature_c":  "3696, 78"
+                    },
+                    {
+                        "seconds":  1682.4251052,
+                        "adapter_mib_temperature_c":  "3696, 77"
+                    },
+                    {
+                        "seconds":  1692.4744266999999,
+                        "adapter_mib_temperature_c":  "3695, 76"
+                    },
+                    {
+                        "seconds":  1702.5644071,
+                        "adapter_mib_temperature_c":  "3695, 76"
+                    },
+                    {
+                        "seconds":  1712.6233857,
+                        "adapter_mib_temperature_c":  "3722, 76"
+                    },
+                    {
+                        "seconds":  1722.6828421,
+                        "adapter_mib_temperature_c":  "3746, 76"
+                    },
+                    {
+                        "seconds":  1732.7452314,
+                        "adapter_mib_temperature_c":  "3713, 80"
+                    },
+                    {
+                        "seconds":  1742.8293821999998,
+                        "adapter_mib_temperature_c":  "3709, 80"
+                    },
+                    {
+                        "seconds":  1752.9308291999998,
+                        "adapter_mib_temperature_c":  "3709, 81"
+                    },
+                    {
+                        "seconds":  1762.9961612,
+                        "adapter_mib_temperature_c":  "3708, 81"
+                    },
+                    {
+                        "seconds":  1773.0704342,
+                        "adapter_mib_temperature_c":  "3708, 81"
+                    },
+                    {
+                        "seconds":  1783.1477052,
+                        "adapter_mib_temperature_c":  "3708, 81"
+                    },
+                    {
+                        "seconds":  1793.2190386999998,
+                        "adapter_mib_temperature_c":  "3739, 78"
+                    },
+                    {
+                        "seconds":  1803.3138116999999,
+                        "adapter_mib_temperature_c":  "3659, 80"
+                    }
+                ]
+}

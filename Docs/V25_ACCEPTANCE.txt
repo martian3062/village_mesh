@@ -1,0 +1,70 @@
+VILLAGE MESH V2.5 - IMPLEMENTATION AND ACCEPTANCE
+Implementation updated: 24 October 2026 (Asia/Kolkata)
+Authored scene date remains 23 October 2026.
+Source plan: Village_Mesh_V2_5_Punjabi_TinyAI_Plan_20261023.txt
+
+This is a living-village prototype on the V2 map. It is not accepted as a
+finished photorealistic Punjabi population or complete eight-milestone release.
+Every person, job, outfit and parcel ownership field is fictional/inferred.
+
+M1 WORLD / CHARACTER CONTRACTS
+Implemented: eight stable identities, individual capabilities, daily windows,
+four demonstration parcels, crop date, three road-profile records, explicit
+64-feature/48-action schema, masks, reservations and deterministic fallback.
+The 39 unimplemented action outputs stay masked.
+
+M2 COMPLETE ACTIVITY
+Implemented runtime: native character movement on authored graph, work/return,
+rain interruptions, roof shelter, task completion and event memory.
+Pending: locally reviewed wardrobe and consented recorded voice; final movement
+and contact animation acceptance. Current character art is procedural prototype.
+
+M3 CLOTHES / FARMS / ROADS
+Implemented prototype: field boundaries, crops/residue/soil, farm access track,
+shade structure, stable outfit selections and a passage-controlled vehicle.
+Pending: measured cross-sections, locally verified drainage/field appearance,
+skinned modular wardrobe, cloth LOD/collision tests, tractor/trolley swept-path
+and entry/exit animation. Runtime overlay does not rebuild V2 geometry/HLODs.
+
+M4 TINY POLICY
+Trained/exported 121,520-parameter policy, exact initializer audit and hashes.
+Synthetic held-out teacher agreement 99.65%; zero invalid actions after masks.
+PyTorch/ONNX maximum absolute error 0.0000152588 on the export fixture.
+No behavioural advantage over rules established; rules remain default, learned
+ranking is opt-in and gated by inference parity/freshness/current validity.
+Unreal and packaged runtime results must be read from recorded check reports.
+
+M5 PUNJABI
+Implemented draft subtitle choices, Roman/English fields, world-state details,
+Gurmukhi font pin/licence, full-shaping widget, UTF-8 byte-length contract.
+Not accepted: native-speaker wording, tone, pronunciation or voice recordings.
+Intent model is NOT trained/deployed; no macro-F1 claim or hidden language API.
+
+M6 COMBINED PASS
+Implemented weather responses, task/passage reservations, actor restore,
+versioned local persistence, and bounded CPU inference scheduling.
+Pending polished human contact/cloth animations, spatial recorded audio,
+complete road/vehicle physical fidelity and locally reviewed work actions.
+Recorded 30-minute run: 71 generic activities across six residents, four tractor
+legs. Mehar and Jas completed no activity in that scenario; their completion
+coverage remains open. The stability pass does not accept all eight routines.
+
+M7 OPTIONAL MICRO LANGUAGE MODEL
+Architecture counts are executable and audited. No decoder weights are trained
+or deployed; the default build does not claim open-ended Punjabi conversation.
+This optional experiment is intentionally outside release functionality until
+training data, held-out language evaluation and native review exist.
+
+M8 RELEASE EVIDENCE
+Local engine/package checks are recorded under Saved/VillageMeshV25 and the
+published Docs/V25 evidence. Fresh-machine and final shipping acceptance remain
+open; local Development packaging does not establish either.
+Recorded: 25 Python tests, three daylight and three rainy standalone traversals,
+rendered rules/learned checks, actual missing-asset fallback and a continuous
+1800-second rendered session passed. All final runs share one executable hash.
+
+REQUIRED EVIDENCE BOUNDARIES
+Frame wall time is not separate CPU/GPU timing. Whole-adapter memory/temperature
+include other applications. NullRHI is simulation-only. Synthetic imitation
+accuracy is not Punjabi comprehension, local fidelity or superiority to rules.
+No unreviewed source asset, voice or local-person claim is accepted by these tests.

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "outfits": [
+    {
+      "id": "outfit_00",
+      "garment_family": "shirt_trousers",
+      "color": [
+        0.22,
+        0.34,
+        0.3
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_01",
+      "garment_family": "long_tunic_trousers",
+      "color": [
+        0.41,
+        0.19,
+        0.24
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_02",
+      "garment_family": "jacket_trousers",
+      "color": [
+        0.17,
+        0.25,
+        0.38
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_03",
+      "garment_family": "shirt_trousers",
+      "color": [
+        0.48,
+        0.37,
+        0.18
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_04",
+      "garment_family": "shirt_trousers",
+      "color": [
+        0.23,
+        0.18,
+        0.31
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_05",
+      "garment_family": "long_tunic_trousers",
+      "color": [
+        0.46,
+        0.24,
+        0.15
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_06",
+      "garment_family": "jacket_trousers",
+      "color": [
+        0.17,
+        0.35,
+        0.43
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    },
+    {
+      "id": "outfit_07",
+      "garment_family": "shirt_trousers",
+      "color": [
+        0.34,
+        0.36,
+        0.25
+      ],
+      "headwear": null,
+      "footwear": "closed_shoes",
+      "voice": null,
+      "review_status": "prototype_not_locally_reviewed",
+      "source": "original procedural visualization; replace through approved asset manifest",
+      "cloth_enabled": false,
+      "distance_fallback": "rigid/skinned"
+    }
+  ],
+  "local_review": null,
+  "release_quality_accepted": false
+}

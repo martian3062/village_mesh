@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "farm_shuttle",
+  "nodes": [
+    "lane_14",
+    "farm_gate",
+    "farm_south"
+  ],
+  "mode": "reserved single-vehicle bidirectional shuttle",
+  "speed_cm_s": 110,
+  "turning": "stop and turn within authored endpoint clearance; no calibrated vehicle dynamics",
+  "vehicle_width_cm": 160,
+  "vehicle_length_cm": 250,
+  "trolley_enabled": false,
+  "confidence": "procedural inference"
+}

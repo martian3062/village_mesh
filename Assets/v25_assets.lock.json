@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "file": "Assets/Fonts/NotoSansGurmukhi.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notosansgurmukhi/NotoSansGurmukhi%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "1e6f728fa620e566f842d81e220265813faa12771214765d289c98e035adc5f2",
+      "bytes": 268608,
+      "license": "OFL-1.1"
+    },
+    {
+      "file": "Assets/Fonts/OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notosansgurmukhi/OFL.txt",
+      "sha256": "3f7451b7e2c8381be0c5712f7b0dd5c2d75fe787ae16a99f18b7fa45627a0fde",
+      "bytes": 4384,
+      "license": "OFL-1.1"
+    }
+  ],
+  "character_art": "original procedural prototype; no locally reviewed wardrobe",
+  "quaternius_acquisition": "official Google Drive returned quota exceeded; no external character files used"
+}
