@@ -8,6 +8,7 @@
 class USpringArmComponent;
 class USkeletalMeshComponent;
 class UBlendSpace;
+class UStaticMeshComponent;
 
 UCLASS()
 class RURAL_PARDEEP_API UPardeepAssetTools : public UBlueprintFunctionLibrary
@@ -16,6 +17,9 @@ class RURAL_PARDEEP_API UPardeepAssetTools : public UBlueprintFunctionLibrary
 public:
     UFUNCTION(BlueprintCallable,Category="Village|Editor")
     static bool RebuildLocomotion(UBlendSpace* Blend);
+    // Save only this generated character's loaded packages, without editor thumbnails.
+    UFUNCTION(BlueprintCallable,Category="Village|Editor")
+    static int32 SaveLoadedPardeepPackages(const FString& Root, bool OnlyDirty = true);
 };
 
 UCLASS()
@@ -38,11 +42,13 @@ private:
     void ApplyView();
     void UpdateSurface();
     void CheckRuntime(float Dt);
+    void AttachTurban();
     UPROPERTY(VisibleAnywhere) TObjectPtr<USpringArmComponent> CameraBoom;
     UPROPERTY() TObjectPtr<AActor> Visual;
     UPROPERTY() TObjectPtr<USkeletalMeshComponent> Body;
     UPROPERTY() TObjectPtr<UBlendSpace> Locomotion;
-    bool bFirstPerson=false,bRightShoulder=true;
+    UPROPERTY() TObjectPtr<UStaticMeshComponent> Turban;
+    bool bFirstPerson=false,bRightShoulder=true,bReferenceAppearance=false;
     float SurfaceTimer=0,Elapsed=0,Travel=0,FootTravel=0;
     FVector LastPosition=FVector::ZeroVector,LastFoot=FVector::ZeroVector;
     bool bHaveFoot=false,bCheck=false,bGrounded=true,bWalkingSeen=false,bRunningSeen=false;

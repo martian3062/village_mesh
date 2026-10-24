@@ -3,7 +3,7 @@ from pathlib import Path
 import unreal
 
 
-def validate_assembly(profile, report, not_before):
+def validate_assembly(profile, report, not_before, save_packages=None):
     root = Path(unreal.Paths.project_dir())
     library = unreal.EditorAssetLibrary
     assets = library.list_assets(profile['assembly_root'], recursive=True, include_folder=False)
@@ -43,7 +43,7 @@ def validate_assembly(profile, report, not_before):
                 unreal.ControlRigBlueprintLibrary.recompile_vm(rig)
                 if not unreal.BlueprintEditorLibrary.compile_blueprint(rig):
                     raise RuntimeError('Repaired Control Rig did not compile: ' + name)
-                if not library.save_loaded_asset(rig, only_if_is_dirty=False):
+                if save_packages is None and not library.save_loaded_asset(rig, only_if_is_dirty=False):
                     raise RuntimeError('Repaired Control Rig could not be saved: ' + name)
                 report.setdefault('restored_control_rig_links', []).append({'asset': rig.get_path_name(), 'source': expected[0], 'target': expected[1]})
             links = []
@@ -62,7 +62,8 @@ def validate_assembly(profile, report, not_before):
         report['migrated_direct_links_verified'] = verified
         if not all(verified.values()):
             raise RuntimeError('Control Rig reroute replacement links need review; saved assets are not yet accepted')
-    if not library.save_directory(profile['assembly_root'], only_if_is_dirty=True, recursive=True):
+    saved = save_packages(profile['assembly_root'], True) if save_packages else library.save_directory(profile['assembly_root'], only_if_is_dirty=True, recursive=True)
+    if not saved:
         raise RuntimeError('Unable to save compiled pilot assets')
     expected_actor = 'BP_' + profile['name']
     blueprints = [p for p in assets if p.rsplit('/', 1)[-1].split('.', 1)[0] == expected_actor]

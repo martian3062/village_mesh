@@ -107,5 +107,11 @@ appearance, not a reconstruction of Pardeep. Its project-authored blend space
 references the installed Epic idle, walk and run clips; the raw clips are not
 redistributed. The generated visual and its dependencies retain the same Epic
 terms. No personal photo archive or face-recognition data is included.
+The separate reference-guided Pardeep character and assembly under
+`Content/MetaHumanPilot/Pardeep` retain the same applicable Epic terms. Facial
+adjustments are authored from owner-selected local portrait references; the raw
+photographs are excluded. The original procedural black turban and cotton
+material under `Content/VillageMeshV3/Player/Headwear`, and their generator, are
+project-authored work under the repository license.
 The generated character includes its assembled grooms, garment, rig and textures. The full Creator Core Data library, engine/plugin binaries and plugin example source files are not redistributed. See `Docs/LFS/README.md` for the publication scope and current license references, and `Docs/MetaHumanPilot/README.md` for the verified setup
 state, original orchestration scripts, and current official licensing links.

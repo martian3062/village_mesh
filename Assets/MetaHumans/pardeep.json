@@ -3,10 +3,14 @@
   "id": "player_pardeep",
   "name": "Pardeep",
   "integration": "third_person_player",
-  "appearance_status": "user_approved_temporary_appearance",
+  "appearance_status": "reference_guided_preview_awaiting_likeness_review",
   "likeness_verified": false,
-  "appearance_blueprint": "/Game/VillageMeshV3/Player/BP_PardeepAppearance",
-  "temporary_visual_source": "/Game/MetaHumanPilot/Assembled/Manpreet/BP_Manpreet",
-  "reference_photo": null,
-  "notes": "The user selected a temporary appearance while choosing a Pardeep reference. This is not a face reconstruction. No mixed-archive photo was automatically assigned to Pardeep or a named supporting character."
+  "appearance_blueprint": "/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep",
+  "character_asset": "/Game/MetaHumanPilot/Pardeep/Characters/MH_Pardeep",
+  "fallback_visual_source": "/Game/VillageMeshV3/Player/BP_PardeepAppearance",
+  "turban_mesh": "/Game/VillageMeshV3/Player/Headwear/SM_PardeepTurban",
+  "turban_color": "black",
+  "face_design": "pardeep_face_design.json",
+  "reference_status": "Four owner-selected local portraits; source files excluded from publication",
+  "notes": "The owner supplied a new reference location after the temporary appearance. This separate MetaHuman uses a manual reference-guided face sculpt and original folded turban. It is an artistic likeness preview, not a verified 3D scan. No mixed-archive photo was assigned to another named character."
 }

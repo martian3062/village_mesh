@@ -2,19 +2,25 @@
 
 This local iteration adds a third-person protagonist slot and a separate village map, `/Game/VillageMeshV3/Lvl_PandoriV3_Pardeep_WP`. It retains the mapped road routes, 821 building outlines, eight regional house styles, nine public-site interpretations and 41 authored fields from V3.
 
-**Appearance is provisional.** The designated `E:\me_too\data\raw\face_ref` directory contained no reference files during this task. The existing Manpreet MetaHuman supplies the temporary player visual. It is not a reconstruction of Pardeep, and the character's current T-shirt/shorts are not completed Punjabi clothing. A specific owner-selected reference is still needed for the likeness. No personal photo archive, face embeddings, messages or credentials were copied into this repository or sent to a cloud service.
+**Likeness review is still required.** After the temporary preview, the owner selected four local front/side/chin-up portraits. Pardeep now has a separate character asset and a manual, reference-guided facial design covering cheeks, nose, eyelids, lips and chin. This is an artistic approximation, not a photogrammetric scan or a verified exact likeness. The current T-shirt/shorts remain a temporary outfit; custom Punjabi clothing is unfinished.
+
+The original black turban mesh has layered folds and an arched forehead edge. It follows the animated head bone, covers the scalp hair and retains the beard, moustache and eyebrows. The original Manpreet pilot is preserved. Source portraits, embeddings, messages and credentials are excluded from publication. The photo files remain local; Epic's rigging service processes the generated character data during the build.
 
 Supporting characters can use separately selected references. The existing eight residents retain their identities; photographs in a mixed archive are not assigned to named characters automatically.
 
 ## Verified local preview — 24 October 2026
 
-The UE 5.8.4 editor build, street import and World Partition conversion passed. All 44 Python tests passed. The standalone third-person check recorded 26.74 m of player travel, 27.37 m of accumulated component-space foot motion, walking and running speeds, and continuous grounded movement. Camera collision is enabled; that flag is not an exhaustive wall-obstruction test. The walking and idle captures were reviewed. No new packaged build or sustained performance result is claimed.
+The UE 5.8.4 editor build passed. All 44 Python tests passed. The latest standalone third-person check loaded the separate Pardeep actor and recorded 26.77 m of player travel, 27.39 m of accumulated component-space foot motion, walking and running speeds, continuous grounded movement, and the turban attached to the animated head. Camera collision is enabled; that flag is not an exhaustive wall-obstruction test. The walking, idle and front portrait captures were reviewed. No new packaged build or sustained performance result is claimed.
+
+A separate commandlet reloaded all 320 saved Pardeep assets and the runtime Blueprint successfully. The project dependency audit checked 9,046 packages without missing or excluded project references. The new character has brown eyes, retained facial hair and original black folded headwear. The portrait is a likeness preview for owner review, not a claim of identity accuracy.
 
 The initial runtime check caught a reference-pose failure despite actor movement. The generator now explicitly validates and resamples the blend space's runtime data before saving it; a fresh engine run passed after the correction.
 
-The live Unreal preview also passed manual checks of the V first/third-person toggle, Q shoulder swap, and M full-map open/close controls.
+The earlier street/temporary-player preview passed manual checks of the V first/third-person toggle, Q shoulder swap, and M full-map open/close controls. The updated appearance was opened in the live preview after its automated movement and portrait checks.
 
 ![Third-person player walking on the brick lane](third_person_walk.png)
+
+![Reference-guided Pardeep portrait with the original black turban](pardeep_portrait.png)
 
 [Idle view](third_person_idle.png) · [Runtime result](runtime_check.json) · [World build result](build_report.json).
 
@@ -55,6 +61,30 @@ python -m unittest discover -s Tests -v
 .\Scripts\pardeep_village.ps1 -Action Check
 ```
 
-The build creates a copy of the V3 source map, removes inherited uniform road actors from that copy, imports the replacement surfaces and converts it to World Partition. The player blend space references the installed MetaHuman idle/walk/run clips; those raw Epic clips are not redistributed in the repository. UE 5.8.4 with the installed MetaHuman content is the development target. The user approved the temporary appearance for this iteration.
+The build creates a copy of the V3 source map, removes inherited uniform road actors from that copy, imports the replacement surfaces and converts it to World Partition. The player blend space references the installed MetaHuman idle/walk/run clips; those raw Epic clips are not redistributed in the repository. UE 5.8.4 with the installed MetaHuman content is the development target. The original approved temporary appearance remains available as a fallback.
+
+## Rebuild the reference-guided appearance
+
+The separate actor is `/Game/MetaHumanPilot/Pardeep/Assembled/BP_Pardeep`. Its source character is `/Game/MetaHumanPilot/Pardeep/Characters/MH_Pardeep`. The original temporary visual remains a fallback if the new actor is unavailable.
+
+```powershell
+# Compile the project module before using its editor asset helpers.
+& 'E:\U.E\UE_5.8\Engine\Build\BatchFiles\Build.bat' rural_pardeepEditor Win64 Development "-Project=$PWD\rural_pardeep.uproject" -WaitMutex -NoHotReloadFromIDE
+# Initialize a separate character from the preserved pilot and build the turban.
+.\Scripts\pardeep_appearance.ps1 -Action Prepare
+# Apply the saved artistic face design, rig and assemble. Requires Epic sign-in.
+.\Scripts\pardeep_appearance.ps1 -Action Character
+# Rebuild just the original cloth mesh/material after headwear edits.
+.\Scripts\pardeep_appearance.ps1 -Action Turban
+# Update cloth and eye/hair materials without repeating facial rigging.
+.\Scripts\pardeep_appearance.ps1 -Action Refine
+# Reload every saved Pardeep asset in a fresh editor process.
+.\Scripts\pardeep_appearance.ps1 -Action Verify
+.\Scripts\pardeep_village.ps1 -Action Check
+```
+
+The face design is recorded in `Assets/MetaHumans/pardeep_face_design.json`. A saved design hash prevents cumulative application of the same sculpt. A different design requires an intentionally reviewed baseline, rather than applying another set of deltas silently. `Saved/PardeepPlayer` holds local reference metadata, build evidence and the runtime portrait. Photographs are not required by the published build scripts.
+
+Character assembly runs in a normal editor because Texture Graph is unavailable in the commandlet path. The generated character packages are saved directly without rendering editor thumbnails, avoiding the allocation spike that exhausted memory on this development laptop. The save helper is restricted to `MetaHumanPilot/Pardeep`; it does not resave other project assets. A failed assembly remains failed in the report even if its source sculpt and rig have been saved successfully.
 
 Local build evidence is written to `Saved/VillageStreets/build_report.json`. The standalone runtime check writes `Saved/PardeepPlayer/runtime_check.json` and walking/idle captures. Runtime results, likeness approval, packaging and a sustained performance test are separate gates; generated source assets alone do not establish those outcomes. The existing V3 packaging script excludes the MetaHuman pilot and should not be used to claim a packaged Pardeep build.
