@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "recorded_at_utc": "2026-10-24T08:13:14.083345+00:00",
+  "test_seed": 9002,
+  "rows": 4000,
+  "physical_initializer_values": 121520,
+  "source_hashes_verified": true,
+  "download_sha256_verified": true,
+  "scores": {
+    "candidate": {
+      "teacher_agreement": 0.998,
+      "invalid_after_mask": 0,
+      "sha256": "bd820852d1b66be69c4072bb0fe76725ceb04fa7d216055fd891c8db87eebac7"
+    },
+    "existing_experimental_model": {
+      "teacher_agreement": 0.99675,
+      "invalid_after_mask": 0,
+      "sha256": "870943b41190a844225788c9e5930455711646aa783b85d180f5f01daecede84"
+    }
+  },
+  "onnxruntime_version": "1.20.1",
+  "deployed_model_changed": false,
+  "scope": "Local CPU ONNX validation on synthetic states. No Unreal NNE parity, gameplay benefit or release claim."
+}

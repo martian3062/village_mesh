@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "recorded_at_utc": "2026-10-24T08:11:32.350030+00:00",
+  "feature_schema": "v25.state64.v1",
+  "cuda_available": true,
+  "torch_version": "2.11.0+cu128",
+  "cuda_version": "12.8",
+  "scope": "Synthetic controller imitation candidate; no Unreal or MetaHuman data; no runtime model replacement.",
+  "baseline_benefit_proven": false,
+  "trials": [
+    {
+      "seed": 3062,
+      "epochs": 36,
+      "train_rows": 16000,
+      "validation_seed": 9001,
+      "validation_rows": 4000,
+      "validation_teacher_agreement": 0.9970000386238098,
+      "train_seconds": 6.485377858999982,
+      "unique_parameters": 121520
+    },
+    {
+      "seed": 104729,
+      "epochs": 36,
+      "train_rows": 16000,
+      "validation_seed": 9001,
+      "validation_rows": 4000,
+      "validation_teacher_agreement": 0.9972500205039978,
+      "train_seconds": 5.820820535999985,
+      "unique_parameters": 121520
+    },
+    {
+      "seed": 24010,
+      "epochs": 36,
+      "train_rows": 16000,
+      "validation_seed": 9001,
+      "validation_rows": 4000,
+      "validation_teacher_agreement": 0.999000072479248,
+      "train_seconds": 5.963395002000027,
+      "unique_parameters": 121520
+    }
+  ],
+  "gpu_name": "Tesla T4",
+  "gpu_count": 2,
+  "used_device": "cuda:0",
+  "selected_seed": 24010,
+  "final_test_seed": 9002,
+  "final_test_rows": 4000,
+  "final_teacher_agreement": 0.9980000257492065,
+  "invalid_after_mask": 0,
+  "gpu_cpu_max_abs_error": 0.0,
+  "onnx_max_abs_error": 0.0,
+  "physical_initializer_values": 121520,
+  "candidate_sha256": "bd820852d1b66be69c4072bb0fe76725ceb04fa7d216055fd891c8db87eebac7",
+  "candidate_bytes": 486961,
+  "ort_version": "1.20.1",
+  "onnx_version": "1.22.0",
+  "candidate_status": "requires_local_Unreal_parity_and_behavior_review"
+}
