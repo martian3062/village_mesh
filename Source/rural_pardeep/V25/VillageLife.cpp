@@ -41,7 +41,7 @@ TSharedPtr<FJsonObject> ReadJSON(const FString& Name)
 FVector VectorJSON(const TArray<TSharedPtr<FJsonValue>>& A) { return FVector(A[0]->AsNumber(),A[1]->AsNumber(),A[2]->AsNumber()); }
 TArray<TSharedPtr<FJsonValue>> JsonVector(FVector V) { return {MakeShared<FJsonValueNumber>(V.X),MakeShared<FJsonValueNumber>(V.Y),MakeShared<FJsonValueNumber>(V.Z)}; }
 const TCHAR* ActionNames[]={TEXT("idle"),TEXT("travel"),TEXT("work"),TEXT("rest"),TEXT("shelter"),TEXT("greet"),TEXT("home"),TEXT("yield"),TEXT("replan")};
-UStaticMesh* Basic(const TCHAR* Name) { return LoadObject<UStaticMesh>(nullptr,*FString::Printf(TEXT("/Engine/BasicShapes/%s.%s"),Name,Name)); }
+UStaticMesh* V25Basic(const TCHAR* Name) { return LoadObject<UStaticMesh>(nullptr,*FString::Printf(TEXT("/Engine/BasicShapes/%s.%s"),Name,Name)); }
 UMaterialInterface* Surface(const TCHAR* Name) { return LoadObject<UMaterialInterface>(nullptr,*FString::Printf(TEXT("/Game/VillageMeshV2/Materials/%s.%s"),Name,Name)); }
 UMaterialInstanceDynamic* Colored(UObject* Owner,FLinearColor Color)
 {
@@ -75,7 +75,7 @@ void AVillageResident::Dress(int32 Index,FLinearColor Color)
     const FVector Scales[]={FVector(.37,.44,.60),FVector(.22,.20,.28),FVector(.12,.12,.56),FVector(.12,.12,.56),FVector(.17,.17,.70),FVector(.17,.17,.70),FVector(.28,.16,.11),FVector(.28,.16,.11),FVector(.22,.20,.10),FVector(.39,.45,Index%3==1?.38:.16),FVector(.025,.025,.025),FVector(.025,.025,.025),FVector(.05,.04,.07)};
     for (int i=0;i<Parts.Num();++i)
     {
-        Parts[i]->SetStaticMesh(Basic(i==1 || i==8 || i>=10?TEXT("Sphere"):TEXT("Cylinder")));
+        Parts[i]->SetStaticMesh(V25Basic(i==1 || i==8 || i>=10?TEXT("Sphere"):TEXT("Cylinder")));
         Parts[i]->SetRelativeLocation(Locations[i]);Parts[i]->SetRelativeScale3D(Scales[i]);
         Parts[i]->SetMaterial(0,i==1||i==12?Skin:i==4||i==5?Trousers:(i>=6&&i<=8)||i==10||i==11?Shoes:Cloth);
     }
@@ -280,7 +280,7 @@ void AVillageLifeDirector::BuildFarmAndRoads()
 {
     auto MakeGroup=[&](const TCHAR* Name,UMaterialInterface* Mat,bool Collision)
     {
-        auto* C=NewObject<UInstancedStaticMeshComponent>(this);C->SetupAttachment(RootComponent);C->SetStaticMesh(Basic(Name));C->SetMaterial(0,Mat);
+        auto* C=NewObject<UInstancedStaticMeshComponent>(this);C->SetupAttachment(RootComponent);C->SetStaticMesh(V25Basic(Name));C->SetMaterial(0,Mat);
         C->SetCollisionEnabled(Collision?ECollisionEnabled::QueryAndPhysics:ECollisionEnabled::NoCollision);C->SetCollisionResponseToAllChannels(ECR_Block);C->RegisterComponent();SceneParts.Add(C);return C;
     };
     auto Add=[](UInstancedStaticMeshComponent* C,FVector P,FVector Size,float Yaw=0){C->AddInstance(FTransform(FRotator(0,Yaw,0),P,Size/100),true);};
@@ -316,11 +316,11 @@ void AVillageLifeDirector::BuildFarmAndRoads()
     auto* Shelter=MakeGroup(TEXT("Cube"),Surface(TEXT("M_V2_concrete")),true);
     Add(Shelter,FVector(2600,-1300,255),FVector(850,650,18));
     for(float X:{2200.f,3000.f})for(float Y:{-1590.f,-1010.f})Add(Shelter,FVector(X,Y,125),FVector(18,18,250));
-    Tractor->SetStaticMesh(Basic(TEXT("Cube")));Tractor->SetMaterial(0,Colored(this,FLinearColor(.065f,.22f,.31f)));
+    Tractor->SetStaticMesh(V25Basic(TEXT("Cube")));Tractor->SetMaterial(0,Colored(this,FLinearColor(.065f,.22f,.31f)));
     Tractor->SetWorldLocation(Nodes[TEXT("farm_south")]+FVector(300,0,-5));Tractor->SetWorldScale3D(FVector(2.5,1.6,1.0));TractorNode=2;TractorDirection=-1;
     for(int i=0;i<4;++i)
     {
-        auto* Wheel=NewObject<UStaticMeshComponent>(this);Wheel->SetupAttachment(Tractor);Wheel->SetStaticMesh(Basic(TEXT("Cylinder")));
+        auto* Wheel=NewObject<UStaticMeshComponent>(this);Wheel->SetupAttachment(Tractor);Wheel->SetStaticMesh(V25Basic(TEXT("Cylinder")));
         Wheel->SetMaterial(0,Colored(this,FLinearColor(.025f,.025f,.025f)));Wheel->SetCollisionEnabled(ECollisionEnabled::NoCollision);Wheel->RegisterComponent();
         Wheel->SetAbsolute(false,false,true);Wheel->SetRelativeLocation(FVector(i<2?-35:35,i%2?-55:55,-35));Wheel->SetRelativeRotation(FRotator(0,0,90));
         Wheel->SetWorldScale3D(FVector(i<2?.95:.65,i<2?.95:.65,.28));TractorParts.Add(Wheel);

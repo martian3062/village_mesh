@@ -9,6 +9,7 @@
 #include "Environment/VillageDoor.h"
 #include "Environment/VillageDiagnostics.h"
 #include "V25/VillageLife.h"
+#include "V3/VillageAtlas.h"
 #include "TimerManager.h"
 #include "Dom/JsonObject.h"
 #include "Serialization/JsonSerializer.h"
@@ -60,6 +61,19 @@ void AVillageExplorer::SetupPlayerInputComponent(UInputComponent* Input)
     Input->BindKey(EKeys::F8, IE_Pressed, this, &AVillageExplorer::VisitPhysicsYard);
     Input->BindKey(EKeys::F9, IE_Pressed, this, &AVillageExplorer::ToggleOverview);
     Input->BindKey(EKeys::F10, IE_Pressed, this, &AVillageExplorer::VisitPilotRoom);
+    auto BindAtlas=[&](FKey Key,TFunction<void(AVillageAtlasHUD*)> Callback)
+    {
+        FInputKeyBinding Binding(FInputChord(Key),IE_Pressed);
+        Binding.KeyDelegate.GetDelegateForManualSet().BindLambda([this,Callback]()
+        {if(auto* PC=Cast<APlayerController>(Controller))if(auto* H=Cast<AVillageAtlasHUD>(PC->GetHUD()))Callback(H);});
+        Input->KeyBindings.Add(MoveTemp(Binding));
+    };
+    BindAtlas(EKeys::M,[](AVillageAtlasHUD* H){H->ToggleMap();});
+    BindAtlas(EKeys::Tab,[](AVillageAtlasHUD* H){H->SelectNext();});
+    BindAtlas(EKeys::Enter,[](AVillageAtlasHUD* H){H->VisitSelected();});
+    BindAtlas(EKeys::LeftMouseButton,[](AVillageAtlasHUD* H){H->SelectAtCursor();});
+    BindAtlas(EKeys::MouseScrollUp,[](AVillageAtlasHUD* H){H->Zoom(1);});
+    BindAtlas(EKeys::MouseScrollDown,[](AVillageAtlasHUD* H){H->Zoom(-1);});
     auto BindV25=[&](FKey Key,TFunction<void(AVillageLifeDirector*)> Callback)
     {
         FInputKeyBinding Binding(FInputChord(Key),IE_Pressed);
@@ -76,7 +90,7 @@ void AVillageExplorer::SetupPlayerInputComponent(UInputComponent* Input)
 void AVillageExplorer::BeginPlay()
 {
     Super::BeginPlay();
-    if (GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))
+    if (GetWorld()->GetMapName().Contains(TEXT("PandoriV2"))||GetWorld()->GetMapName().Contains(TEXT("PandoriV3")))
     {
         FString Text;TSharedPtr<FJsonObject> Manifest;
         if (FFileHelper::LoadFileToString(Text,*(FPaths::ProjectContentDir()/TEXT("Validation/pilot.json"))) &&
@@ -97,7 +111,7 @@ void AVillageExplorer::BeginPlay()
     if (Arguments.Contains(TEXT("-VillageV2Capture="))||Arguments.Contains(TEXT("-VillageV2Route="))||Arguments.Contains(TEXT("-VillageV2Interactions="))||Arguments.Contains(TEXT("-VillageV2Soak=")))
         GetWorldTimerManager().SetTimerForNextTick([this]() { GetWorld()->SpawnActor<AVillageDiagnostics>(); });
 #endif
-    if(AVillageLifeDirector::Enabled()&&GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))
+    if((AVillageLifeDirector::Enabled()&&GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))||GetWorld()->GetMapName().Contains(TEXT("PandoriV3")))
         GetWorldTimerManager().SetTimerForNextTick([this](){GetWorld()->SpawnActor<AVillageLifeDirector>();});
 }
 void AVillageExplorer::Forward(float V) { AddMovementInput(GetActorForwardVector(), V); }

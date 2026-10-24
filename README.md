@@ -1,5 +1,9 @@
 # village_mesh
 
+**V3 village atlas and full-map architecture:** [build and play guide](Docs/V3/README.md) for a live minimap, expandable destination map, eight house styles across the 821 mapped building outlines, nine public destinations, agricultural parcels and animated livestock. Public-site placements and facades are representative; the guide records their reference confidence.
+
+With the V3 build generated locally, run `.\Scripts\v3.ps1 -Action Play` (or `-Action Editor` for the Unreal editor). Press **M**, then **Enter**, to visit the rebuilt Residential Lane; select other destinations from the map. See the guide for clean-machine setup, controls, screenshots, and validation.
+
 **V2.5 living-village prototype:** [build and play guide](Docs/V25/README.md) for eight fictional residents, four inferred farm plots, draft Punjabi subtitles, persistent state and the audited 121,520-parameter CPU policy. Character/vehicle art remains a procedural prototype; local wardrobe, voice and language review are pending.
 
 **V2 pilot work:** see the [V2 implementation guide](Docs/V2/README.md) for the separate 240 m street pilot, build/run commands, and milestone status. The V1 overview and recorded validation below remain available for comparison.
@@ -10,9 +14,9 @@ An explorable Unreal Engine village based on **Pandori Nijjaran, Adampur, Punjab
 
 The repository publishes project source, generation scripts, small geographic extracts, asset manifests, and validation evidence. Unreal maps and imported binary assets are generated locally. The C++ module and project file retain the original name, `rural_pardeep`.
 
-![V2 mapped street pilot in Unreal Engine](Docs/V2/daylight.png)
+![V3 residential lane and map HUD in Unreal Engine](Docs/V3/view_10.png)
 
-*Actual V2 engine capture. See the [V2 guide, weather comparisons and results](Docs/V2/README.md). The [original village overview](Docs/overview.png), [V1 street capture](Docs/street.png), and [source map](Docs/pandori_map.png) remain available for comparison.*
+*V3 standalone engine capture. See the [V3 guide and destination gallery](Docs/V3/README.md). The [V2 pilot capture](Docs/V2/daylight.png), [original village overview](Docs/overview.png), [V1 street capture](Docs/street.png), and [source map](Docs/pandori_map.png) remain available for comparison.*
 
 ## Contents
 
@@ -34,6 +38,8 @@ The repository publishes project source, generation scripts, small geographic ex
 - [Contributing](#contributing)
 
 ## What is implemented
+
+The table below records the V1 foundation. Current additions and their separate evidence are in the [V2](Docs/V2/README.md), [V2.5](Docs/V25/README.md), and [V3](Docs/V3/README.md) guides.
 
 | Area | Current implementation |
 | --- | --- |

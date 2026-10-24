@@ -1,0 +1,30 @@
+{
+	"passed": true,
+	"atlas_loaded": true,
+	"overview_streaming_complete": true,
+	"overview_mesh_chunks": 570,
+	"per_animal_travel_cm": [
+		2722.887075562965,
+		2730.1540436147484,
+		2728.5406522749931,
+		2723.9810974115412,
+		2730.3096310497181,
+		2729.4833316802237,
+		2731.9146640990416,
+		2728.5077181457841,
+		3490.2296687824646,
+		3389.1667205454537,
+		3346.3516112774046,
+		3350.2289876290461,
+		2113.1433482459556,
+		2182.7102714124967
+	],
+	"all_animals_moved": true,
+	"places": 10,
+	"animals": 14,
+	"animal_travel_cm": 2722.887075562965,
+	"elapsed_seconds": 168.08203019946814,
+	"frame_p95_ms": 29.755298048257828,
+	"all_arrivals_grounded": true,
+	"scope": "Rendered atlas, nine public entrances, residential lane and aerial overview; not a full village walk-through or release soak"
+}

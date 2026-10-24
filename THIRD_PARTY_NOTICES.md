@@ -79,3 +79,16 @@ controller and is distributed under the repository MIT license. No external
 pretrained language, speech-recognition or voice model is included. The current
 character/vehicle prototype geometry is original procedural code. Quaternius
 assets were researched but not acquired or included after a download quota error.
+
+## V3 atlas, regional architecture and farming
+
+V3 building, landmark, animal and farm geometry is original procedural code under
+the repository MIT license. `Assets/World/v3_world.json` and the atlas image are
+derived from the pinned OSM/Overture geographic inputs and retain the geographic
+data attribution and ODbL obligations above; they are not solely MIT data.
+
+Public landmark listings are linked in `Docs/V3/README.md`: Wikimapia Shiv Temple,
+Yappe Gurudwara Nihang Singh and iCBSE GPS Pandori Nijjaran. These support reference
+context, not surveyed game positions or verified facades. No listing photographs,
+external map tiles, private resident details or third-party landmark meshes are
+redistributed. All nine in-game public sites are marked representative.

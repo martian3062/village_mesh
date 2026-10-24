@@ -1,0 +1,3 @@
+-r requirements-v25-tools.txt
+# Atlas rasterization; tested locally with this exact version.
+Pillow==11.3.0
