@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "pilot_manpreet",
+  "name": "Manpreet",
+  "fictional": true,
+  "adult": true,
+  "integration": "isolated_pilot",
+  "resident_id": null,
+  "character_asset": "/Game/MetaHumanPilot/Characters/MH_Manpreet",
+  "assembly_root": "/Game/MetaHumanPilot/Assembled",
+  "height_cm": 176.0,
+  "skin": {"u": 0.6, "v": 0.65, "roughness": 0.65},
+  "wardrobe": {"Hair": null, "Beard": null, "Outfits": null},
+  "required_wardrobe_slots": ["Hair", "Beard", "Outfits"],
+  "assembly": {"pipeline": "optimized", "quality": "medium"},
+  "planned_punjabi_wardrobe": ["pagri", "kurta_pajama", "jutti"],
+  "appearance_review": "pending_rendered_pilot",
+  "notes": "Creative design settings for one fictional adult; not a scan or a claim about Punjabi appearance. Select installed wardrobe assets after Core Data installation. Original Punjabi garments are a subsequent authoring milestone. The existing eight residents and player are unchanged."
+}

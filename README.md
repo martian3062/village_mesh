@@ -1,5 +1,7 @@
 # village_mesh
 
+**MetaHuman pilot setup:** [Manpreet setup and status](Docs/MetaHumanPilot/README.md). Creator plugins and a local base character asset are prepared. Core Data installation, groom/clothing selection, cloud rigging, rendered review and performance validation remain pending; the current playable residents are unchanged.
+
 **V3 village atlas and full-map architecture:** [build and play guide](Docs/V3/README.md) for a live minimap, expandable destination map, eight house styles across the 821 mapped building outlines, nine public destinations, agricultural parcels and animated livestock. Public-site placements and facades are representative; the guide records their reference confidence.
 
 With the V3 build generated locally, run `.\Scripts\v3.ps1 -Action Play` (or `-Action Editor` for the Unreal editor). Press **M**, then **Enter**, to visit the rebuilt Residential Lane; select other destinations from the map. See the guide for clean-machine setup, controls, screenshots, and validation.

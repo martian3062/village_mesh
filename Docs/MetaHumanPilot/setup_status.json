@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-10-24T07:09:32.515244+00:00",
+  "base_commit": "7c4178eae3411912a5690c00f3d36d69e2a6ef39",
+  "status": "waiting_for_core_data",
+  "engine_version": "5.8.3-58210709+++UE5+Release-5.8",
+  "creator_subsystem_available": true,
+  "base_character_asset_created": true,
+  "character_asset": "/Game/MetaHumanPilot/Characters/MH_Manpreet.MH_Manpreet",
+  "base_asset_bytes": 757205,
+  "base_asset_sha256": "824af0500abc965ede5eade5ba753b9fd903e71bf0f175785b4e343a5203e564",
+  "core_data_present": false,
+  "wardrobe_item_count": 0,
+  "python_tests_passed": 36,
+  "cloud_authentication": "not_tested",
+  "stages_not_validated": [
+    "Style",
+    "Wardrobe",
+    "Rig",
+    "Textures",
+    "Assemble",
+    "PIE",
+    "performance",
+    "resident_replacement"
+  ],
+  "scope": "Base asset created by an Unreal API probe; staged build driver syntax and offline tests pass. No realistic clothed or assembled pilot claimed.",
+  "blockers": [
+    "Install MetaHuman Creator Core Data from UE 5.8 Options in Epic Games Launcher"
+  ]
+}

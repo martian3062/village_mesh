@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
   "required": ["PCG", "SunPosition"],
-  "disabled_for_package": ["ModelContextProtocol", "EditorToolset", "MCPClientToolset", "PCGToolset", "ProceduralVegetationEditor", "MeshTerrainMode", "USDImporter", "Water", "Landmass", "NiagaraFluids", "NNERuntimeORT", "LearningAgents", "MassAI", "StateTree", "SmartObjects", "PoseSearch", "PythonScriptPlugin", "ModelingToolsEditorMode"],
-  "notes": "Scoped to the current procedural explorer. Niagara core and native AI modules remain module dependencies. No trained agents, Water bodies or editor Python are needed by this map. Packaging restores the authoring descriptor byte-for-byte."
+  "disabled_for_package": ["ModelContextProtocol", "EditorToolset", "MCPClientToolset", "PCGToolset", "ProceduralVegetationEditor", "MeshTerrainMode", "USDImporter", "Water", "Landmass", "NiagaraFluids", "NNERuntimeORT", "LearningAgents", "MassAI", "StateTree", "SmartObjects", "PoseSearch", "PythonScriptPlugin", "ModelingToolsEditorMode", "MetaHumanCharacter", "MetaHumanSDK", "HairStrands", "RigLogic", "ChaosClothAsset", "ChaosOutfitAsset"],
+  "notes": "Scoped to the current procedural explorer. Niagara core and native AI modules remain module dependencies. No trained agents, Water bodies or editor Python are needed by this map. The separate MetaHuman authoring pilot is not included in V2/V2.5/V3 packages; it needs its own validated runtime profile before integration. Packaging restores the authoring descriptor byte-for-byte."
 }

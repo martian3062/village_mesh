@@ -133,6 +133,30 @@
     {
       "Name": "SunPosition",
       "Enabled": true
+    },
+    {
+      "Name": "MetaHumanCharacter",
+      "Enabled": true
+    },
+    {
+      "Name": "MetaHumanSDK",
+      "Enabled": true
+    },
+    {
+      "Name": "HairStrands",
+      "Enabled": true
+    },
+    {
+      "Name": "RigLogic",
+      "Enabled": true
+    },
+    {
+      "Name": "ChaosClothAsset",
+      "Enabled": true
+    },
+    {
+      "Name": "ChaosOutfitAsset",
+      "Enabled": true
     }
   ]
 }

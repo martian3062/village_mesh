@@ -92,3 +92,13 @@ Yappe Gurudwara Nihang Singh and iCBSE GPS Pandori Nijjaran. These support refer
 context, not surveyed game positions or verified facades. No listing photographs,
 external map tiles, private resident details or third-party landmark meshes are
 redistributed. All nine in-game public sites are marked representative.
+
+## MetaHuman authoring pilot
+
+The separate Manpreet pilot uses Epic's installed MetaHuman Creator APIs. Epic
+technology and generated MetaHuman assets retain their applicable Epic terms;
+they are not relicensed under this repository's MIT source-code license. Pilot
+binary assets remain local under the ignored `Content/MetaHumanPilot` directory.
+No Epic grooms, garments, DNA, texture models or example source files are bundled
+in this repository. See `Docs/MetaHumanPilot/README.md` for the verified setup
+state, original orchestration scripts, and current official licensing links.
