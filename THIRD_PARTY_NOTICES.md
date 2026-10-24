@@ -101,5 +101,11 @@ they are not relicensed under this repository's MIT source-code license. Pilot
 binary assets under `Content/MetaHumanPilot` are now included through Git LFS as generated character assets under the applicable Epic terms. The user requested this publication after the initial local pilot.
 The pilot references Epic's installed MetaHuman neutral idle and forward-walk
 animation clips. These remain local and retain their applicable Epic terms.
+The Pardeep third-person preview reuses that generated visual through a separate
+Blueprint under `Content/VillageMeshV3/Player`. It is a user-approved temporary
+appearance, not a reconstruction of Pardeep. Its project-authored blend space
+references the installed Epic idle, walk and run clips; the raw clips are not
+redistributed. The generated visual and its dependencies retain the same Epic
+terms. No personal photo archive or face-recognition data is included.
 The generated character includes its assembled grooms, garment, rig and textures. The full Creator Core Data library, engine/plugin binaries and plugin example source files are not redistributed. See `Docs/LFS/README.md` for the publication scope and current license references, and `Docs/MetaHumanPilot/README.md` for the verified setup
 state, original orchestration scripts, and current official licensing links.

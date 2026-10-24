@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "map": "/Game/VillageMeshV3/Lvl_PandoriV3_Pardeep",
+  "roads": 71,
+  "surfaces": {
+    "asphalt": 9,
+    "pavers": 35,
+    "brick": 17,
+    "dirt": 10
+  },
+  "chunks": 134,
+  "removed_old_road_actors": 55,
+  "solar_street_lights": 40,
+  "locomotion": "/Game/VillageMeshV3/Player/BS_PlayerLocomotion.BS_PlayerLocomotion",
+  "appearance": "User-approved temporary Manpreet visual in a replaceable player Blueprint; Pardeep likeness deferred",
+  "street_surface_assignment": "authored; not ground surveyed"
+}

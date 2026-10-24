@@ -19,6 +19,8 @@ public:
     virtual void Tick(float DeltaSeconds) override;
     virtual void SetupPlayerInputComponent(UInputComponent* Input) override;
 protected:
+    float WalkingSpeed = 420.f;
+    float RunningSpeed = 720.f;
     virtual void EndPlay(const EEndPlayReason::Type Reason) override;
     void Forward(float Value);
     void Right(float Value);

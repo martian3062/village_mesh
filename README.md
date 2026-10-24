@@ -2,6 +2,8 @@
 
 **Large assets are included through Git LFS:** [clone instructions, asset manifest and licensing scope](Docs/LFS/README.md). Run `git lfs install` before cloning and `git lfs pull` before opening Unreal.
 
+**Pardeep third-person village:** [controls, road surfaces and appearance status](Docs/PardeepPlayer/README.md). Run `.\Scripts\pardeep_village.ps1 -Action Play` for the separate village with asphalt connectors, brick/tile lanes, dirt tracks, shoulder camera controls and a heading/speed HUD. Pardeep currently uses the user-approved temporary MetaHuman appearance; a personal likeness has not been reconstructed.
+
 **Kaggle GPU compute:** [setup and verified TinyAI run](Docs/Kaggle/README.md). A private Tesla T4 job completed three synthetic-policy training trials. The downloaded candidate passed local ONNX validation; the deployed model is unchanged.
 
 **MetaHuman pilot:** [Manpreet setup, screenshots and validation](Docs/MetaHumanPilot/README.md). The UE 5.8.4 pilot is assembled and rendered in the village, with verified idle/walk animation, ground contact and a short standalone timing comparison. He uses a temporary Epic outfit; custom Punjabi clothing and resident replacement remain future milestones.

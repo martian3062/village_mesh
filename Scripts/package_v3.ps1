@@ -14,7 +14,7 @@ try {
     [IO.File]::WriteAllText($Paths[0],($Descriptor|ConvertTo-Json -Depth 12),(New-Object Text.UTF8Encoding($false)))
     $Engine=[Text.Encoding]::UTF8.GetString($Original[1]).Replace('/Game/VillageMesh/Lvl_PandoriNijjaran_WP.Lvl_PandoriNijjaran_WP',"$Map.Lvl_PandoriV3_WP")
     [IO.File]::WriteAllText($Paths[1],$Engine,(New-Object Text.UTF8Encoding($false)))
-    $Game=[Text.Encoding]::UTF8.GetString($Original[2])+"`n[/Script/UnrealEd.ProjectPackagingSettings]`n+DirectoriesToAlwaysStageAsNonUFS=(Path=`"V25`")`n+DirectoriesToAlwaysStageAsNonUFS=(Path=`"V3`")`n+DirectoriesToAlwaysCook=(Path=`"/Game/VillageMeshV25`")`n+DirectoriesToAlwaysCook=(Path=`"/Game/VillageMeshV3`")`n"
+    $Game=[Text.Encoding]::UTF8.GetString($Original[2])+"`n[/Script/UnrealEd.ProjectPackagingSettings]`n+DirectoriesToAlwaysStageAsNonUFS=(Path=`"V25`")`n+DirectoriesToAlwaysStageAsNonUFS=(Path=`"V3`")`n+DirectoriesToAlwaysCook=(Path=`"/Game/VillageMeshV25`")`n+DirectoriesToAlwaysCook=(Path=`"/Game/VillageMeshV3`")`n+DirectoriesToNeverCook=(Path=`"/Game/VillageMeshV3/Player`")`n"
     [IO.File]::WriteAllText($Paths[2],$Game,(New-Object Text.UTF8Encoding($false)))
     & "$EngineRoot\Engine\Build\BatchFiles\RunUAT.bat" BuildCookRun "-project=$Project" -noP4 -platform=Win64 -clientconfig=Development -build -cook "-map=$Map" -stage -pak -archive "-archivedirectory=$ProjectRoot\Saved\Packages\V3" -AdditionalCookerOptions=-DisablePython -unattended -utf8output
     if($LASTEXITCODE -ne 0){throw 'V3 packaging failed'}

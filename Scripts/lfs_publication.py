@@ -61,7 +61,8 @@ def prepare():
         if relative in pinned and digest != pinned[relative]['sha256']:
             raise ValueError('Pinned download changed: ' + relative)
         group = ('poly_haven_cc0' if relative in pinned else
-                 'epic_metahuman' if relative.startswith('Content/MetaHumanPilot/') else
+                 'epic_metahuman' if (relative.startswith('Content/MetaHumanPilot/') or
+                                      relative == 'Content/VillageMeshV3/Player/BP_PardeepAppearance.uasset') else
                  'runtime_inputs' if relative.startswith(tuple(p + '/' for p in RAW_ROOTS)) else
                  'generated_village')
         records.append({'path': relative, 'bytes': path.stat().st_size, 'sha256': digest, 'group': group,

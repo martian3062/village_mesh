@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "player_pardeep",
+  "name": "Pardeep",
+  "integration": "third_person_player",
+  "appearance_status": "user_approved_temporary_appearance",
+  "likeness_verified": false,
+  "appearance_blueprint": "/Game/VillageMeshV3/Player/BP_PardeepAppearance",
+  "temporary_visual_source": "/Game/MetaHumanPilot/Assembled/Manpreet/BP_Manpreet",
+  "reference_photo": null,
+  "notes": "The user selected a temporary appearance while choosing a Pardeep reference. This is not a face reconstruction. No mixed-archive photo was automatically assigned to Pardeep or a named supporting character."
+}

@@ -114,12 +114,12 @@ void AVillageExplorer::BeginPlay()
     if((AVillageLifeDirector::Enabled()&&GetWorld()->GetMapName().Contains(TEXT("PandoriV2")))||GetWorld()->GetMapName().Contains(TEXT("PandoriV3")))
         GetWorldTimerManager().SetTimerForNextTick([this](){GetWorld()->SpawnActor<AVillageLifeDirector>();});
 }
-void AVillageExplorer::Forward(float V) { AddMovementInput(GetActorForwardVector(), V); }
-void AVillageExplorer::Right(float V) { AddMovementInput(GetActorRightVector(), V); }
+void AVillageExplorer::Forward(float V) { const FRotator R(0,Controller?Controller->GetControlRotation().Yaw:GetActorRotation().Yaw,0);AddMovementInput(R.Vector(), V); }
+void AVillageExplorer::Right(float V) { const FRotator R(0,Controller?Controller->GetControlRotation().Yaw:GetActorRotation().Yaw,0);AddMovementInput(FRotationMatrix(R).GetUnitAxis(EAxis::Y), V); }
 void AVillageExplorer::Turn(float V) { AddControllerYawInput(V); }
 void AVillageExplorer::LookUp(float V) { AddControllerPitchInput(V); }
-void AVillageExplorer::SprintOn() { GetCharacterMovement()->MaxWalkSpeed = 720.f; }
-void AVillageExplorer::SprintOff() { GetCharacterMovement()->MaxWalkSpeed = 420.f; }
+void AVillageExplorer::SprintOn() { GetCharacterMovement()->MaxWalkSpeed = RunningSpeed; }
+void AVillageExplorer::SprintOff() { GetCharacterMovement()->MaxWalkSpeed = WalkingSpeed; }
 
 void AVillageExplorer::GrabOrRelease()
 {
@@ -128,7 +128,7 @@ void AVillageExplorer::GrabOrRelease()
     FHitResult Hit;
     FCollisionQueryParams Query(SCENE_QUERY_STAT(VillageGrab), false, this);
     if (GetWorld()->LineTraceSingleByChannel(Hit, Start,
-        Start + Camera->GetForwardVector() * 400.f, ECC_Visibility, Query))
+        Start + Camera->GetForwardVector() * 900.f, ECC_Visibility, Query) && FVector::Dist(Hit.ImpactPoint,GetActorLocation())<=440.f)
     {
         if (AVillageDoor* Door = Cast<AVillageDoor>(Hit.GetActor()))
         {
@@ -193,7 +193,7 @@ void AVillageExplorer::Tick(float DeltaSeconds)
 #endif
     if (UPrimitiveComponent* Held = GrabHandle->GetGrabbedComponent())
     {
-        const FVector Start = Camera->GetComponentLocation();
+        const FVector Start = GetActorLocation()+FVector(0,0,60);
         const FVector Target = Start + Camera->GetForwardVector() * 220.f;
         FCollisionQueryParams Query(SCENE_QUERY_STAT(VillageGrabTarget), false, this);
         Query.AddIgnoredActor(Held->GetOwner());
