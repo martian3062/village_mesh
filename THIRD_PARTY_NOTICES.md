@@ -99,6 +99,8 @@ The separate Manpreet pilot uses Epic's installed MetaHuman Creator APIs. Epic
 technology and generated MetaHuman assets retain their applicable Epic terms;
 they are not relicensed under this repository's MIT source-code license. Pilot
 binary assets remain local under the ignored `Content/MetaHumanPilot` directory.
-No Epic grooms, garments, DNA, texture models or example source files are bundled
+The pilot references Epic's installed MetaHuman neutral idle and forward-walk
+animation clips. These remain local and retain their applicable Epic terms.
+No Epic grooms, garments, animations, DNA, texture models or example source files are bundled
 in this repository. See `Docs/MetaHumanPilot/README.md` for the verified setup
 state, original orchestration scripts, and current official licensing links.

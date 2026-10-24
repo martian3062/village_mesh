@@ -1,6 +1,8 @@
 # village_mesh
 
-**MetaHuman pilot setup:** [Manpreet setup and status](Docs/MetaHumanPilot/README.md). Creator plugins and a local base character asset are prepared. Core Data installation, groom/clothing selection, cloud rigging, rendered review and performance validation remain pending; the current playable residents are unchanged.
+**Kaggle GPU compute:** [setup and verified TinyAI run](Docs/Kaggle/README.md). A private Tesla T4 job completed three synthetic-policy training trials. The downloaded candidate passed local ONNX validation; the deployed model is unchanged.
+
+**MetaHuman pilot:** [Manpreet setup, screenshots and validation](Docs/MetaHumanPilot/README.md). The UE 5.8.4 pilot is assembled and rendered in the village, with verified idle/walk animation, ground contact and a short standalone timing comparison. He uses a temporary Epic outfit; custom Punjabi clothing and resident replacement remain future milestones.
 
 **V3 village atlas and full-map architecture:** [build and play guide](Docs/V3/README.md) for a live minimap, expandable destination map, eight house styles across the 821 mapped building outlines, nine public destinations, agricultural parcels and animated livestock. Public-site placements and facades are representative; the guide records their reference confidence.
 

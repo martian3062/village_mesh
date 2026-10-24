@@ -1,29 +1,185 @@
 {
-  "recorded_at_utc": "2026-10-24T07:09:32.515244+00:00",
-  "base_commit": "7c4178eae3411912a5690c00f3d36d69e2a6ef39",
-  "status": "waiting_for_core_data",
-  "engine_version": "5.8.3-58210709+++UE5+Release-5.8",
-  "creator_subsystem_available": true,
-  "base_character_asset_created": true,
-  "character_asset": "/Game/MetaHumanPilot/Characters/MH_Manpreet.MH_Manpreet",
-  "base_asset_bytes": 757205,
-  "base_asset_sha256": "824af0500abc965ede5eade5ba753b9fd903e71bf0f175785b4e343a5203e564",
-  "core_data_present": false,
-  "wardrobe_item_count": 0,
-  "python_tests_passed": 36,
-  "cloud_authentication": "not_tested",
-  "stages_not_validated": [
-    "Style",
-    "Wardrobe",
-    "Rig",
-    "Textures",
-    "Assemble",
-    "PIE",
-    "performance",
-    "resident_replacement"
+  "recorded_at_utc": "2026-10-24T08:48:29.105453+00:00",
+  "base_commit": "83adb57e2ea9a092059cf9a7c7ef38989c9b577e",
+  "status": "isolated_pilot_validated",
+  "engine_version": "5.8.4-58902052+++UE5+Release-5.8",
+  "native_editor_build_passed": true,
+  "native_editor_build_duration_seconds": 52.4,
+  "native_editor_module_sha256": "f1b9b764df67bb56d4b7fd1759d9849111511dcafdb234340722549bc32faa3c",
+  "core_data_present": true,
+  "wardrobe_item_count": 96,
+  "character_asset": "/Game/MetaHumanPilot/Characters/MH_Manpreet",
+  "character_asset_bytes": 144130040,
+  "character_asset_sha256": "f6c28cb357c4adbc667238d16ce52a566e3d8f298bcbf67efcc31cee660445de",
+  "profile_sha256": "076350e46a87d55f91b12d805719c24b9d54664cbcf90e83e28ecec31f597905",
+  "stages_passed": {
+    "inspect": {
+      "started_at_utc": "2026-10-24T07:31:24.371260+00:00",
+      "passed": true
+    },
+    "style": {
+      "started_at_utc": "2026-10-24T07:27:37.820776+00:00",
+      "passed": true
+    },
+    "wardrobe": {
+      "started_at_utc": "2026-10-24T07:30:43.474085+00:00",
+      "passed": true
+    },
+    "rig": {
+      "started_at_utc": "2026-10-24T07:31:40.590517+00:00",
+      "passed": true
+    },
+    "textures": {
+      "started_at_utc": "2026-10-24T07:35:33.419131+00:00",
+      "passed": true
+    },
+    "assemble": {
+      "started_at_utc": "2026-10-24T08:23:22.111862+00:00",
+      "passed": true
+    },
+    "validateassembly": {
+      "started_at_utc": "2026-10-24T08:23:22.111862+00:00",
+      "passed": true
+    }
+  },
+  "assembly": {
+    "saved_asset_count": 318,
+    "compiled_blueprint_count": 10,
+    "assembled_blueprints": [
+      "/Game/MetaHumanPilot/Assembled/Manpreet/BP_Manpreet.BP_Manpreet"
+    ],
+    "source_assembly_started_at_utc": "2026-10-24T08:12:16.426943+00:00",
+    "restored_control_rig_links": [
+      {
+        "asset": "/Game/MetaHumanPilot/Assembled/Common/Face/CR_MetaHuman_HeadMovement_IK_Proc.CR_MetaHuman_HeadMovement_IK_Proc",
+        "source": "Multiply.Result.Z",
+        "target": "Add.C"
+      },
+      {
+        "asset": "/Game/MetaHumanPilot/Assembled/Common/Face/Face_ControlBoard_CtrlRig.Face_ControlBoard_CtrlRig",
+        "source": "MathFloatAdd_6_1.Result",
+        "target": "SetControlVector2D_1_1.Vector.X"
+      }
+    ],
+    "migrated_direct_links_verified": {
+      "CR_MetaHuman_HeadMovement_IK_Proc": true,
+      "Face_ControlBoard_CtrlRig": true
+    }
+  },
+  "saved_wardrobe_matches_profile": true,
+  "saved_wardrobe_slots": [
+    "Hair",
+    "Beard",
+    "Mustache",
+    "Eyebrows",
+    "Eyelashes",
+    "Outfits"
   ],
-  "scope": "Base asset created by an Unreal API probe; staged build driver syntax and offline tests pass. No realistic clothed or assembled pilot claimed.",
-  "blockers": [
-    "Install MetaHuman Creator Core Data from UE 5.8 Options in Epic Games Launcher"
-  ]
+  "python_tests_passed": 38,
+  "cloud_authentication": "verified_epic_sign_in_completed",
+  "standalone_comparison": {
+    "passed": true,
+    "profile_sha256": "076350e46a87d55f91b12d805719c24b9d54664cbcf90e83e28ecec31f597905",
+    "recorded_at_utc": "2026-10-24T08:43:47.6812145Z",
+    "baseline_p95_ms": 29.721301048994064,
+    "character_p95_ms": 29.76590022444725,
+    "difference_p95_ms": 0.044599175453186,
+    "resolution": "1440x900",
+    "screen_percentage": 67,
+    "fps_cap": 60,
+    "scope": "Two local standalone runs at the same mapped street; other applications remain open. Not a packaged build, crowd benchmark or release soak."
+  },
+  "runtime_character": {
+    "passed": true,
+    "baseline": false,
+    "error": "",
+    "shader_compilation_during_samples": false,
+    "first_shader_sample_seconds": -1,
+    "shader_sample_frames": 0,
+    "max_shader_jobs_during_samples": 0,
+    "play_mode": "standalone",
+    "blueprint": "/Game/MetaHumanPilot/Assembled/Manpreet/BP_Manpreet.BP_Manpreet",
+    "elapsed_seconds": 75.00782775878906,
+    "samples": 1813,
+    "frame_mean_ms": 21.81504766050453,
+    "frame_p95_ms": 29.76590022444725,
+    "grounded": true,
+    "idle_applied": true,
+    "walk_applied": true,
+    "actor_travel_cm": 841.679931640625,
+    "foot_component_space_travel_cm": 3917.982666015625,
+    "last_movement_blocker": "",
+    "movement_started_penetrating": false,
+    "scope": "Single MetaHuman at mapped V3 Residential Lane, 25 s warmup and 40 s samples. No crowd, packaged release, long soak or custom Punjabi wardrobe claim."
+  },
+  "runtime_pie": {
+    "passed": true,
+    "baseline": false,
+    "error": "",
+    "shader_compilation_during_samples": false,
+    "first_shader_sample_seconds": -1,
+    "shader_sample_frames": 0,
+    "max_shader_jobs_during_samples": 0,
+    "play_mode": "PIE",
+    "blueprint": "/Game/MetaHumanPilot/Assembled/Manpreet/BP_Manpreet.BP_Manpreet",
+    "elapsed_seconds": 75.0069351196289,
+    "samples": 2227,
+    "frame_mean_ms": 17.638338360890284,
+    "frame_p95_ms": 19.269701093435287,
+    "grounded": true,
+    "idle_applied": true,
+    "walk_applied": true,
+    "actor_travel_cm": 841.57861328125,
+    "foot_component_space_travel_cm": 3918.492919921875,
+    "last_movement_blocker": "",
+    "movement_started_penetrating": false,
+    "scope": "Single MetaHuman at mapped V3 Residential Lane, 25 s warmup and 40 s samples. No crowd, packaged release, long soak or custom Punjabi wardrobe claim."
+  },
+  "runtime_report_times_utc": {
+    "runtime_baseline": "2026-10-24T08:41:53.905180+00:00",
+    "runtime_character": "2026-10-24T08:43:42.280922+00:00",
+    "runtime_comparison": "2026-10-24T08:43:47.732563+00:00",
+    "runtime_pie": "2026-10-24T08:46:21.584297+00:00"
+  },
+  "pie_bootstrap": {
+    "started_at_utc": "2026-10-24T08:44:40.864326+00:00",
+    "status": "PIE_started",
+    "map_saved": false,
+    "original_game_mode_restored": true,
+    "pie_worlds": [
+      "/Game/VillageMeshV3/UEDPIE_0_Lvl_PandoriV3_WP.Lvl_PandoriV3_WP"
+    ]
+  },
+  "source_map_unchanged_after_pie": true,
+  "source_map_sha256": "e838eae71ec0c62675d476376fd8ebba921fb6b0cb4ed8cd50c76019c61b9a35",
+  "editor_preview_adjustment": {
+    "applied_after_pie_measurement": true,
+    "console_variable": "r.LumenScene.SurfaceCache.CardTexelDensityScale",
+    "value": 50,
+    "surface_cache_capacity_warning_cleared_in_viewport": true,
+    "standalone_comparison_changed": false
+  },
+  "rendered_review": {
+    "reviewed": true,
+    "temporary_outfit": "Epic white T-shirt and shorts, bare feet",
+    "captures": {
+      "character_idle.png": "f76401db8a21d6aea58f1c571afdeaf823591b40eada6305ee490a87c8134dfb",
+      "character_walk.png": "aaacd305feb3276f9d8522a85d40f9351e51014bf49e330cd7c05f527595a935",
+      "character_portrait.png": "d7629939514d021ec0df3a5c0db7689abc5c80ab5bf9fa66b604d4a7e80d550e"
+    },
+    "observations": [
+      "Face, beard, hair and garment visible in the rendered village",
+      "Forward facing, ground contact and changed walking pose verified",
+      "Custom Punjabi wardrobe has not been authored"
+    ]
+  },
+  "remaining_milestones": [
+    "custom Punjabi garments and motion fitting",
+    "LOD and hair-card review",
+    "speed-matched locomotion and resident navigation integration",
+    "crowd performance",
+    "MetaHuman packaged build and release soak"
+  ],
+  "scope": "One locally assembled, rendered and animated MetaHuman in an isolated V3 pilot. Standalone comparison and PIE checks passed. No resident replacement, crowd capacity or packaged release claim.",
+  "blockers": []
 }

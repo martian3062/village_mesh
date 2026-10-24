@@ -1,16 +1,47 @@
 # Manpreet MetaHuman pilot
 
-This is the first milestone of the character proposal: one fictional adult named Manpreet, generated locally with MetaHuman Creator in UE 5.8.3. He is a separate pilot. The existing roster is Harjit, Simran, Aman, Gurleen, Navdeep, Mehar, Kiran and Jas; none has been renamed or replaced.
+This is the first milestone of the character proposal: one fictional adult named Manpreet, authored locally with MetaHuman Creator in UE 5.8.4. He is a separate pilot. The existing roster is Harjit, Simran, Aman, Gurleen, Navdeep, Mehar, Kiran and Jas; none has been renamed or replaced.
+
+The pilot uses Epic's white T-shirt and shorts, with bare feet. These are the installed default garments for checking the character pipeline. They are not the planned Punjabi wardrobe. The design profile is a frozen assembly input; current review outcomes are recorded in `setup_status.json`.
 
 ## Current verified state
 
-On 24 October 2026 the project's Creator, SDK, HairStrands, RigLogic, Chaos Cloth Asset and Chaos Outfit Asset plugins were enabled. A real Unreal commandlet loaded the Creator subsystem, confirmed its Python APIs, and created/saved `/Game/MetaHumanPilot/Characters/MH_Manpreet`. This is a base character asset, not a finished villager.
+On 24 October 2026 the project's Creator, SDK, HairStrands, RigLogic, Chaos Cloth Asset and Chaos Outfit Asset plugins were enabled. The Launcher update installed UE 5.8.4 and MetaHuman Creator Core Data. The native `rural_pardeepEditor Win64 Development` rebuild succeeded on the updated engine.
 
-The same run reported: `MetaHuman Optional Content folder not found. MetaHuman Creator plugin initialized with limited features.` The optional content folder is absent and the wardrobe inventory is zero. Rigging, skin synthesis, a clothed rendered preview, PIE, animation integration and performance comparison have **not** passed. No MetaHuman has replaced a resident or the player, and no custom Punjabi garment has been completed.
+The filesystem and Unreal asset registry both report **96 wardrobe items**. The staged driver loaded `/Game/MetaHumanPilot/Characters/MH_Manpreet`, applied the 176 cm height target and skin design, and saved six selections: pulled-back hair, full beard, full mustache, natural eyebrows, fine eyelashes and Epic's default garment. `Style` and `Wardrobe` finished with **zero errors and zero warnings**. A separate `Inspect` process reopened the saved asset and confirmed all six selections. This is an authoring milestone, not a finished villager.
 
-The full Python suite passes **36 tests** (the previous 33 plus three pilot isolation/output-boundary checks). Python and PowerShell syntax checks pass. [The recorded setup evidence](setup_status.json) includes the base asset digest and unvalidated stages. The asset was created by an Unreal API probe; the staged build driver has not yet been run through the appearance/cloud stages.
+The user completed Epic's browser authentication. Cloud rigging finished and its facial blendshape flag was verified, followed by a successful high-resolution texture request. Both stages saved the character. Optimized Medium assembly produced **318 assets**, and all **10 generated Blueprints** compiled. Two missing Control Rig connections were repaired and verified after a fresh reload. The rendered full-body, walking and close-up views were reviewed. The isolated standalone checks, short performance comparison and a separate **Play-in-Editor run all passed**. No MetaHuman has replaced a resident or the player, and no custom Punjabi garment has been completed.
 
-## Install the missing Core Data
+The full Python suite passes **38 tests**, including the private Kaggle upload boundary. Python and PowerShell syntax checks pass. [The recorded setup evidence](setup_status.json) includes the saved asset digest and the remaining gates. Local detailed stage reports are in `Saved/MetaHumanPilot`; raw engine/authentication logs stay local.
+
+## Rendered pilot and local measurement
+
+These are captures from the actual V3 village runtime, using the temporary Epic garment.
+
+![Manpreet on the mapped Residential Lane](character_idle.png)
+
+![Manpreet close-up in the village](character_portrait.png)
+
+[Walking capture](character_walk.png).
+
+| Standalone check | Result |
+| --- | --- |
+| Resolution / screen percentage / frame cap | 1440 x 900 / 67% / 60 FPS |
+| Measured frames, without / with Manpreet | 1,821 / 1,813 |
+| Mean frame time, without / with Manpreet | 21.76 / 21.82 ms |
+| 95th percentile, without / with Manpreet | 29.72 / 29.77 ms |
+| Shader work during measured frames | None in either run |
+| Ground contact, idle clip, walk clip | Passed |
+| Swept actor travel during walking | 8.42 m |
+| Blocking collision / initial penetration | None on this short lane path |
+
+The observed p95 difference is approximately 0.04 ms. These two capped runs, with other applications open, cannot isolate the character's GPU cost or establish crowd capacity. Locomotion is exercised during warmup to load its visible materials before sampling; earlier runs with overlapping shader work were rejected. The current clips and short scripted path verify the pilot, while speed-matched locomotion blends, navigation and resident behavior integration remain future work.
+
+PIE separately passed ground contact, idle/walk, 8.42 m of swept travel and a clean sampling interval. The editor's original game mode was restored, and the village map's on-disk hash remained unchanged. An editor-only Lumen surface-cache warning cleared when `r.LumenScene.SurfaceCache.CardTexelDensityScale` was reduced from 100 to 50 after measurement. The PIE launcher now applies this preview setting and disables automatic source-file imports for that session. The standalone comparison retains its original settings. Editor timings are not compared against standalone timings.
+
+## Core Data setup for another machine
+
+This installation is complete on the development machine. For a clean installation:
 
 1. Close Unreal Editor.
 2. Open **Epic Games Launcher → Unreal Engine → Library**.
@@ -31,7 +62,7 @@ Run from the repository root. `-EngineRoot` can override the local default `E:\U
 .\Scripts\metahuman_pilot.ps1 -Action Inspect
 ```
 
-`Create` reuses an existing pilot asset. It does not overwrite authoring work. `Inspect` records the actual installed wardrobe paths in `Saved/MetaHumanPilot/inspect.json`. Choose the hair, beard and outfit paths in [the design profile](../../Assets/MetaHumans/manpreet.json) from that inventory. Null slots are intentionally unresolved; the wardrobe stage refuses to claim completion with missing selections.
+`Create` reuses an existing pilot asset. It does not overwrite authoring work. `Inspect` records the installed wardrobe paths and saved character selections in `Saved/MetaHumanPilot/inspect.json`. The [design profile](../../Assets/MetaHumans/manpreet.json) now selects six installed Epic assets. The wardrobe stage scans the optional content registry, validates each slot selection by value, and explicitly saves the character package because nested collection edits do not always mark it dirty.
 
 After Core Data and wardrobe selections are ready:
 
@@ -41,7 +72,7 @@ After Core Data and wardrobe selections are ready:
 .\Scripts\metahuman_pilot.ps1 -Action Edit
 ```
 
-Review the face, body and wardrobe in Creator, and complete any required Epic sign-in. Close this project's editor before each automated build stage:
+`Edit` opens Creator over a lightweight engine template map. Review the face, body and wardrobe there, and complete any required Epic sign-in. Close this project's editor before each automated build stage:
 
 ```powershell
 .\Scripts\metahuman_pilot.ps1 -Action Rig
@@ -49,7 +80,33 @@ Review the face, body and wardrobe in Creator, and complete any required Epic si
 .\Scripts\metahuman_pilot.ps1 -Action Assemble
 ```
 
-The scripted target is an **Optimized / Medium** assembly under `/Game/MetaHumanPilot/Assembled`. The rig stage requests joints and blendshapes so the Python API's stored blendshape flag can verify completion. The texture stage checks its stored high-resolution flag. Assembly retains wardrobe validation and requires a current successful wardrobe report. These downstream stages are prepared against the installed Epic examples and headers but remain unvalidated until the missing content and authentication gates are resolved.
+The scripted target is an **Optimized / Medium** assembly under `/Game/MetaHumanPilot/Assembled`. The rig stage requests joints and blendshapes (`JOINTS_AND_BLEND_SHAPES` in the tested UE 5.8.4 Python API) so the stored blendshape flag can verify completion. The texture stage checks its stored high-resolution flag. Assembly retains wardrobe validation and requires a current successful wardrobe report. The runner uses a normal editor session and defers assembly until editor initialization, because Texture Graph did not initialize in Python commandlets, including with `-AllowCommandletRendering`. Shader workers are limited on this machine. A fresh actor Blueprint on disk is required before assembly can pass.
+
+Epic's [Python scripting guide](https://dev.epicgames.com/documentation/metahuman/metahuman-creator-python-scripting-in-unreal-engine?application_version=5.8) describes the subsystem editing/commit workflow and blocking cloud requests. The installed API was checked directly where its enum spelling differed from the documentation.
+
+The tested UE 5.8.4 assembly reported four legacy reroute diagnostics and dropped two numeric Control Rig connections. The driver recognizes only those exact diagnostics, requires the engine's current assembly-success message, and saves the generated assets explicitly. It restores the two reported source-to-target connections only when their inputs are disconnected, then recompiles and checks the graphs. Repairs apply to the generated copies under `/Game/MetaHumanPilot/Assembled/Common/Face`. Unknown errors or conflicting inputs fail the stage.
+
+To recheck a successfully generated and saved assembly without repeating rigging, texture synthesis or mesh generation:
+
+```powershell
+.\Scripts\metahuman_pilot.ps1 -Action ValidateAssembly
+```
+
+Recovery requires the current design profile and a report confirming that engine assembly and asset saving completed. A fresh validation session confirmed that both repaired connections persisted.
+
+## Isolated village runtime pilot
+
+The runtime driver selects a separate native game mode through the map URL; the normal village modes and eight residents keep their existing behavior. The test uses the mapped Residential Lane viewpoint and the installed MetaHuman idle/walk clips. A swept capsule supplies pilot collision, and component-space foot motion distinguishes real skeletal animation from actor translation. The attached visual actor ignores its parent capsule to avoid self-blocking. A 2 cm floor clearance prevents initial penetration, and the mesh's +Y forward axis is aligned with the probe's +X axis.
+
+```powershell
+.\Scripts\metahuman_pilot_runtime.ps1 -Action Check
+.\Scripts\metahuman_pilot_runtime.ps1 -Action Play
+.\Scripts\metahuman_pilot_runtime.ps1 -Action PIE
+```
+
+Close this project between launches. `Check` runs the same view with and without Manpreet at 1440 x 900, 67% screen percentage and a 60 FPS cap, collecting 40 seconds of frame times after a 25-second warmup. Warmup restarts while shaders are compiling, with a ten-minute limit; compilation during measured frames fails the check. A close-up camera follows the measurement period. It saves separate baseline/character reports, screenshots and a comparison under `Saved/MetaHumanPilot`. This is a short local measurement with other applications open, not a crowd benchmark or release soak. `PIE` temporarily sets the editor world's game mode, restores it once the play world exists, and does not save the village map. Its report is separate from the standalone comparison.
+
+`Play` opens an interactive standalone village with Manpreet. Use WASD and mouse look to inspect him. Locomotion is exercised during warmup, followed by idle and a short back-and-forth walk after 45 seconds. `PIE` first runs the automated checks, then returns movement and look control to you and leaves the editor open. Add `-SkipCompile` only when the current native sources have already been built. Use `M` for the village map.
 
 The existing V2/V2.5/V3 packaging profile disables the new pilot plugins for its procedural-world builds. It does not cook the isolated MetaHuman folder. Integrating MetaHumans into a distributable village build requires a new runtime/package validation pass; the earlier V3 performance result is not evidence for a MetaHuman build.
 
@@ -61,7 +118,7 @@ The first appearance/performance pilot can use suitable Epic-supplied clothing o
 
 Epic's [wardrobe documentation](https://dev.epicgames.com/documentation/metahuman/tailoring-your-own-wardrobe-items?application_version=5.8) distinguishes fixed skeletal clothing from resizable Chaos outfits. Parametric outfits require suitable source sizes and setup; an arbitrary garment mesh does not automatically fit every body.
 
-After a clothed pilot is assembled, the remaining gates are: place him in a separate V3 pilot scene; verify idle/walk animation and collision in PIE; measure comparable character-off/character-on frame timings; review LODs/hair cards; then opt in the resident visual replacement. The existing procedural resident animation consists of component transforms, not a skeletal locomotion animation set that can simply be retargeted. Those runtime changes are deliberately pending actual character assets and measurements.
+Before replacing residents, complete custom Punjabi clothing, review garment fit through movement, inspect LODs/hair cards, implement speed-matched navigation and animation, and measure a representative crowd and packaged build. The existing procedural resident animation consists of component transforms, not a skeletal locomotion animation set that can simply be retargeted. The pilot clips and collision probe do not replace that behavior system.
 
 ## Source and licensing
 
