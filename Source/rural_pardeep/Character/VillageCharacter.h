@@ -44,7 +44,7 @@ public:
 	FVillagerLook Appearance;
 
 	/**
-	 * Call from a footstep AnimNotify (manual hookup — see WIRING_CHECKLIST.md).
+	 * Call from a footstep AnimNotify (manual hookup — see README.md#legacy-wiring).
 	 * Traces down, reads the physical material, and puffs dust on dirt/dust surfaces.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Village|Footsteps")

@@ -6,8 +6,8 @@ $Root=Split-Path $PSScriptRoot -Parent
 $Cli=Join-Path $Root 'Saved/Kaggle/venv/Scripts/kaggle.exe'
 $CredentialDir=Join-Path $env:LOCALAPPDATA 'VillageMesh/Kaggle'
 $TokenPath=Join-Path $CredentialDir 'access_token'
-if(-not (Test-Path -LiteralPath $Cli)){throw 'Install kaggle==2.2.5 in Saved/Kaggle/venv. See Docs/Kaggle/README.md.'}
-if(-not (Test-Path -LiteralPath $TokenPath)){throw 'Put the project Kaggle token in the local credential file described in Docs/Kaggle/README.md.'}
+if(-not (Test-Path -LiteralPath $Cli)){throw 'Install kaggle==2.2.5 in Saved/Kaggle/venv. See README.md#kaggle.'}
+if(-not (Test-Path -LiteralPath $TokenPath)){throw 'Put the project Kaggle token in the local credential file described in README.md#kaggle.'}
 $OldToken=$env:KAGGLE_API_TOKEN
 $OldConfig=$env:KAGGLE_CONFIG_DIR
 $OldUtf8=$env:PYTHONUTF8

@@ -67,11 +67,12 @@ def main():
         'Local wardrobe/voice/language review, complete cloth/contact/vehicle animation, measured roads/farms, separate GPU profiling, and independent fresh-machine release testing remain open. See the [acceptance register](../V25_ACCEPTANCE.txt).','']
     for r in runs:
         if r['wall_seconds']>=1800:lines+=['Continuous run `%s`: %.2f minutes, %d completed tractor legs, peak process physical memory %.1f MiB. These bounded observations are not a memory-leak proof.'%(r['run_id'],r['wall_seconds']/60,r['tractor_legs'],r['peak_process_bytes']/1048576),'']
-    (DOCS/'RESULTS.md').write_text('\n'.join(lines),encoding='utf-8')
+    from readme_sections import update_report
+    update_report('v25-results', '\n'.join(lines), 'Docs/V25')
     paths=[]
     for directory in ('Source','Scripts','Config','Assets/NPC','Assets/Models','Assets/Dialogue','Assets/Wardrobe','Assets/Farms','Assets/Roads','Assets/Fonts'):
         paths.extend(p for p in (ROOT/directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts)
-    paths.extend(ROOT/p for p in ('rural_pardeep.uproject','Assets/Routes/tractor_route.json','Assets/v25_assets.lock.json','requirements-v25-tools.txt','requirements-tools.txt','.gitattributes','LICENSE','THIRD_PARTY_NOTICES.md'))
+    paths.extend(ROOT/p for p in ('rural_pardeep.uproject','Assets/Routes/tractor_route.json','Assets/v25_assets.lock.json','requirements-v25-tools.txt','requirements-tools.txt','.gitattributes','LICENSE','README.md'))
     ignored=subprocess.run(['git','check-ignore','-z','--stdin'],input=('\0'.join(p.relative_to(ROOT).as_posix() for p in paths)+'\0').encode(),capture_output=True)
     if ignored.returncode not in (0,1):raise RuntimeError(ignored.stderr)
     ignore=set(ignored.stdout.decode().split('\0'))

@@ -4,4 +4,4 @@ onnx==1.18.0
 onnxruntime==1.20.1
 matplotlib>=3.8,<4
 # Training also requires torch==2.11.0 from https://download.pytorch.org/whl/cpu.
-# Install separately with the CPU index as documented in Docs/V25/README.md.
+# Install separately with the CPU index as documented in README.md#v25.

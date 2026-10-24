@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import shutil
+from readme_sections import export_notices, export_package_readme
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -10,8 +11,10 @@ def main():
     package=ROOT/'Saved/Packages/V2/Windows'
     if not (package/'rural_pardeep.exe').is_file():raise RuntimeError('V2 package is missing')
     docs=package/'Documentation';docs.mkdir(exist_ok=True)
-    for name in ('LICENSE','THIRD_PARTY_NOTICES.md'):
+    for name in ('LICENSE',):
         shutil.copyfile(ROOT/name,docs/name)
+    export_package_readme(docs/'README.md')
+    export_notices(docs/'THIRD_PARTY_NOTICES.txt')
     for directory in ('Geodata','Architecture','Reference','Routes'):
         target=docs/'Assets'/directory;target.mkdir(parents=True,exist_ok=True)
         for path in (ROOT/'Assets'/directory).iterdir():

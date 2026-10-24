@@ -63837,5 +63837,5 @@
     "Unverified legacy Content/Village imports and unrelated templates",
     "Engine binaries, plugin source/Core Data distribution, build products, caches, Saved logs and credentials"
   ],
-  "license_details": "README.md and ../../THIRD_PARTY_NOTICES.md; MetaHuman assets are not MIT"
+  "license_details": "../../README.md#third-party-notices; MetaHuman assets are not MIT"
 }

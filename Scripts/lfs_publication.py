@@ -77,7 +77,7 @@ def prepare():
               'dependency_audit': audit,
               'excluded': ['Unverified legacy Content/Village imports and unrelated templates',
                            'Engine binaries, plugin source/Core Data distribution, build products, caches, Saved logs and credentials'],
-              'license_details': 'README.md and ../../THIRD_PARTY_NOTICES.md; MetaHuman assets are not MIT'}
+              'license_details': '../../README.md#third-party-notices; MetaHuman assets are not MIT'}
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     (ROOT / 'Saved/LFS/asset-paths.txt').write_text('\n'.join(item['path'] for item in records) + '\n', encoding='utf-8')

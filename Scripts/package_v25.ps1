@@ -30,7 +30,8 @@ $Output=Join-Path $ProjectRoot 'Saved/Packages/V25/Windows'
 start "" "%~dp0rural_pardeep.exe" -VillageV25 -windowed -ResX=1440 -ResY=900 -ForceRes "-ExecCmds=sg.ViewDistanceQuality 3,sg.ShadowQuality 3,sg.GlobalIlluminationQuality 3,sg.ReflectionQuality 3,r.ScreenPercentage 67,t.MaxFPS 60"
 '@ | Set-Content -LiteralPath (Join-Path $Output 'Play_V25.cmd') -Encoding ASCII
 Copy-Item -LiteralPath (Join-Path $ProjectRoot 'LICENSE') -Destination (Join-Path $Output 'SOURCE_LICENSE.txt')
-Copy-Item -LiteralPath (Join-Path $ProjectRoot 'THIRD_PARTY_NOTICES.md') -Destination $Output
+python (Join-Path $PSScriptRoot 'readme_sections.py') export-notices (Join-Path $Output 'THIRD_PARTY_NOTICES.txt')
+if($LASTEXITCODE -ne 0){throw 'Package built, but notice export failed'}
 Write-Output "V2.5 Windows Development package: $Output"
 python (Join-Path $PSScriptRoot 'write_v25_package_notes.py')
 if($LASTEXITCODE -ne 0){throw 'Package built, but package documentation failed'}

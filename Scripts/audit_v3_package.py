@@ -29,7 +29,7 @@ def main():
     if not runtime['passed'] or not runtime['overview_streaming_complete'] or runtime['overview_mesh_chunks']!=build['mesh_chunks']:
         raise ValueError('Standalone overview did not load every generated village mesh chunk')
     files=[p for folder in ('Scripts','Source','Config') for p in (ROOT/folder).rglob('*') if p.is_file() and p.suffix in ('.py','.ps1','.cpp','.h','.cs','.ini','.json') and '__pycache__' not in str(p) and p.name!='DefaultEditorPerProjectUserSettings.ini']
-    files += [ROOT/p for p in ['Assets/World/v3_world.json','Assets/World/v3_map.png','README.md','Docs/V3/README.md','Tests/test_v3_world.py','THIRD_PARTY_NOTICES.md','requirements-v3-tools.txt']]
+    files += [ROOT/p for p in ['Assets/World/v3_world.json','Assets/World/v3_map.png','README.md','Tests/test_v3_world.py','requirements-v3-tools.txt']]
     report=dict(passed=True,scope='Exact staged inputs and cooked namespace audit; not independent machine validation',
         counts={k:build[k] for k in ('buildings','roads','landmarks','fields','styles','mesh_chunks','triangles')},
         namespaces=dict(Counter(p.split('/')[0] for p in content if p.endswith(('.uasset','.umap')))),

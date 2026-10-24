@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+from readme_sections import update_report
 
 ROOT=Path(__file__).resolve().parents[1]
 SAVED=ROOT/'Saved/VillageMeshV2'
@@ -43,7 +44,7 @@ def main():
         if not r.get('rendered',False):build+=' (NullRHI)'
         lines.append('| %s | %s | %s | %s | %.1f |'%(r['file'],build,'pass' if r['passed'] else 'FAIL',timing,r['peak_process_physical_bytes']/1024**2))
     lines+=['','The proposed route target is p95 <=33.3 ms. Passing that percentile does not mean every frame stayed below the target. Capture and interaction timings are deliberately excluded from this comparison.','',
-        '## Captures','',f'{len(captures)} fixed-camera PNGs indexed with SHA256 checksums in [evidence.json](evidence.json). Four representative views appear in the [pilot README](README.md); the complete set remains in `Saved/VillageMeshV2`.','']
+        '## Captures','',f'{len(captures)} fixed-camera PNGs indexed with SHA256 checksums in [evidence.json](evidence.json). Four representative views appear in the [pilot section](../../README.md#v2); the complete set remains in `Saved/VillageMeshV2`.','']
     soaks=[r for r in runs if r['mode']=='soak']
     if soaks:
         lines+=['## Continuous soak','']
@@ -67,7 +68,7 @@ def main():
     lines+=['## Acceptance limits','',
         'Local facade photographs, measured ground/facade dimensions, local architectural review, dedicated Lumen diagnostic views, complete people/animal/traffic/audio work, separate CPU/GPU frame profiling, and independent fresh-machine testing remain outstanding. This is a reproducible procedural pilot, not an accepted hyperrealistic reconstruction. See the [milestone register](../V2_ACCEPTANCE.txt).','',
         'The offscreen Lumen visualization attempts produced lit images despite accepting the console settings. They are excluded from the beauty evidence and do not establish surface-cache coverage. See the [attempt record](lumen_diagnostic_attempt.json).','']
-    (DOCS/'RESULTS.md').write_text('\n'.join(lines),encoding='utf-8')
+    update_report('v2-results', '\n'.join(lines), 'Docs/V2')
     for path in SAVED.glob('package_monitor_*.json'):
         shutil.copyfile(path,DOCS/path.name)
     print(json.dumps(dict(runs=len(runs),capture_files=len(captures),rendered_route_runs=summary['rendered_route_runs'])))
